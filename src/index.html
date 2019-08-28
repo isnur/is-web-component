@@ -2,16 +2,21 @@
 <html dir="ltr" lang="en">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0">
-  <title>Stencil Component Starter</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Is Web Components Starter</title>
 
-  <script type="module" src="/build/is-web-components.esm.js"></script>
-  <script nomodule src="/build/is-web-components.js"></script>
-
+  <script type="module" src="/build/is-web-component.esm.js"></script>
+  <script nomodule src="/build/is-web-component.js"></script>
+  <style>
+    is-badge {
+      --border-radius: 10em;
+      --font-size: 20px;
+    }
+  </style>
 </head>
 <body>
 
-  <my-component first="Stencil" last="'Don't call me a framework' JS"></my-component>
+  <is-badge color="success" rounded text="Active"></is-badge>
 
 </body>
 </html>

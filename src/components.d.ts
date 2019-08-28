@@ -9,53 +9,53 @@ import { HTMLStencilElement, JSXBase } from '@stencil/core/internal';
 
 
 export namespace Components {
-  interface MyComponent {
+  interface IsBadge {
     /**
-    * The first name
+    * The color options are: `"primary"`, `"secondary"`, `"success"`, `"warning"`, `"danger"`, `"light"`, `"info"`, and `"dark"`.
     */
-    'first': string;
+    'color'?: string;
     /**
-    * The last name
+    * If `true`, make the badge rounded.
     */
-    'last': string;
+    'rounded'?: boolean;
     /**
-    * The middle name
+    * The text to display in the badge.
     */
-    'middle': string;
+    'text': string;
   }
 }
 
 declare global {
 
 
-  interface HTMLMyComponentElement extends Components.MyComponent, HTMLStencilElement {}
-  var HTMLMyComponentElement: {
-    prototype: HTMLMyComponentElement;
-    new (): HTMLMyComponentElement;
+  interface HTMLIsBadgeElement extends Components.IsBadge, HTMLStencilElement {}
+  var HTMLIsBadgeElement: {
+    prototype: HTMLIsBadgeElement;
+    new (): HTMLIsBadgeElement;
   };
   interface HTMLElementTagNameMap {
-    'my-component': HTMLMyComponentElement;
+    'is-badge': HTMLIsBadgeElement;
   }
 }
 
 declare namespace LocalJSX {
-  interface MyComponent extends JSXBase.HTMLAttributes<HTMLMyComponentElement> {
+  interface IsBadge extends JSXBase.HTMLAttributes<HTMLIsBadgeElement> {
     /**
-    * The first name
+    * The color options are: `"primary"`, `"secondary"`, `"success"`, `"warning"`, `"danger"`, `"light"`, `"info"`, and `"dark"`.
     */
-    'first'?: string;
+    'color'?: string;
     /**
-    * The last name
+    * If `true`, make the badge rounded.
     */
-    'last'?: string;
+    'rounded'?: boolean;
     /**
-    * The middle name
+    * The text to display in the badge.
     */
-    'middle'?: string;
+    'text'?: string;
   }
 
   interface IntrinsicElements {
-    'my-component': MyComponent;
+    'is-badge': IsBadge;
   }
 }
 

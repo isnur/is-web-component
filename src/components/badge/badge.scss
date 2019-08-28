@@ -1,0 +1,75 @@
+:host {
+  /**
+     * @prop --background-color: Background color of the badge
+     * @prop --color: Text color of the badge
+     *
+     * @prop --padding-top: Padding top of the badge
+     * @prop --padding-end: Padding right of the badge
+     * @prop --padding-bottom: Padding bottom of the badge
+     * @prop --padding-start: Padding left of the badge
+     */
+  -webkit-font-smoothing: antialiased;
+  padding: var(--padding-top, 3px) var(--padding-end, 8px) var(--padding-bottom, 3px) var(--padding-start, 8px);
+  display: inline-block;
+  min-width: 10px;
+  color: var(--color, #fff);
+  text-align: center;
+  white-space: nowrap;
+  contain: content;
+  vertical-align: baseline;
+  background-color: var(--background-color, #327bb7);
+}
+
+:host span {
+  /**
+     * @prop --font-family: Font family of the badge text
+     * @prop --font-size: Font size of the badge text 
+     * @prop --font-weight: Font weight of the badge text
+     */
+  font-family: var(--font-family, "Helvetica Neue", Helvetica, Arial, sans-serif);
+  font-size: var(--font-size, 13px);
+  font-weight: var(--font-weight, normal);
+  line-height: 1;
+}
+
+:host(.primary) {
+  color: $primary-color;
+  background-color: $primary-bg;
+}
+:host(.secondary) {
+  color: $secondary-color;
+  background-color: $secondary-bg;
+}
+:host(.success) {
+  color: $success-color;
+  background-color: $success-bg;
+}
+:host(.warning) {
+  color: $warning-color;
+  background-color: $warning-bg;
+}
+:host(.danger) {
+  color: $danger-color;
+  background-color: $danger-bg;
+}
+:host(.light) {
+  color: $light-color;
+  background-color: $light-bg;
+}
+:host(.info) {
+  color: $info-color;
+  background-color: $info-bg;
+}
+:host(.dark) {
+  color: $dark-color;
+  background-color: $dark-bg;
+}
+:host(.rounded) {
+  /**
+     * @prop --border-radius: Border radius of the badge if is rounded
+     */
+  border-radius: var(--border-radius, 4px);
+}
+:host(.hidden) {
+  display: none;
+}
