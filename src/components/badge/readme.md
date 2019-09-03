@@ -7,11 +7,11 @@
 
 ## Properties
 
-| Property  | Attribute | Description                                                                                                                 | Type      | Default     |
-| --------- | --------- | --------------------------------------------------------------------------------------------------------------------------- | --------- | ----------- |
-| `color`   | `color`   | The color options are: `"primary"`, `"secondary"`, `"success"`, `"warning"`, `"danger"`, `"light"`, `"info"`, and `"dark"`. | `string`  | `'primary'` |
-| `rounded` | `rounded` | If `true`, make the badge rounded.                                                                                          | `boolean` | `false`     |
-| `text`    | `text`    | The text to display in the badge.                                                                                           | `string`  | `undefined` |
+| Property  | Attribute | Description                                                                                                                                      | Type      | Default     |
+| --------- | --------- | ------------------------------------------------------------------------------------------------------------------------------------------------ | --------- | ----------- |
+| `color`   | `color`   | The color options are: `"primary"`, `"secondary"`, `"success"`, `"warning"`, `"error"`, `"light"`, `"info"`, `"white"`, `"black"`, and `"dark"`. | `string`  | `undefined` |
+| `rounded` | `rounded` | If `true`, make the badge rounded.                                                                                                               | `boolean` | `false`     |
+| `text`    | `text`    | The text to display in the badge.                                                                                                                | `string`  | `undefined` |
 
 
 ## CSS Custom Properties
