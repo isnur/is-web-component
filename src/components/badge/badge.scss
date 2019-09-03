@@ -9,7 +9,7 @@
      * @prop --padding-start: Padding left of the badge
      */
   -webkit-font-smoothing: antialiased;
-  padding: var(--padding-top, 3px) var(--padding-end, 8px) var(--padding-bottom, 3px) var(--padding-start, 8px);
+  padding: var(--padding-top, 1px) var(--padding-end, 8px) var(--padding-bottom, 3px) var(--padding-start, 8px);
   display: inline-block;
   min-width: 10px;
   color: var(--color, #fff);
@@ -18,6 +18,7 @@
   contain: content;
   vertical-align: baseline;
   background-color: var(--background-color, #327bb7);
+  border-color: transparent;
 }
 
 :host span {
@@ -48,9 +49,9 @@
   color: $warning-color;
   background-color: $warning-bg;
 }
-:host(.danger) {
-  color: $danger-color;
-  background-color: $danger-bg;
+:host(.error) {
+  color: $error-color;
+  background-color: $error-bg;
 }
 :host(.light) {
   color: $light-color;
@@ -63,6 +64,14 @@
 :host(.dark) {
   color: $dark-color;
   background-color: $dark-bg;
+}
+:host(.white) {
+  color: $white-color;
+  background-color: $white-bg;
+}
+:host(.black) {
+  color: $black-color;
+  background-color: $black-bg;
 }
 :host(.rounded) {
   /**

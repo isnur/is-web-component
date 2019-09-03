@@ -11,7 +11,7 @@ import { HTMLStencilElement, JSXBase } from '@stencil/core/internal';
 export namespace Components {
   interface IsBadge {
     /**
-    * The color options are: `"primary"`, `"secondary"`, `"success"`, `"warning"`, `"danger"`, `"light"`, `"info"`, and `"dark"`.
+    * The color options are: `"primary"`, `"secondary"`, `"success"`, `"warning"`, `"error"`, `"light"`, `"info"`, `"white"`, `"black"`, and `"dark"`.
     */
     'color'?: string;
     /**
@@ -41,7 +41,7 @@ declare global {
 declare namespace LocalJSX {
   interface IsBadge extends JSXBase.HTMLAttributes<HTMLIsBadgeElement> {
     /**
-    * The color options are: `"primary"`, `"secondary"`, `"success"`, `"warning"`, `"danger"`, `"light"`, `"info"`, and `"dark"`.
+    * The color options are: `"primary"`, `"secondary"`, `"success"`, `"warning"`, `"error"`, `"light"`, `"info"`, `"white"`, `"black"`, and `"dark"`.
     */
     'color'?: string;
     /**

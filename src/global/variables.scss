@@ -1,23 +1,41 @@
-$primary-color: #fff;
-$primary-bg: #327BB7;
+$dark: black;
+$light: white;
 
-$secondary-color: #5D5D5D;
-$secondary-bg: #FF7D09;
+@function set-text-color($color) {
+  @if (lightness($color) > 60) {
+    @return $dark; // Lighter background, return dark color
+  } @else {
+    @return $light; // Darker background, return light color
+  }
+}
 
-$success-color: #fff;
-$success-bg: #00C092;
+$primary-bg: #327bb7;
+$primary-color: set-text-color($primary-bg);
 
-$warning-color: #5D5D5D;
-$warning-bg: #E8D700;
+$secondary-bg: #ff7d09;
+$secondary-color: set-text-color($secondary-bg);
 
-$danger-color: #fff;
-$danger-bg: #D0021B;
+$success-bg: #00c092;
+$success-color: set-text-color($success-bg);
 
-$light-color: #212529;
-$light-bg: #f8f9fa;
+$warning-bg: #e8d700;
+$warning-color: set-text-color($warning-bg);
 
-$info-color: #fff;
-$info-bg: #17a2b8;
+$error-bg: #d0021b;
+$error-color: set-text-color($error-bg);
 
-$dark-color: #fff;
-$dark-bg: #343a40;
+$light-bg: #e5e5e5;
+$light-color: set-text-color($light-bg);
+
+$info-bg: #b9b9b9;
+$info-color: set-text-color($info-bg);
+
+$dark-bg: #5d5d5d;
+$dark-color: set-text-color($dark-bg);
+
+$black-bg: black;
+$black-color: set-text-color($black-bg);
+
+$white-bg: white;
+$white-color: set-text-color($white-bg);
+

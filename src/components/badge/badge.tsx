@@ -7,9 +7,9 @@ import { Component, Host, Prop, h } from '@stencil/core';
 })
 export class Badge {
   /**
-     * The color options are: `"primary"`, `"secondary"`, `"success"`, `"warning"`, `"danger"`, `"light"`, `"info"`, and `"dark"`.
+     * The color options are: `"primary"`, `"secondary"`, `"success"`, `"warning"`, `"error"`, `"light"`, `"info"`, `"white"`, `"black"`, and `"dark"`.
      */
-  @Prop() color?: string = 'primary';
+  @Prop() color?: string;
   
   /**
    * The text to display in the badge.
