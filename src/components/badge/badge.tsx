@@ -27,7 +27,7 @@ export class Badge {
         class={{
           [this.color]: true,
           'rounded': this.rounded,
-          'hidden': this.text === undefined
+          'hidden': !this.text
         }}
       >
         <span>{this.text}</span>
