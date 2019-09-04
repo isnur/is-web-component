@@ -10,7 +10,7 @@ export class Badge {
      * The color options are: `"primary"`, `"secondary"`, `"success"`, `"warning"`, `"error"`, `"light"`, `"info"`, `"white"`, `"black"`, and `"dark"`.
      */
   @Prop() color?: string;
-  
+
   /**
    * The text to display in the badge.
    */

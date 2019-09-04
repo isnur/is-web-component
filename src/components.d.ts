@@ -23,6 +23,28 @@ export namespace Components {
     */
     'text': string;
   }
+  interface IsMultiselect {
+    /**
+    * If `true`, the user cannot interact with the select.
+    */
+    'disabled': boolean;
+    /**
+    * Get the selected items.
+    */
+    'getSelected': () => Promise<ISelectItem[]>;
+    /**
+    * The options list items.
+    */
+    'items': ISelectItem[];
+    /**
+    * The text to display when not selected items.
+    */
+    'placeholder': string;
+    /**
+    * The selected items.
+    */
+    'selected': ISelectItem[];
+  }
 }
 
 declare global {
@@ -33,8 +55,15 @@ declare global {
     prototype: HTMLIsBadgeElement;
     new (): HTMLIsBadgeElement;
   };
+
+  interface HTMLIsMultiselectElement extends Components.IsMultiselect, HTMLStencilElement {}
+  var HTMLIsMultiselectElement: {
+    prototype: HTMLIsMultiselectElement;
+    new (): HTMLIsMultiselectElement;
+  };
   interface HTMLElementTagNameMap {
     'is-badge': HTMLIsBadgeElement;
+    'is-multiselect': HTMLIsMultiselectElement;
   }
 }
 
@@ -53,9 +82,28 @@ declare namespace LocalJSX {
     */
     'text'?: string;
   }
+  interface IsMultiselect extends JSXBase.HTMLAttributes<HTMLIsMultiselectElement> {
+    /**
+    * If `true`, the user cannot interact with the select.
+    */
+    'disabled'?: boolean;
+    /**
+    * The options list items.
+    */
+    'items'?: ISelectItem[];
+    /**
+    * The text to display when not selected items.
+    */
+    'placeholder'?: string;
+    /**
+    * The selected items.
+    */
+    'selected'?: ISelectItem[];
+  }
 
   interface IntrinsicElements {
     'is-badge': IsBadge;
+    'is-multiselect': IsMultiselect;
   }
 }
 

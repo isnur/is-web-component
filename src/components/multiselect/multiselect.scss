@@ -1,0 +1,163 @@
+.multiselect {
+  position: relative;
+  min-height: 35px;
+  display: flex;
+  align-items: center;
+  border-radius: 5px;
+  border: 1px solid #e8e8e8;
+  background: #fff;
+  font-size: 14px;
+  background-image: linear-gradient(45deg, transparent 50%, gray 50%),
+    linear-gradient(135deg, gray 50%, transparent 50%);
+  background-position: calc(100% - 20px) calc(1em + 2px), calc(100% - 15px) calc(1em + 2px);
+  outline: 0;
+  background-size: 5px 5px, 5px 5px, 1px 1.5em;
+  background-repeat: no-repeat;
+  color: #35495e;
+  font-family: Lato, Helvetica, sans-serif;
+  &.active {
+    background-image: linear-gradient(45deg, gray 50%, transparent 50%),
+      linear-gradient(135deg, transparent 50%, gray 50%);
+    background-position: calc(100% - 15px) 1em, calc(100% - 20px) 1em;
+  }
+}
+.multiselect__click-area {
+  background-color: transparent;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.multiselect__placeholder {
+  padding-left: 15px;
+}
+.btnToggle {
+  width: 40px;
+  cursor: pointer;
+}
+.multiselect__input {
+  padding-left: 10px;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  input {
+    width: 100%;
+    height: 100%;
+    display: inline-block;
+    min-height: 35px;
+    line-height: 20px;
+    border: none;
+    border-radius: 5px;
+    background: #fff;
+    padding: 0 0 0 5px;
+    transition: border 0.1s ease;
+    box-sizing: border-box;
+    vertical-align: top;
+    outline: none;
+    color: #35495e;
+    font-family: Helvetica, sans-serif;
+    font-size: 14px;
+  }
+
+  ::placeholder {
+    /* Chrome, Firefox, Opera, Safari 10.1+ */
+    opacity: 1; /* Firefox */
+    color: #35495e;
+    font-family: Helvetica, sans-serif;
+  }
+
+  :-ms-input-placeholder {
+    /* Internet Explorer 10-11 */
+    color: #35495e;
+    font-family: Helvetica, sans-serif;
+  }
+
+  ::-ms-input-placeholder {
+    /* Microsoft Edge */
+    color: #35495e;
+    font-family: Helvetica, sans-serif;
+  }
+}
+
+.multiselect__content {
+  position: absolute;
+  display: block;
+  background: #fff;
+  width: calc(100% - 18px);
+  max-height: 240px;
+  overflow: auto;
+  border: 1px solid #e8e8e8;
+  border-top: none;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  z-index: 3;
+  -webkit-overflow-scrolling: touch;
+  &--list {
+    list-style: none;
+    display: inline-block;
+    padding: 0;
+    margin: 0;
+    min-width: 100%;
+    vertical-align: top;
+  }
+  &--item {
+    padding: 12px;
+    line-height: 16px;
+    text-decoration: none;
+    text-transform: none;
+    position: relative;
+    cursor: pointer;
+    white-space: nowrap;
+    display: flex;
+    justify-content: space-between;
+    &:hover {
+      background: $success-bg;
+      color: $success-color;
+      outline: none;
+      &::after {
+        content: "Click to Select";
+        font-size: 12px;
+      }
+    }
+  }
+  &--selected {
+    display: flex;
+    justify-content: space-between;
+    background: $light-bg;
+    color: $light-color;
+    &::after {
+      content: "\2713 ";
+      color: $primary-bg;
+      font-weight: bold;
+    }
+    &:hover {
+      background: $error-bg;
+      color: $error-color;
+      outline: none;
+      &::after {
+        content: "Click to Remove";
+        font-size: 12px;
+        color: $error-color;
+        font-weight: normal;
+      }
+    }
+  }
+  &--remove {
+    background: $error-bg;
+    color: $error-color;
+    outline: none;
+  }
+}
+
+.not-found {
+  height: 35px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 12px;
+  font-family: Helvetica, sans-serif;
+}
