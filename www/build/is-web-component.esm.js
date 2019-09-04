@@ -1,0 +1,1 @@
+import{p as e,b as d}from"./p-16aacc87.js";e().then(e=>d([["p-m5bbrjwq",[[2,"is-badge",{color:[1],text:[1],rounded:[4]}],[2,"is-multiselect",{disabled:[4],placeholder:[1],items:[16],selected:[16],isExpanded:[32],keyword:[32],getSelected:[64]}]]]],e));

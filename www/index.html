@@ -1,0 +1,52 @@
+<!doctype html><html dir="ltr" lang="en"><head> <meta charset="utf-8"> <meta name="viewport" content="width=device-width, initial-scale=1"> <title>Is Web Components Starter</title>  <link rel="modulepreload" href="/build/p-16aacc87.js"><link rel="modulepreload" href="/build/p-m5bbrjwq.entry.js"><script nomodule="" src="/build/is-web-component.js"></script> </head> <body> <is-multiselect id="select1" placeholder="Pilih katalog"></is-multiselect> <pre id="result1"></pre> <is-multiselect id="select2"></is-multiselect> <pre id="result2"></pre> <is-badge color="success" rounded="" text="Get Items" onclick="setResult()"></is-badge> <script>const data1 = [{
+      id: 1,
+      name: 'List 1'
+    }, {
+      id: 2,
+      name: 'List 2'
+    }, {
+      id: 3,
+      name: 'List 3'
+    }, {
+      id: 4,
+      name: 'List 4'
+    }];
+    setOptions('1', data1);
+
+    const data2 = [{
+      id: 1,
+      name: 'Data 1'
+    }, {
+      id: 2,
+      name: 'Data 2'
+    }, {
+      id: 3,
+      name: 'Data 3'
+    }, {
+      id: 4,
+      name: 'Data 4'
+    }, {
+      id: 5,
+      name: 'Data 5'
+    }, {
+      id: 6,
+      name: 'Data 6'
+    }];
+    setOptions('2', data2);
+
+    function setOptions(id, data) {
+      const element = document.getElementById('select' + id);
+      element.items = data;
+    }
+    function getItems(id) {
+      const element = document.getElementById('select' + id);
+      element.getSelected().then((res) => {
+        const result = document.getElementById('result' + id);
+        const code = JSON.stringify(res, null, ' ');
+        result.innerHTML = '<code>' + code + '</code>';
+      });
+    }
+    function setResult() {
+      getItems('1');
+      getItems('2');
+    }</script> <script type="module" data-resources-url="/build/" data-namespace="is-web-component">import{p as e,b as d}from"/build/p-16aacc87.js";e().then(e=>d([["p-m5bbrjwq",[[2,"is-badge",{color:[1],text:[1],rounded:[4]}],[2,"is-multiselect",{disabled:[4],placeholder:[1],items:[16],selected:[16],isExpanded:[32],keyword:[32],getSelected:[64]}]]]],e));</script></body></html>
