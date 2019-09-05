@@ -1,3 +1,6 @@
+:host {
+  display: block;
+}
 .multiselect {
   position: relative;
   min-height: 35px;
@@ -7,18 +10,13 @@
   border: 1px solid #e8e8e8;
   background: #fff;
   font-size: 14px;
-  background-image: linear-gradient(45deg, transparent 50%, gray 50%),
-    linear-gradient(135deg, gray 50%, transparent 50%);
-  background-position: calc(100% - 20px) calc(1em + 2px), calc(100% - 15px) calc(1em + 2px);
   outline: 0;
-  background-size: 5px 5px, 5px 5px, 1px 1.5em;
-  background-repeat: no-repeat;
   color: #35495e;
   font-family: Lato, Helvetica, sans-serif;
-  &.active {
-    background-image: linear-gradient(45deg, gray 50%, transparent 50%),
-      linear-gradient(135deg, transparent 50%, gray 50%);
-    background-position: calc(100% - 15px) 1em, calc(100% - 20px) 1em;
+  &.multiselect__disabled {
+    background: $light-bg;
+    pointer-events: none;
+    opacity: 0.6;
   }
 }
 .multiselect__click-area {
@@ -38,6 +36,16 @@
 .btnToggle {
   width: 40px;
   cursor: pointer;
+  background-image: linear-gradient(45deg, transparent 50%, gray 50%),
+    linear-gradient(135deg, gray 50%, transparent 50%);
+  background-position: calc(100% - 20px) calc(1em + 2px), calc(100% - 15px) calc(1em + 2px);
+  background-size: 5px 5px, 5px 5px, 1px 1.5em;
+  background-repeat: no-repeat;
+  &.active {
+    background-image: linear-gradient(45deg, gray 50%, transparent 50%),
+      linear-gradient(135deg, transparent 50%, gray 50%);
+    background-position: calc(100% - 15px) 1em, calc(100% - 20px) 1em;
+  }
 }
 .multiselect__input {
   padding-left: 10px;

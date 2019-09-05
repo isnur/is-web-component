@@ -6,9 +6,6 @@ import { Component, ComponentInterface, Host, Prop, State, Method, h } from '@st
   scoped: true
 })
 export class Multiselect implements ComponentInterface {
-  @State() isExpanded = false;
-  @State() keyword = '';
-
   /**
    * If `true`, the user cannot interact with the select.
    */
@@ -29,6 +26,10 @@ export class Multiselect implements ComponentInterface {
    */
   @Prop() selected: ISelectItem[] = [];
 
+  @State() isExpanded = false;
+  @State() keyword = '';
+  @State() textSelected = this.placeholder;
+  
   /**
    * Get the selected items.
    */
@@ -48,6 +49,11 @@ export class Multiselect implements ComponentInterface {
   }
   private toggle = (state: boolean) => {
     this.isExpanded = state;
+    if (this.selected.length > 0 && !this.isExpanded) {
+      this.textSelected = this.selected.length + ' options selected';
+    } else {
+      this.textSelected = this.placeholder;
+    }
   }
   private isSelected = (item: ISelectItem) => {
     return this.selected.some(obj => obj.id === item.id)
@@ -74,22 +80,25 @@ export class Multiselect implements ComponentInterface {
       var isClickInside = this.multiselect.contains(event.target);
 
       if (!isClickInside) {
-        this.isExpanded = false;
+        this.toggle(false);
       }
     });
   }
 
   render() {
     return (
-      <Host class="multiselect__wrapper" ref={el => this.multiselect = el}>
+      <Host ref={el => this.multiselect = el}>
         <div class={{
           'multiselect': true,
-          'active': this.isExpanded
+          'multiselect__disabled': this.disabled
         }}>
           <div class="multiselect__click-area" onClick={this.onClick} style={{
             zIndex: this.isExpanded ? '-1' : '0'
           }}>
-            <span class="btnToggle" onClick={() => this.toggle(false)}></span>
+            <span class={{
+              'btnToggle': true,
+              'active': this.isExpanded
+            }} onClick={() => this.toggle(false)}></span>
           </div>
           {this.isExpanded ?
             <div class="multiselect__input">
@@ -99,10 +108,13 @@ export class Multiselect implements ComponentInterface {
                 ref={el => this.textInput = el}
                 placeholder={this.placeholder}
               />
-              <span class="btnToggle" onClick={() => this.toggle(false)}></span>
+              <span class={{
+                'btnToggle': true,
+                'active': this.isExpanded
+              }} onClick={() => this.toggle(false)}></span>
             </div> :
             <div class="multiselect__placeholder">
-              {this.placeholder}
+              {this.textSelected}
             </div>
           }
         </div>
