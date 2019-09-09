@@ -1,7 +1,7 @@
 {
   "name": "is-web-component",
-  "version": "0.0.2",
-  "description": "Stencil Component Starter",
+  "version": "1.0.0",
+  "description": "Is Web Component build with stenciljs",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
   "es2015": "dist/esm/index.mjs",
@@ -9,11 +9,16 @@
   "types": "dist/types/index.d.ts",
   "collection": "dist/collection/collection-manifest.json",
   "collection:main": "dist/collection/index.js",
-  "unpkg": "dist/is-web-components/is-web-components.js",
+  "unpkg": "dist/is-web-component/is-web-component.js",
   "files": [
     "dist/",
     "loader/"
   ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/isnur/is-web-component.git"
+  },
+  "homepage": "https://is-web-component.isnur.com",
   "scripts": {
     "build": "stencil build --docs",
     "start": "stencil build --dev --watch --serve",
