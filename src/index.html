@@ -17,10 +17,10 @@
 
 <body>
 
-  <is-multiselect id="select1" placeholder="Pilih katalog"></is-multiselect>
+  <is-multiselect id="select1" show-selected-badge="true" limit="2" placeholder="Pilih katalog"></is-multiselect>
   <pre id="result1">
   </pre>
-  <is-multiselect id="select2"></is-multiselect>
+  <is-multiselect id="select2" label-selected="selected"></is-multiselect>
   <pre id="result2">
   </pre>
   <is-badge color="success" rounded text="Get Items" onclick="setResult()"></is-badge>
@@ -32,6 +32,11 @@
       disable1: false,
       disable2: false
     };
+
+    const limitText = (count) => {
+      return `dan ${count} lagi`;
+    };
+    setLimitText('1', limitText);
 
     const data1 = [{
       id: 1,
@@ -47,6 +52,12 @@
       name: 'List 4'
     }];
     setOptions('1', data1);
+
+    const selected1 = [{
+      id: 2,
+      name: 'List 2'
+    }];
+    setSelected('1', selected1);
 
     const data2 = [{
       id: 1,
@@ -68,6 +79,16 @@
       name: 'Data 6'
     }];
     setOptions('2', data2);
+
+    function setSelected(id, data) {
+      const element = document.getElementById('select' + id);
+      element.selected = data;
+    }
+
+    function setLimitText(id, limitText) {
+      const element = document.getElementById('select' + id);
+      element.limitText = limitText;
+    }
 
     function setOptions(id, data) {
       const element = document.getElementById('select' + id);
@@ -92,6 +113,12 @@
       disable.text = disableState['disable' + id] ? 'Disable Select ' + id : 'Enable Select ' + id;
       disableState['disable' + id] = element.disabled;
     }
+    const elm1 = document.getElementById('select1');
+    elm1.addEventListener('onSelected', event => {
+      const result = document.getElementById('result1');
+      const code = JSON.stringify(event.detail, null, ' ');
+      result.innerHTML = '<code>' + code + '</code>';
+    })
   </script>
 </body>
 

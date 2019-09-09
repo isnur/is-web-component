@@ -1,11 +1,13 @@
 :host {
   display: block;
+  position: relative;
 }
 .multiselect {
   position: relative;
   min-height: 35px;
   display: flex;
-  align-items: center;
+  flex-direction: column;
+  justify-content: center;
   border-radius: 5px;
   border: 1px solid #e8e8e8;
   background: #fff;
@@ -31,10 +33,17 @@
 }
 
 .multiselect__placeholder {
-  padding-left: 15px;
+  padding: 5px 40px 5px 15px;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
 }
 .btnToggle {
   width: 40px;
+  height: 35px;
+  position: absolute;
+  top: 0;
+  right: 0;
   cursor: pointer;
   background-image: linear-gradient(45deg, transparent 50%, gray 50%),
     linear-gradient(135deg, gray 50%, transparent 50%);
@@ -49,11 +58,12 @@
 }
 .multiselect__input {
   padding-left: 10px;
+  margin-top: -10px;
   width: 100%;
   height: 100%;
   display: flex;
   input {
-    width: 100%;
+    width: calc(100% - 50px);
     height: 100%;
     display: inline-block;
     min-height: 35px;
@@ -73,7 +83,7 @@
 
   ::placeholder {
     /* Chrome, Firefox, Opera, Safari 10.1+ */
-    opacity: 1; /* Firefox */
+    opacity: 0.5; /* Firefox */
     color: #35495e;
     font-family: Helvetica, sans-serif;
   }
@@ -95,7 +105,7 @@
   position: absolute;
   display: block;
   background: #fff;
-  width: calc(100% - 18px);
+  width: calc(100% - 2px);
   max-height: 240px;
   overflow: auto;
   border: 1px solid #e8e8e8;
@@ -127,7 +137,7 @@
       color: $success-color;
       outline: none;
       &::after {
-        content: "Click to Select";
+        content: attr(label-to-select);
         font-size: 12px;
       }
     }
@@ -138,16 +148,15 @@
     background: $light-bg;
     color: $light-color;
     &::after {
-      content: "\2713 ";
-      color: $primary-bg;
-      font-weight: bold;
+      content: attr(label-selected);
+      color: $info-bg;
     }
     &:hover {
       background: $error-bg;
       color: $error-color;
       outline: none;
       &::after {
-        content: "Click to Remove";
+        content: attr(label-to-remove);
         font-size: 12px;
         color: $error-color;
         font-weight: normal;
@@ -168,4 +177,34 @@
   align-items: center;
   font-size: 12px;
   font-family: Helvetica, sans-serif;
+}
+
+.multiselect__tag {
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  color: $light-color;
+  margin: 2.5px 10px 2.5px 0;
+  &--remove {
+    padding: 0 8px;
+    border-left: 1px solid white;
+    font-size: 0.8em;
+    line-height: 1px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    &[color~="primary"] {
+      background-color: $primary-bg;
+      color: $primary-color;
+    }
+  }
+  &--more {
+    height: 25px;
+    line-height: 25px;
+  }
+  is-badge {
+    cursor: inherit;
+    height: 20px;
+  }
 }
