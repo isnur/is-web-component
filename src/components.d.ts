@@ -37,6 +37,22 @@ export namespace Components {
     */
     'items': ISelectItem[];
     /**
+    * The label when option is selected.
+    */
+    'labelSelected': string;
+    /**
+    * The label to remove or select.
+    */
+    'labelTo': ILabelTo;
+    /**
+    * Limit the display of selected options. The rest will be hidden within the limitText string.
+    */
+    'limit': number;
+    /**
+    * Function that process the message shown when selected elements pass the defined limit.
+    */
+    'limitText': Function;
+    /**
     * The text to display when not selected items.
     */
     'placeholder': string;
@@ -44,6 +60,10 @@ export namespace Components {
     * The selected items.
     */
     'selected': ISelectItem[];
+    /**
+    * If `true`, The badges will show selected items.
+    */
+    'showSelectedBadge': boolean;
   }
 }
 
@@ -92,6 +112,26 @@ declare namespace LocalJSX {
     */
     'items'?: ISelectItem[];
     /**
+    * The label when option is selected.
+    */
+    'labelSelected'?: string;
+    /**
+    * The label to remove or select.
+    */
+    'labelTo'?: ILabelTo;
+    /**
+    * Limit the display of selected options. The rest will be hidden within the limitText string.
+    */
+    'limit'?: number;
+    /**
+    * Function that process the message shown when selected elements pass the defined limit.
+    */
+    'limitText'?: Function;
+    /**
+    * Emitted when the selected items has changed.
+    */
+    'onOnSelected'?: (event: CustomEvent<any>) => void;
+    /**
     * The text to display when not selected items.
     */
     'placeholder'?: string;
@@ -99,6 +139,10 @@ declare namespace LocalJSX {
     * The selected items.
     */
     'selected'?: ISelectItem[];
+    /**
+    * If `true`, The badges will show selected items.
+    */
+    'showSelectedBadge'?: boolean;
   }
 
   interface IntrinsicElements {

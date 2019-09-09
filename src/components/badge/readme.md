@@ -24,11 +24,25 @@
 | `--font-family`      | Font family of the badge text            |
 | `--font-size`        | Font size of the badge text              |
 | `--font-weight`      | Font weight of the badge text            |
+| `--height`           | Height of the badge                      |
 | `--padding-bottom`   | Padding bottom of the badge              |
-| `--padding-end`      | Padding right of the badge               |
-| `--padding-start`    | Padding left of the badge                |
+| `--padding-left`     | Padding left of the badge                |
+| `--padding-right`    | Padding right of the badge               |
 | `--padding-top`      | Padding top of the badge                 |
 
+
+## Dependencies
+
+### Used by
+
+ - [is-multiselect](..\multiselect)
+
+### Graph
+```mermaid
+graph TD;
+  is-multiselect --> is-badge
+  style is-badge fill:#f9f,stroke:#333,stroke-width:4px
+```
 
 ----------------------------------------------
 

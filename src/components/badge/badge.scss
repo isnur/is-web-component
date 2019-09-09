@@ -3,15 +3,17 @@
      * @prop --background-color: Background color of the badge
      * @prop --color: Text color of the badge
      *
+     * @prop --height: Height of the badge
      * @prop --padding-top: Padding top of the badge
-     * @prop --padding-end: Padding right of the badge
+     * @prop --padding-right: Padding right of the badge
      * @prop --padding-bottom: Padding bottom of the badge
-     * @prop --padding-start: Padding left of the badge
+     * @prop --padding-left: Padding left of the badge
      */
   -webkit-font-smoothing: antialiased;
-  padding: var(--padding-top, 1px) var(--padding-end, 8px) var(--padding-bottom, 3px) var(--padding-start, 8px);
+  padding: var(--padding-top, 0) var(--padding-right, 8px) var(--padding-bottom, 0) var(--padding-left, 8px);
   display: inline-block;
   min-width: 10px;
+  height: var(--height, 24px);
   color: var(--color, #fff);
   text-align: center;
   white-space: nowrap;
@@ -31,6 +33,9 @@
   font-size: var(--font-size, 13px);
   font-weight: var(--font-weight, normal);
   line-height: 1;
+  display: flex;
+  height: 100%;
+  align-items: center;
 }
 
 :host(.primary) {
