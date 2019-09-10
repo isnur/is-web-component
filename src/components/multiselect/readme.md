@@ -44,7 +44,7 @@ Type: `Promise<ISelectItem[]>`
 
 ### Depends on
 
-- [is-badge](..\badge)
+- [is-badge](../badge)
 
 ### Graph
 ```mermaid

@@ -35,7 +35,7 @@
 
 ### Used by
 
- - [is-multiselect](..\multiselect)
+ - [is-multiselect](../multiselect)
 
 ### Graph
 ```mermaid
