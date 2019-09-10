@@ -21,6 +21,9 @@ export const config: Config = {
     },
     {
       type: 'www',
+      copy: [
+        { src: '_redirects' }
+      ],
       serviceWorker: null // disable service workers
     }
   ],
