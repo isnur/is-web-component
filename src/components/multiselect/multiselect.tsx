@@ -85,9 +85,7 @@ export class Multiselect implements ComponentInterface {
   @Watch('selected')
   setSelected(newValue: ISelectItem[], oldValue: ISelectItem[]) {
     if (newValue !== oldValue) {
-      if (this.showSelectedBadge) {
-        this.tags = this.renderSelectedItems();
-      }
+      this.updatePlaceholder();
     }
   }
 
@@ -124,6 +122,17 @@ export class Multiselect implements ComponentInterface {
 
   private toggle = (state: boolean, outside?: boolean) => {
     this.isExpanded = state;
+    this.updatePlaceholder();
+    if (!outside) {
+      if (this.isExpanded) {
+        setTimeout(() => {
+          this.textInput.focus();
+        }, 200);
+      }
+    }
+  };
+
+  private updatePlaceholder() {
     this.textSelected = this.placeholder;
     if (this.selected.length > 0 && !this.isExpanded) {
       this.textSelected = this.selected.length + ' options selected';
@@ -131,15 +140,10 @@ export class Multiselect implements ComponentInterface {
     if (this.showSelectedBadge) {
       this.tags = this.renderSelectedItems();
     }
-    if (!outside) {
-      if (this.isExpanded) {
-        this.textSelected = '';
-        setTimeout(() => {
-          this.textInput.focus();
-        }, 200);
-      }
+    if (this.isExpanded) {
+      this.textSelected = '';
     }
-  };
+  }
 
   private isSelected = (item: ISelectItem) => {
     return this.selected.some(obj => obj.id === item.id)
@@ -152,9 +156,6 @@ export class Multiselect implements ComponentInterface {
       });
     } else {
       this.selected = [...this.selected, item];
-    }
-    if (this.showSelectedBadge) {
-      this.tags = this.renderSelectedItems();
     }
     this.onSelected.emit(this.selected);
   };
