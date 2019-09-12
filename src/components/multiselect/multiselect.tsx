@@ -34,7 +34,7 @@ export class Multiselect implements ComponentInterface {
     remove: 'Click to Remove',
     select: 'Click to Select'
   };
-  
+
   /**
    * Limit the display of selected options. The rest will be hidden within the limitText string.
    */
@@ -104,19 +104,21 @@ export class Multiselect implements ComponentInterface {
 
   private renderSelectedItems = () => {
     let selected = [];
-    this.selected.map((item, i) => {
-      if (i < this.limit) {
-        selected.push(
-          <div class="multiselect__tag">
-            <is-badge color="primary" text={item.name}></is-badge>
-            <span class="multiselect__tag--remove" color="primary" onClick={() => this.updateItems(item)}>x</span>
-          </div>
-        );
-      } else {
-        const count = this.selected.length - this.limit;
-        selected[this.limit + 1] = <span class="multiselect__tag--more">{this.limitText(count)}</span>
-      }
-    });
+    if (this.selected) {
+      this.selected.map((item, i) => {
+        if (i < this.limit) {
+          selected.push(
+            <div class="multiselect__tag">
+              <is-badge color="primary" text={item.name}></is-badge>
+              <span class="multiselect__tag--remove" color="primary" onClick={() => this.updateItems(item)}>x</span>
+            </div>
+          );
+        } else {
+          const count = this.selected.length - this.limit;
+          selected[this.limit + 1] = <span class="multiselect__tag--more">{this.limitText(count)}</span>
+        }
+      });
+    }
     return selected;
   };
 
@@ -134,7 +136,7 @@ export class Multiselect implements ComponentInterface {
 
   private updatePlaceholder() {
     this.textSelected = this.placeholder;
-    if (this.selected.length > 0 && !this.isExpanded) {
+    if (this.selected && this.selected.length > 0 && !this.isExpanded) {
       this.textSelected = this.selected.length + ' options selected';
     }
     if (this.showSelectedBadge) {
@@ -146,7 +148,10 @@ export class Multiselect implements ComponentInterface {
   }
 
   private isSelected = (item: ISelectItem) => {
-    return this.selected.some(obj => obj.id === item.id)
+    if (this.selected) {
+      return this.selected.some(obj => obj.id === item.id)
+    }
+    return false;
   };
 
   private updateItems = (item: ISelectItem) => {
@@ -155,7 +160,11 @@ export class Multiselect implements ComponentInterface {
         return obj.id !== item.id;
       });
     } else {
-      this.selected = [...this.selected, item];
+      if (this.selected && this.selected.length > 0) {
+        this.selected = [...this.selected, item];
+      } else {
+        this.selected = [item];
+      }
     }
     this.onSelected.emit(this.selected);
   };
@@ -196,7 +205,7 @@ export class Multiselect implements ComponentInterface {
           </div>
 
           <div class="multiselect__placeholder">
-            {this.showSelectedBadge && this.selected.length > 0 ? this.tags : this.textSelected}
+            {this.showSelectedBadge && this.selected && this.selected.length > 0 ? this.tags : this.textSelected}
           </div>
 
           {this.isExpanded &&
