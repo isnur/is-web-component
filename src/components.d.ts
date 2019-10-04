@@ -88,7 +88,7 @@ declare global {
 }
 
 declare namespace LocalJSX {
-  interface IsBadge extends JSXBase.HTMLAttributes<HTMLIsBadgeElement> {
+  interface IsBadge {
     /**
     * The color options are: `"primary"`, `"secondary"`, `"success"`, `"warning"`, `"error"`, `"light"`, `"info"`, `"white"`, `"black"`, and `"dark"`.
     */
@@ -102,7 +102,7 @@ declare namespace LocalJSX {
     */
     'text'?: string;
   }
-  interface IsMultiselect extends JSXBase.HTMLAttributes<HTMLIsMultiselectElement> {
+  interface IsMultiselect {
     /**
     * If `true`, the user cannot interact with the select.
     */
@@ -156,7 +156,10 @@ export { LocalJSX as JSX };
 
 declare module "@stencil/core" {
   export namespace JSX {
-    interface IntrinsicElements extends LocalJSX.IntrinsicElements {}
+    interface IntrinsicElements {
+      'is-badge': LocalJSX.IsBadge & JSXBase.HTMLAttributes<HTMLIsBadgeElement>;
+      'is-multiselect': LocalJSX.IsMultiselect & JSXBase.HTMLAttributes<HTMLIsMultiselectElement>;
+    }
   }
 }
 
