@@ -53,6 +53,10 @@ export namespace Components {
     */
     'limitText': Function;
     /**
+    * Maximum selected items can be selected.
+    */
+    'max': number;
+    /**
     * The text to display when not selected items.
     */
     'placeholder': string;
@@ -127,6 +131,10 @@ declare namespace LocalJSX {
     * Function that process the message shown when selected elements pass the defined limit.
     */
     'limitText'?: Function;
+    /**
+    * Maximum selected items can be selected.
+    */
+    'max'?: number;
     /**
     * Emitted when the selected items has changed.
     */
