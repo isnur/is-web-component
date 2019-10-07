@@ -1,6 +1,6 @@
 dist/
 loader/
-docs/
+/docs/
 
 *~
 *.sw[mnpcod]
