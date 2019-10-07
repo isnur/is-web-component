@@ -3,7 +3,7 @@ import { sass } from '@stencil/sass';
 
 export const config: Config = {
   namespace: 'is-web-component',
-  excludeSrc: ['**/my-component/**'],
+  // excludeSrc: ['**/my-component/**'],
   plugins: [
     sass({
       injectGlobalPaths: [
@@ -22,12 +22,13 @@ export const config: Config = {
     {
       type: 'www',
       copy: [
-        { src: '_redirects' }
+        { src: '_redirects' },
+        { src: '../docs', dest: 'docs'}
       ],
       serviceWorker: null // disable service workers
     }
   ],
   testing: {
-    testPathIgnorePatterns: ['/my-component/']
+    // testPathIgnorePatterns: ['/my-component/']
   }
 };

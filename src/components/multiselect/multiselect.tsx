@@ -43,7 +43,7 @@ export class Multiselect implements ComponentInterface {
   /**
    * Function that process the message shown when selected elements pass the defined limit.
    */
-  @Prop() limitText: Function = (count: number) => `and ${count} more`;
+  @Prop() limitText: Function = (count: number) => 'and ' + count + ' more';
 
   /**
    * The label when option is selected.
