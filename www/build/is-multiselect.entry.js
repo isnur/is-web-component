@@ -86,11 +86,13 @@ const Multiselect = class {
                 });
             }
             else {
-                if (this.selected && this.selected.length > 0) {
-                    this.selected = [...this.selected, item];
-                }
-                else {
-                    this.selected = [item];
+                if (this.selected.length !== this.max) {
+                    if (this.selected && this.selected.length > 0) {
+                        this.selected = [...this.selected, item];
+                    }
+                    else {
+                        this.selected = [item];
+                    }
                 }
             }
             this.onSelected.emit(this.selected);
