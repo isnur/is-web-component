@@ -1,0 +1,13 @@
+{
+  "name": "Is Web Component Documentation",
+  "output": "docs",
+  "hideGenerator": true,
+  "disableGraph": true,
+  "disablePrivate": true,
+  "disableProtected": true,
+  "disableInternal": true,
+  "disableDomTree": true,
+  "theme": "laravel",
+  "includes": "src/components",
+  "includesName": "Stencil documentation"
+}
