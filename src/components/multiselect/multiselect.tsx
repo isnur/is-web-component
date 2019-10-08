@@ -1,4 +1,16 @@
-import { Component, ComponentInterface, Host, Prop, State, Method, Watch, Listen, Event, EventEmitter, h } from '@stencil/core';
+import {
+  Component,
+  ComponentInterface,
+  Host,
+  Prop,
+  State,
+  Method,
+  Watch,
+  Listen,
+  Event,
+  EventEmitter,
+  h
+} from '@stencil/core';
 
 @Component({
   tag: 'is-multiselect',
@@ -55,6 +67,11 @@ export class Multiselect implements ComponentInterface {
    */
   @Prop() showSelectedBadge: boolean = false;
 
+  /**
+   * Maximum selected items can be selected.
+   */
+  @Prop() max: number;
+
   @State() isExpanded: boolean = false;
   @State() keyword: string = '';
   @State() textSelected: string = this.placeholder;
@@ -82,6 +99,7 @@ export class Multiselect implements ComponentInterface {
       this.onFilteredItems();
     }
   }
+
   @Watch('selected')
   setSelected(newValue: ISelectItem[], oldValue: ISelectItem[]) {
     if (newValue !== oldValue) {
@@ -89,7 +107,7 @@ export class Multiselect implements ComponentInterface {
     }
   }
 
-  @Listen('click', { target: 'document' })
+  @Listen('click', {target: 'document'})
   handleClick(event: MouseEvent) {
     const isClickInside = this.multiselect.contains(event.target);
 
@@ -160,10 +178,12 @@ export class Multiselect implements ComponentInterface {
         return obj.id !== item.id;
       });
     } else {
-      if (this.selected && this.selected.length > 0) {
-        this.selected = [...this.selected, item];
-      } else {
-        this.selected = [item];
+      if (this.selected.length !== this.max) {
+        if (this.selected && this.selected.length > 0) {
+          this.selected = [...this.selected, item];
+        } else {
+          this.selected = [item];
+        }
       }
     }
     this.onSelected.emit(this.selected);
@@ -209,14 +229,14 @@ export class Multiselect implements ComponentInterface {
           </div>
 
           {this.isExpanded &&
-            <div class="multiselect__input">
+          <div class="multiselect__input">
               <input
-                value={this.keyword}
-                onInput={() => this.onFilteredItems()}
-                ref={el => this.textInput = el}
-                placeholder={this.placeholder}
+                  value={this.keyword}
+                  onInput={() => this.onFilteredItems()}
+                  ref={el => this.textInput = el}
+                  placeholder={this.placeholder}
               />
-            </div>
+          </div>
           }
           <div class={{
             'btnToggle': true,
@@ -226,23 +246,23 @@ export class Multiselect implements ComponentInterface {
         {
           this.isExpanded &&
           <div class="multiselect__content">
-            <ul class="multiselect__content--list">
-              {
-                this.filteredItems.length > 0 ? this.filteredItems.map((item: ISelectItem, i) => {
-                  return (
-                    <li class={{
-                      'multiselect__content--item': true,
-                      'multiselect__content--selected': this.isSelected(item)
-                    }} key={i}
-                      onClick={() => this.updateItems(item)}
-                      label-selected={this.isSelected(item) ? this.labelSelected : null}
-                      label-to-remove={this.isSelected(item) ? this.labelTo.remove : null}
-                      label-to-select={!this.isSelected(item) ? this.labelTo.select : null}
-                    >{item.name}</li>
-                  )
-                }) : <li class="not-found">Not found</li>
-              }
-            </ul>
+              <ul class="multiselect__content--list">
+                {
+                  this.filteredItems.length > 0 ? this.filteredItems.map((item: ISelectItem, i) => {
+                    return (
+                      <li class={{
+                        'multiselect__content--item': true,
+                        'multiselect__content--selected': this.isSelected(item)
+                      }} key={i}
+                          onClick={() => this.updateItems(item)}
+                          label-selected={this.isSelected(item) ? this.labelSelected : null}
+                          label-to-remove={this.isSelected(item) ? this.labelTo.remove : null}
+                          label-to-select={!this.isSelected(item) ? this.labelTo.select : null}
+                      >{item.name}</li>
+                    )
+                  }) : <li class="not-found">Not found</li>
+                }
+              </ul>
           </div>
         }
       </Host>
