@@ -29,7 +29,7 @@
     "doc:serve": "npm run doc && npx compodoc -s"
   },
   "devDependencies": {
-    "@compodoc/compodoc": "1.1.10",
+    "@compodoc/compodoc": "1.1.11",
     "@stencil/core": "1.7.1",
     "@stencil/sass": "1.1.0",
     "@types/jest": "24.0.18",
