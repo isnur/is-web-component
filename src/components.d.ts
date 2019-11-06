@@ -9,6 +9,32 @@ import { HTMLStencilElement, JSXBase } from '@stencil/core/internal';
 
 
 export namespace Components {
+  interface IsAlert {
+    /**
+    * If `true` alert will close automatically.
+    */
+    'autoClose': boolean;
+    /**
+    * Number of seconds to close alert automatically if autoClose `true`.
+    */
+    'closeSecs': number;
+    /**
+    * Customized close button text.
+    */
+    'closeText'?: string;
+    /**
+    * If closable or not.
+    */
+    'closeable': boolean;
+    /**
+    * The color options are: `"primary"`, `"secondary"`, `"success"`, `"warning"`, `"error"`, `"light"`, `"info"`, `"white"`, `"black"`, and `"dark"`.
+    */
+    'color'?: string;
+    /**
+    * If `true`, make the alert rounded.
+    */
+    'rounded'?: boolean;
+  }
   interface IsBadge {
     /**
     * The color options are: `"primary"`, `"secondary"`, `"success"`, `"warning"`, `"error"`, `"light"`, `"info"`, `"white"`, `"black"`, and `"dark"`.
@@ -74,6 +100,12 @@ export namespace Components {
 declare global {
 
 
+  interface HTMLIsAlertElement extends Components.IsAlert, HTMLStencilElement {}
+  var HTMLIsAlertElement: {
+    prototype: HTMLIsAlertElement;
+    new (): HTMLIsAlertElement;
+  };
+
   interface HTMLIsBadgeElement extends Components.IsBadge, HTMLStencilElement {}
   var HTMLIsBadgeElement: {
     prototype: HTMLIsBadgeElement;
@@ -86,12 +118,43 @@ declare global {
     new (): HTMLIsMultiselectElement;
   };
   interface HTMLElementTagNameMap {
+    'is-alert': HTMLIsAlertElement;
     'is-badge': HTMLIsBadgeElement;
     'is-multiselect': HTMLIsMultiselectElement;
   }
 }
 
 declare namespace LocalJSX {
+  interface IsAlert {
+    /**
+    * If `true` alert will close automatically.
+    */
+    'autoClose'?: boolean;
+    /**
+    * Number of seconds to close alert automatically if autoClose `true`.
+    */
+    'closeSecs'?: number;
+    /**
+    * Customized close button text.
+    */
+    'closeText'?: string;
+    /**
+    * If closable or not.
+    */
+    'closeable'?: boolean;
+    /**
+    * The color options are: `"primary"`, `"secondary"`, `"success"`, `"warning"`, `"error"`, `"light"`, `"info"`, `"white"`, `"black"`, and `"dark"`.
+    */
+    'color'?: string;
+    /**
+    * Emitted when the alert is closed.
+    */
+    'onOnClose'?: (event: CustomEvent<any>) => void;
+    /**
+    * If `true`, make the alert rounded.
+    */
+    'rounded'?: boolean;
+  }
   interface IsBadge {
     /**
     * The color options are: `"primary"`, `"secondary"`, `"success"`, `"warning"`, `"error"`, `"light"`, `"info"`, `"white"`, `"black"`, and `"dark"`.
@@ -154,6 +217,7 @@ declare namespace LocalJSX {
   }
 
   interface IntrinsicElements {
+    'is-alert': IsAlert;
     'is-badge': IsBadge;
     'is-multiselect': IsMultiselect;
   }
@@ -165,6 +229,7 @@ export { LocalJSX as JSX };
 declare module "@stencil/core" {
   export namespace JSX {
     interface IntrinsicElements {
+      'is-alert': LocalJSX.IsAlert & JSXBase.HTMLAttributes<HTMLIsAlertElement>;
       'is-badge': LocalJSX.IsBadge & JSXBase.HTMLAttributes<HTMLIsBadgeElement>;
       'is-multiselect': LocalJSX.IsMultiselect & JSXBase.HTMLAttributes<HTMLIsMultiselectElement>;
     }
