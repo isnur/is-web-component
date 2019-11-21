@@ -33,10 +33,10 @@
     "@stencil/core": "1.8.1",
     "@stencil/sass": "1.1.0",
     "@types/jest": "24.0.19",
-    "@types/puppeteer": "1.20.2",
+    "@types/puppeteer": "2.0.0",
     "jest": "24.8.0",
     "jest-cli": "24.8.0",
-    "puppeteer": "1.20.0"
+    "puppeteer": "2.0.0"
   },
   "license": "MIT"
 }
