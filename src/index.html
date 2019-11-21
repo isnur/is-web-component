@@ -12,11 +12,32 @@
     is-badge {
       cursor: pointer;
     }
+    is-alert {
+      margin-bottom: 10px;
+    }
   </style>
 </head>
 
 <body>
-
+  <is-alert color="light" rounded>
+    <strong>Holy guacamole 1!</strong> You should check in on some of those fields below.
+  </is-alert>
+  <is-alert color="light" auto-close rounded>
+    <strong>Auto close in 3 seconds!</strong> You should check in on some of those fields below.
+  </is-alert>
+  <is-alert color="light" auto-close close-secs="10" rounded>
+    <strong>Auto close in 10 seconds!</strong> You should check in on some of those fields below.
+  </is-alert>
+  <is-alert color="light" rounded>
+    <strong>Holy guacamole 3!</strong> You should check in on some of those fields below.
+  </is-alert>
+  <is-alert color="success" rounded closeable="false">
+    <h4 class="alert-heading">Well done!</h4>
+    <p>Aww yeah, you successfully read this important alert message. This example text is going to run a bit longer so that you can see how spacing within an alert works with this kind of content.</p>
+    <hr>
+    <p class="mb-0">Whenever you need to, be sure to use margin utilities to keep things nice and tidy.</p>
+  </is-alert>
+  <br>
   <is-multiselect id="select1" show-selected-badge="true" limit="2" placeholder="Pilih katalog"></is-multiselect>
   <pre id="result1">
   </pre>
