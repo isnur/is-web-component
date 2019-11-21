@@ -88,7 +88,7 @@ export class Multiselect implements ComponentInterface {
   /**
    * Emitted when the selected items has changed.
    */
-  @Event() onSelected: EventEmitter;
+  @Event() selectedChanged: EventEmitter;
 
   @Watch('items')
   setItems(newValue: ISelectItem[], oldValue: ISelectItem[]) {
@@ -186,7 +186,7 @@ export class Multiselect implements ComponentInterface {
         }
       }
     }
-    this.onSelected.emit(this.selected);
+    this.selectedChanged.emit(this.selected);
   };
 
   private onFilteredItems = () => {

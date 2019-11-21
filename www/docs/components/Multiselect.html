@@ -149,13 +149,13 @@
                                 <a href="#max">max</a>
                             </li>
                             <li>
-                                <a href="#onSelected">onSelected</a>
-                            </li>
-                            <li>
                                 <a href="#placeholder">placeholder</a>
                             </li>
                             <li>
                                 <a href="#selected">selected</a>
+                            </li>
+                            <li>
+                                <a href="#selectedChanged">selectedChanged</a>
                             </li>
                             <li>
                                 <a href="#showSelectedBadge">showSelectedBadge</a>
@@ -1012,48 +1012,6 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-                        <a name="onSelected"></a>
-                        <span class="name">
-                            <b>
-                            onSelected</b>
-                            <a href="#onSelected"><span class="icon ion-ios-link"></span></a>
-                        </span>
-                    </td>
-                </tr>
-                    <tr>
-                        <td class="col-md-4">
-                            <i>Type : </i>        <code><a href="https://angular.io/api/core/EventEmitter" target="_blank" >EventEmitter</a></code>
-
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="col-md-4">
-                            <b>Decorators : </b>
-                            <br />
-                            <code>
-                                @Event()<br />
-                            </code>
-                        </td>
-                    </tr>
-                        <tr>
-                            <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="91" class="link-to-prism">src/components/multiselect/multiselect.tsx:91</a></div>
-                            </td>
-                        </tr>
-
-                <tr>
-                    <td class="col-md-4">
-                        <div class="io-description"><p>Emitted when the selected items has changed.</p>
-</div>
-                    </td>
-                </tr>
-
-            </tbody>
-        </table>
-        <table class="table table-sm table-bordered">
-            <tbody>
-                <tr>
-                    <td class="col-md-4">
                         <a name="placeholder"></a>
                         <span class="name">
                             <b>
@@ -1138,6 +1096,48 @@
                 <tr>
                     <td class="col-md-4">
                         <div class="io-description"><p>The selected items.</p>
+</div>
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="selectedChanged"></a>
+                        <span class="name">
+                            <b>
+                            selectedChanged</b>
+                            <a href="#selectedChanged"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://angular.io/api/core/EventEmitter" target="_blank" >EventEmitter</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <b>Decorators : </b>
+                            <br />
+                            <code>
+                                @Event()<br />
+                            </code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="91" class="link-to-prism">src/components/multiselect/multiselect.tsx:91</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>Emitted when the selected items has changed.</p>
 </div>
                     </td>
                 </tr>
@@ -1369,7 +1369,7 @@ export class Multiselect implements ComponentInterface {
   /**
    * Emitted when the selected items has changed.
    */
-  @Event() onSelected: EventEmitter;
+  @Event() selectedChanged: EventEmitter;
 
   @Watch(&#x27;items&#x27;)
   setItems(newValue: ISelectItem[], oldValue: ISelectItem[]) {
@@ -1467,7 +1467,7 @@ export class Multiselect implements ComponentInterface {
         }
       }
     }
-    this.onSelected.emit(this.selected);
+    this.selectedChanged.emit(this.selected);
   };
 
   private onFilteredItems &#x3D; () &#x3D;&gt; {
@@ -1564,7 +1564,7 @@ export class Multiselect implements ComponentInterface {
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
         var COMPONENT_TEMPLATE = '<div></div>'
-    var COMPONENTS = [{'name': 'Alert', 'selector': ''},{'name': 'Badge', 'selector': ''},{'name': 'Multiselect', 'selector': ''}];
+    var COMPONENTS = [{'name': 'Alert', 'selector': ''},{'name': 'Badge', 'selector': ''},{'name': 'HomeAbout', 'selector': ''},{'name': 'Multiselect', 'selector': ''}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'Multiselect'};
 </script>
@@ -1602,6 +1602,7 @@ export class Multiselect implements ComponentInterface {
             var COMPODOC_CURRENT_PAGE_DEPTH = 1;
             var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
             var COMPODOC_CURRENT_PAGE_URL = 'Multiselect.html';
+            var MAX_SEARCH_RESULTS = 15;
        </script>
 
        <script src="../js/libs/custom-elements.min.js"></script>

@@ -29,7 +29,7 @@ export class Alert {
   /**
    * Customized close button text.
    */
-  @Prop() closeText?: string = '\uD83D\uDDD9';
+  @Prop() closeText?: string = '\u2573';
 
   /**
    * If `true`, make the alert rounded.
@@ -41,14 +41,14 @@ export class Alert {
   @Element() el: HTMLElement;
 
   private close = () => {
-    this.onClose.emit(true);
+    this.closed.emit(true);
     this.el.remove()
   }
 
   /**
    * Emitted when the alert is closed.
    */
-  @Event() onClose: EventEmitter;
+  @Event() closed: EventEmitter;
 
   private renderCloseText = () => {
     if (this.closeable) {
