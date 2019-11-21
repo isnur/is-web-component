@@ -3,6 +3,8 @@
 (function () {
   var doc = document;
   var currentScript = doc.currentScript;
+
+  // Safari 10 support type="module" but still download and executes the nomodule script
   if (!currentScript || !currentScript.hasAttribute('nomodule') || !('onbeforeload' in currentScript)) {
 
     /*!
@@ -787,7 +789,7 @@ var CustomStyle = /** @class */ (function () {
         }
         var baseScope = this.registerHostTemplate(cssText, cssScopeId, isScoped);
         var styleEl = this.doc.createElement('style');
-        styleEl.setAttribute('data-styles', '');
+        styleEl.setAttribute('data-no-shim', '');
         if (!baseScope.usesCssVars) {
             // This component does not use (read) css variables
             styleEl.textContent = cssText;
@@ -854,20 +856,15 @@ if (!win.__stencil_cssshim && needsShim()) {
     win.__stencil_cssshim = new CustomStyle(win, document);
 }
 
-    var scriptElm = doc.querySelector('script[data-stencil-namespace="is-web-component"]');
-    if (!scriptElm) {
-      var allScripts = doc.querySelectorAll('script');
-      for (var x = allScripts.length - 1; x >= 0; x--) {
-        scriptElm = allScripts[x];
-        if (scriptElm.src || scriptElm.hasAttribute('data-resources-url')) {
-          break;
-        }
-      }
-    }
+    // Figure out currentScript (for IE11, since it does not support currentScript)
+    var regex = /\/is-web-component(\.esm)?\.js($|\?|#)/;
+    var scriptElm = currentScript || Array.from(doc.querySelectorAll('script')).find(function(s) {
+      return regex.test(s.src) || s.getAttribute('data-stencil-namespace') === "is-web-component";
+    });
 
     var resourcesUrl = scriptElm ? scriptElm.getAttribute('data-resources-url') || scriptElm.src : '';
     var start = function() {
-      var url = new URL('./p-48f79c3b.system.js', resourcesUrl);
+      var url = new URL('./p-c3f22234.system.js', resourcesUrl);
       System.import(url.href);
     };
 

@@ -46,7 +46,8 @@
 <p>Script tag</p>
 <ul>
 <li><p>Put a script tag similar to this</p>
-<div><pre class="line-numbers"><code class="language-html">  &lt;script src=&quot;https://unpkg.com/is-web-component&#64;1.0.3/dist/is-web-component.js&quot;&gt;&lt;/script&gt;</code></pre></div><p>in the head of your index.html</p>
+<div><pre class="line-numbers"><code class="language-html">  &lt;script type=&quot;module&quot; src=&quot;https://unpkg.com/is-web-component&#64;latest/dist/is-web-component/is-web-component.esm.js&quot;&gt;&lt;/script&gt;
+  &lt;script nomodule=&quot;&quot; src=&quot;https://unpkg.com/is-web-component&#64;latest/dist/is-web-component/is-web-component.js&quot;&gt;&lt;/script&gt;</code></pre></div><p>in the head of your index.html</p>
 </li>
 <li><p>Then you can use the element anywhere in your template, JSX, html etc.</p>
 <div><pre class="line-numbers"><code class="language-html">  &lt;h3&gt;is-badge&lt;/h3&gt;
@@ -77,11 +78,12 @@
 </ul>
 <h2 id="components">Components</h2>
 <ul>
-<li><input disabled="" type="checkbox"> is-alert</li>
+<li><input checked="" disabled="" type="checkbox"> <a href="src/components/alert/readme.md">is-alert</a></li>
 <li><input checked="" disabled="" type="checkbox"> <a href="src/components/badge/readme.md">is-badge</a></li>
 <li><input disabled="" type="checkbox"> is-modal</li>
 <li><input checked="" disabled="" type="checkbox"> <a href="src/components/multiselect/readme.md">is-multiselect</a></li>
 <li><input disabled="" type="checkbox"> is-pagination</li>
+<li><input checked="" disabled="" type="checkbox"> <a href="src/components/readmore/readme.md">is-readmore</a></li>
 <li><input disabled="" type="checkbox"> is-table</li>
 <li><input disabled="" type="checkbox"> is-tabs</li>
 </ul>
@@ -122,6 +124,7 @@
             var COMPODOC_CURRENT_PAGE_DEPTH = 0;
             var COMPODOC_CURRENT_PAGE_CONTEXT = 'getting-started';
             var COMPODOC_CURRENT_PAGE_URL = 'index.html';
+            var MAX_SEARCH_RESULTS = 15;
        </script>
 
        <script src="./js/libs/custom-elements.min.js"></script>

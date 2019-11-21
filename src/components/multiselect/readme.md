@@ -23,9 +23,9 @@
 
 ## Events
 
-| Event        | Description                                  | Type               |
-| ------------ | -------------------------------------------- | ------------------ |
-| `onSelected` | Emitted when the selected items has changed. | `CustomEvent<any>` |
+| Event             | Description                                  | Type               |
+| ----------------- | -------------------------------------------- | ------------------ |
+| `selectedChanged` | Emitted when the selected items has changed. | `CustomEvent<any>` |
 
 
 ## Methods
