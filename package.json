@@ -20,7 +20,7 @@
   },
   "homepage": "https://is-web-component.isnur.com",
   "scripts": {
-    "build": "stencil build --docs && npm run doc",
+    "build": "stencil build --docs && npm run doc && stencil build --docs && npm run doc",
     "start": "stencil build --dev --watch --serve",
     "test": "stencil test --spec --e2e",
     "test.watch": "stencil test --spec --e2e --watchAll",
