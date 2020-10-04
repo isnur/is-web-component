@@ -5,7 +5,7 @@ import { IToggleOptions } from './readmore.interface';
   tag: 'is-readmore',
   styleUrl: 'readmore.scss'
 })
-export class HomeAbout {
+export class Readmore {
   /**
    * The options to config toggle text.
    */

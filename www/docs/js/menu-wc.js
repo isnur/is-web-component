@@ -83,10 +83,10 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                 <a href="components/Badge.html" data-type="entity-link">Badge</a>
                             </li>
                             <li class="link">
-                                <a href="components/HomeAbout.html" data-type="entity-link">HomeAbout</a>
+                                <a href="components/Multiselect.html" data-type="entity-link">Multiselect</a>
                             </li>
                             <li class="link">
-                                <a href="components/Multiselect.html" data-type="entity-link">Multiselect</a>
+                                <a href="components/Readmore.html" data-type="entity-link">Readmore</a>
                             </li>
                         </ul>
                     </li>

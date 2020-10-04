@@ -30,7 +30,7 @@
 
 ## Methods
 
-### `getSelected() => Promise<ISelectItem[]>`
+### `getSelected() => Promise<ISelectItem[] | undefined>`
 
 Get the selected items.
 
