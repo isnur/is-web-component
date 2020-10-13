@@ -1,0 +1,96 @@
+:host {
+    /**
+       * @prop --background-color: Background color of the alert
+       * @prop --color: Text color of the alert
+       *
+       * @prop --padding-top: Padding top of the alert
+       * @prop --padding-right: Padding right of the alert
+       * @prop --padding-bottom: Padding bottom of the alert
+       * @prop --padding-left: Padding left of the alert
+       *
+       * @prop --font-family: Font family of the alert text
+       * @prop --font-size: Font size of the alert text 
+       * @prop --font-weight: Font weight of the alert text
+       */
+    -webkit-font-smoothing: antialiased;
+    padding: var(--padding-top, 8px) var(--padding-right, 16px) var(--padding-bottom, 8px) var(--padding-left, 16px);
+    min-height: var(--height, 24px);
+    color: var(--color, #fff);
+    background-color: var(--background-color, #327bb7);
+    border-color: transparent;
+    font-family: var(--font-family, "Helvetica Neue", Helvetica, Arial, sans-serif);
+    font-size: var(--font-size, 13px);
+    font-weight: var(--font-weight, normal);
+    line-height: 1;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    .alert {
+      &__content {
+        display: block;
+        height: 100%;
+        width: 100%;
+      }
+      &__close-text {
+        cursor: pointer;
+        opacity: .70;
+        position: absolute;
+        top: 14px;
+        right: 16px;
+        font-size: 0.8em;
+        &:hover {
+          opacity: .85;
+        }
+      }
+    }
+  }
+  
+  :host(.primary) {
+    color: $primary-color;
+    background-color: $primary-bg;
+  }
+  :host(.secondary) {
+    color: $secondary-color;
+    background-color: $secondary-bg;
+  }
+  :host(.success) {
+    color: $success-color;
+    background-color: $success-bg;
+  }
+  :host(.warning) {
+    color: $warning-color;
+    background-color: $warning-bg;
+  }
+  :host(.error) {
+    color: $error-color;
+    background-color: $error-bg;
+  }
+  :host(.light) {
+    color: $light-color;
+    background-color: $light-bg;
+  }
+  :host(.info) {
+    color: $info-color;
+    background-color: $info-bg;
+  }
+  :host(.dark) {
+    color: $dark-color;
+    background-color: $dark-bg;
+  }
+  :host(.white) {
+    color: $white-color;
+    background-color: $white-bg;
+  }
+  :host(.black) {
+    color: $black-color;
+    background-color: $black-bg;
+  }
+  :host(.rounded) {
+    /**
+       * @prop --border-radius: Border radius of the badge if is rounded
+       */
+    border-radius: var(--border-radius, 4px);
+  }
+  

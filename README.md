@@ -36,7 +36,8 @@ Script tag
 - Put a script tag similar to this
 
   ```html
-    <script src="https://unpkg.com/is-web-component@1.0.3/dist/is-web-component.js"></script>
+    <script type="module" src="https://unpkg.com/is-web-component@latest/dist/is-web-component/is-web-component.esm.js"></script>
+    <script nomodule="" src="https://unpkg.com/is-web-component@latest/dist/is-web-component/is-web-component.js"></script>
   ```
   
   in the head of your index.html
@@ -72,10 +73,11 @@ Script tag
 
 ## Components
 
-- [ ] is-alert
+- [x] [is-alert](src/components/alert/readme.md)
 - [x] [is-badge](src/components/badge/readme.md)
 - [ ] is-modal
 - [x] [is-multiselect](src/components/multiselect/readme.md)
 - [ ] is-pagination
+- [x] [is-readmore](src/components/readmore/readme.md)
 - [ ] is-table
 - [ ] is-tabs

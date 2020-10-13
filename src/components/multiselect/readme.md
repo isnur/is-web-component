@@ -23,14 +23,14 @@
 
 ## Events
 
-| Event        | Description                                  | Type               |
-| ------------ | -------------------------------------------- | ------------------ |
-| `onSelected` | Emitted when the selected items has changed. | `CustomEvent<any>` |
+| Event             | Description                                  | Type               |
+| ----------------- | -------------------------------------------- | ------------------ |
+| `selectedChanged` | Emitted when the selected items has changed. | `CustomEvent<any>` |
 
 
 ## Methods
 
-### `getSelected() => Promise<ISelectItem[]>`
+### `getSelected() => Promise<ISelectItem[] | undefined>`
 
 Get the selected items.
 

@@ -12,11 +12,32 @@
     is-badge {
       cursor: pointer;
     }
+    is-alert {
+      margin-bottom: 10px;
+    }
   </style>
 </head>
 
 <body>
-
+  <is-alert color="light" rounded>
+    <strong>Holy guacamole 1!</strong> You should check in on some of those fields below.
+  </is-alert>
+  <is-alert color="light" auto-close rounded>
+    <strong>Auto close in 3 seconds!</strong> You should check in on some of those fields below.
+  </is-alert>
+  <is-alert color="light" auto-close close-secs="10" rounded>
+    <strong>Auto close in 10 seconds!</strong> You should check in on some of those fields below.
+  </is-alert>
+  <is-alert color="light" rounded>
+    <strong>Holy guacamole 3!</strong> You should check in on some of those fields below.
+  </is-alert>
+  <is-alert color="success" rounded closeable="false">
+    <h4 class="alert-heading">Well done!</h4>
+    <p>Aww yeah, you successfully read this important alert message. This example text is going to run a bit longer so that you can see how spacing within an alert works with this kind of content.</p>
+    <hr>
+    <p class="mb-0">Whenever you need to, be sure to use margin utilities to keep things nice and tidy.</p>
+  </is-alert>
+  <br>
   <is-multiselect id="select1" show-selected-badge="true" limit="2" placeholder="Pilih katalog"></is-multiselect>
   <pre id="result1">
   </pre>
@@ -26,6 +47,16 @@
   <is-badge color="success" rounded text="Get Items" onclick="setResult()"></is-badge>
   <is-badge id="disable1" color="dark" rounded text="Disable Select 1" onclick="setDisabled('1')"></is-badge>
   <is-badge id="disable2" color="dark" rounded text="Disable Select 2" onclick="setDisabled('2')"></is-badge>
+
+  <is-readmore id="readmore" style="max-width: 980px;">
+    <h1>Readmore Demo</h1>
+    <p style="text-align: justify;">
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Tellus elementum sagittis vitae et leo duis. Magna etiam tempor orci eu lobortis elementum nibh tellus. Tortor at auctor urna nunc id cursus metus. Nulla facilisi nullam vehicula ipsum a arcu cursus. Vestibulum rhoncus est pellentesque elit ullamcorper dignissim cras tincidunt lobortis. Sit amet justo donec enim diam. Eget nunc lobortis mattis aliquam. Condimentum id venenatis a condimentum vitae sapien. Nunc congue nisi vitae suscipit tellus. Blandit volutpat maecenas volutpat blandit aliquam. Cum sociis natoque penatibus et magnis dis parturient montes. Justo laoreet sit amet cursus.
+    </p>
+    <p style="text-align: justify;">
+      Dictum sit amet justo donec enim diam vulputate ut. Est placerat in egestas erat imperdiet sed euismod. Viverra maecenas accumsan lacus vel facilisis. Malesuada bibendum arcu vitae elementum curabitur vitae nunc sed. Libero enim sed faucibus turpis in eu. Interdum consectetur libero id faucibus nisl tincidunt. Sociis natoque penatibus et magnis dis parturient. Velit aliquet sagittis id consectetur purus ut faucibus pulvinar elementum. Dignissim sodales ut eu sem integer. Blandit massa enim nec dui. Egestas integer eget aliquet nibh praesent tristique. Tellus at urna condimentum mattis pellentesque id. Dui ut ornare lectus sit amet est placerat. Turpis egestas integer eget aliquet nibh praesent tristique magna sit. Risus commodo viverra maecenas accumsan lacus vel.
+    </p>
+    </is-readmore>
 
   <script>
     let disableState = {
@@ -114,11 +145,19 @@
       disableState['disable' + id] = element.disabled;
     }
     const elm1 = document.getElementById('select1');
-    elm1.addEventListener('onSelected', event => {
+    elm1.addEventListener('selectedChanged', event => {
       const result = document.getElementById('result1');
       const code = JSON.stringify(event.detail, null, ' ');
       result.innerHTML = '<code>' + code + '</code>';
     })
+    
+    var readmore = document.getElementById('readmore');
+    readmore.toggleOptions = {
+      textOpen: 'Read more',
+      textClose: 'Collapse',
+      textPosition: 'center', // 'left' , 'center', 'right
+      textClass: ''
+    };
   </script>
 </body>
 

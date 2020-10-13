@@ -55,10 +55,16 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                         </div>
                         <ul class="links collapse " ${ isNormalMode ? 'id="additional-pages"' : 'id="xs-additional-pages"' }>
                                     <li class="link ">
+                                        <a href="additional-documentation/is-alert.html" data-type="entity-link" data-context-id="additional">is-alert</a>
+                                    </li>
+                                    <li class="link ">
                                         <a href="additional-documentation/is-badge.html" data-type="entity-link" data-context-id="additional">is-badge</a>
                                     </li>
                                     <li class="link ">
                                         <a href="additional-documentation/is-multiselect.html" data-type="entity-link" data-context-id="additional">is-multiselect</a>
+                                    </li>
+                                    <li class="link ">
+                                        <a href="additional-documentation/is-readmore.html" data-type="entity-link" data-context-id="additional">is-readmore</a>
                                     </li>
                         </ul>
                     </li>
@@ -71,10 +77,16 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                         </div>
                         <ul class="links collapse " ${ isNormalMode ? 'id="components-links"' : 'id="xs-components-links"' }>
                             <li class="link">
+                                <a href="components/Alert.html" data-type="entity-link">Alert</a>
+                            </li>
+                            <li class="link">
                                 <a href="components/Badge.html" data-type="entity-link">Badge</a>
                             </li>
                             <li class="link">
                                 <a href="components/Multiselect.html" data-type="entity-link">Multiselect</a>
+                            </li>
+                            <li class="link">
+                                <a href="components/Readmore.html" data-type="entity-link">Readmore</a>
                             </li>
                         </ul>
                     </li>
@@ -91,6 +103,9 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                             </li>
                             <li class="link">
                                 <a href="interfaces/ISelectItem.html" data-type="entity-link">ISelectItem</a>
+                            </li>
+                            <li class="link">
+                                <a href="interfaces/IToggleOptions.html" data-type="entity-link">IToggleOptions</a>
                             </li>
                         </ul>
                     </li>

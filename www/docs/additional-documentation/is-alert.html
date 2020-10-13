@@ -49,7 +49,7 @@
 
 
 
-<h1 id="is-multiselect">is-multiselect</h1>
+<h1 id="is-alert">is-alert</h1>
 <!-- Auto Generated Below -->
 
 
@@ -66,72 +66,44 @@
 </thead>
 <tbody>
 <tr>
-<td><code>disabled</code></td>
-<td><code>disabled</code></td>
-<td>If <code>true</code>, the user cannot interact with the select.</td>
+<td><code>autoClose</code></td>
+<td><code>auto-close</code></td>
+<td>If <code>true</code> alert will close automatically.</td>
 <td><code>boolean</code></td>
-<td><code>false</code></td>
+<td><code>true</code></td>
 </tr>
 <tr>
-<td><code>items</code></td>
-<td>--</td>
-<td>The options list items.</td>
-<td><code>ISelectItem[]</code></td>
-<td><code>[]</code></td>
-</tr>
-<tr>
-<td><code>labelSelected</code></td>
-<td><code>label-selected</code></td>
-<td>The label when option is selected.</td>
-<td><code>string</code></td>
-<td><code>&#39;\u2713&#39;</code></td>
-</tr>
-<tr>
-<td><code>labelTo</code></td>
-<td>--</td>
-<td>The label to remove or select.</td>
-<td><code>ILabelTo</code></td>
-<td><code>{     remove: &#39;Click to Remove&#39;,     select: &#39;Click to Select&#39;   }</code></td>
-</tr>
-<tr>
-<td><code>limit</code></td>
-<td><code>limit</code></td>
-<td>Limit the display of selected options. The rest will be hidden within the limitText string.</td>
+<td><code>closeSecs</code></td>
+<td><code>close-secs</code></td>
+<td>Number of seconds to close alert automatically if autoClose <code>true</code>.</td>
 <td><code>number</code></td>
 <td><code>3</code></td>
 </tr>
 <tr>
-<td><code>limitText</code></td>
-<td>--</td>
-<td>Function that process the message shown when selected elements pass the defined limit.</td>
-<td><code>Function</code></td>
-<td><code>(count: number) =&gt; &#39;and &#39; + count + &#39; more&#39;</code></td>
+<td><code>closeText</code></td>
+<td><code>close-text</code></td>
+<td>Customized close button text.</td>
+<td><code>string</code></td>
+<td><code>&#39;\u2573&#39;</code></td>
 </tr>
 <tr>
-<td><code>max</code></td>
-<td><code>max</code></td>
-<td>Maximum selected items can be selected.</td>
-<td><code>number</code></td>
+<td><code>closeable</code></td>
+<td><code>closeable</code></td>
+<td>If closable or not.</td>
+<td><code>boolean</code></td>
+<td><code>true</code></td>
+</tr>
+<tr>
+<td><code>color</code></td>
+<td><code>color</code></td>
+<td>The color options are: <code>&quot;primary&quot;</code>, <code>&quot;secondary&quot;</code>, <code>&quot;success&quot;</code>, <code>&quot;warning&quot;</code>, <code>&quot;error&quot;</code>, <code>&quot;light&quot;</code>, <code>&quot;info&quot;</code>, <code>&quot;white&quot;</code>, <code>&quot;black&quot;</code>, and <code>&quot;dark&quot;</code>.</td>
+<td><code>string</code></td>
 <td><code>undefined</code></td>
 </tr>
 <tr>
-<td><code>placeholder</code></td>
-<td><code>placeholder</code></td>
-<td>The text to display when not selected items.</td>
-<td><code>string</code></td>
-<td><code>&quot;Pick some&quot;</code></td>
-</tr>
-<tr>
-<td><code>selected</code></td>
-<td>--</td>
-<td>The selected items.</td>
-<td><code>ISelectItem[]</code></td>
-<td><code>[]</code></td>
-</tr>
-<tr>
-<td><code>showSelectedBadge</code></td>
-<td><code>show-selected-badge</code></td>
-<td>If <code>true</code>, The badges will show selected items.</td>
+<td><code>rounded</code></td>
+<td><code>rounded</code></td>
+<td>If <code>true</code>, make the alert rounded.</td>
 <td><code>boolean</code></td>
 <td><code>false</code></td>
 </tr>
@@ -148,26 +120,64 @@
 </thead>
 <tbody>
 <tr>
-<td><code>selectedChanged</code></td>
-<td>Emitted when the selected items has changed.</td>
+<td><code>closed</code></td>
+<td>Emitted when the alert is closed.</td>
 <td><code>CustomEvent&lt;any&gt;</code></td>
 </tr>
 </tbody>
 </table>
-<h2 id="methods">Methods</h2>
-<h3 id="getselected--promiseiselectitem--undefined"><code>getSelected() =&gt; Promise&lt;ISelectItem[] | undefined&gt;</code></h3>
-<p>Get the selected items.</p>
-<h4 id="returns">Returns</h4>
-<p>Type: <code>Promise&lt;ISelectItem[]&gt;</code></p>
-<h2 id="dependencies">Dependencies</h2>
-<h3 id="depends-on">Depends on</h3>
-<ul>
-<li><a href="../badge">is-badge</a></li>
-</ul>
-<h3 id="graph">Graph</h3>
-<div><pre class="line-numbers"><code class="language-mermaid">graph TD;
-  is-multiselect --&gt; is-badge
-  style is-multiselect fill:#f9f,stroke:#333,stroke-width:4px</code></pre></div><hr>
+<h2 id="css-custom-properties">CSS Custom Properties</h2>
+<table class="table table-bordered compodoc-table">
+<thead>
+<tr>
+<th>Name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>--background-color</code></td>
+<td>Background color of the alert</td>
+</tr>
+<tr>
+<td><code>--border-radius</code></td>
+<td>Border radius of the badge if is rounded</td>
+</tr>
+<tr>
+<td><code>--color</code></td>
+<td>Text color of the alert</td>
+</tr>
+<tr>
+<td><code>--font-family</code></td>
+<td>Font family of the alert text</td>
+</tr>
+<tr>
+<td><code>--font-size</code></td>
+<td>Font size of the alert text</td>
+</tr>
+<tr>
+<td><code>--font-weight</code></td>
+<td>Font weight of the alert text</td>
+</tr>
+<tr>
+<td><code>--padding-bottom</code></td>
+<td>Padding bottom of the alert</td>
+</tr>
+<tr>
+<td><code>--padding-left</code></td>
+<td>Padding left of the alert</td>
+</tr>
+<tr>
+<td><code>--padding-right</code></td>
+<td>Padding right of the alert</td>
+</tr>
+<tr>
+<td><code>--padding-top</code></td>
+<td>Padding top of the alert</td>
+</tr>
+</tbody>
+</table>
+<hr>
 <p><em>Built with <a href="https://stenciljs.com/">StencilJS</a></em></p>
 
                    </div><div class="search-results">
@@ -187,7 +197,7 @@
        <script>
             var COMPODOC_CURRENT_PAGE_DEPTH = 1;
             var COMPODOC_CURRENT_PAGE_CONTEXT = 'additional-page';
-            var COMPODOC_CURRENT_PAGE_URL = 'is-multiselect.html';
+            var COMPODOC_CURRENT_PAGE_URL = 'is-alert.html';
             var MAX_SEARCH_RESULTS = 15;
        </script>
 
