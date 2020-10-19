@@ -47,6 +47,28 @@ export namespace Components {
          */
         "text": string;
     }
+    interface IsModal {
+        /**
+          * The text to display in the cancel button.
+         */
+        "cancelText": string;
+        /**
+          * If 'true' will show the modal header.
+         */
+        "modalHeader": boolean;
+        /**
+          * The title to display in the modal.
+         */
+        "modalTitle": string;
+        /**
+          * The text to display in the save button.
+         */
+        "saveText": string;
+        /**
+          * If 'true' will make the modal visible.
+         */
+        "visible": boolean;
+    }
     interface IsMultiselect {
         /**
           * If `true`, the user cannot interact with the select.
@@ -113,6 +135,12 @@ declare global {
         prototype: HTMLIsBadgeElement;
         new (): HTMLIsBadgeElement;
     };
+    interface HTMLIsModalElement extends Components.IsModal, HTMLStencilElement {
+    }
+    var HTMLIsModalElement: {
+        prototype: HTMLIsModalElement;
+        new (): HTMLIsModalElement;
+    };
     interface HTMLIsMultiselectElement extends Components.IsMultiselect, HTMLStencilElement {
     }
     var HTMLIsMultiselectElement: {
@@ -128,6 +156,7 @@ declare global {
     interface HTMLElementTagNameMap {
         "is-alert": HTMLIsAlertElement;
         "is-badge": HTMLIsBadgeElement;
+        "is-modal": HTMLIsModalElement;
         "is-multiselect": HTMLIsMultiselectElement;
         "is-readmore": HTMLIsReadmoreElement;
     }
@@ -176,6 +205,30 @@ declare namespace LocalJSX {
           * The text to display in the badge.
          */
         "text"?: string;
+    }
+    interface IsModal {
+        /**
+          * The text to display in the cancel button.
+         */
+        "cancelText"?: string;
+        /**
+          * If 'true' will show the modal header.
+         */
+        "modalHeader"?: boolean;
+        /**
+          * The title to display in the modal.
+         */
+        "modalTitle"?: string;
+        "onCancel"?: (event: CustomEvent<any>) => void;
+        "onOk"?: (event: CustomEvent<any>) => void;
+        /**
+          * The text to display in the save button.
+         */
+        "saveText"?: string;
+        /**
+          * If 'true' will make the modal visible.
+         */
+        "visible"?: boolean;
     }
     interface IsMultiselect {
         /**
@@ -232,6 +285,7 @@ declare namespace LocalJSX {
     interface IntrinsicElements {
         "is-alert": IsAlert;
         "is-badge": IsBadge;
+        "is-modal": IsModal;
         "is-multiselect": IsMultiselect;
         "is-readmore": IsReadmore;
     }
@@ -242,6 +296,7 @@ declare module "@stencil/core" {
         interface IntrinsicElements {
             "is-alert": LocalJSX.IsAlert & JSXBase.HTMLAttributes<HTMLIsAlertElement>;
             "is-badge": LocalJSX.IsBadge & JSXBase.HTMLAttributes<HTMLIsBadgeElement>;
+            "is-modal": LocalJSX.IsModal & JSXBase.HTMLAttributes<HTMLIsModalElement>;
             "is-multiselect": LocalJSX.IsMultiselect & JSXBase.HTMLAttributes<HTMLIsMultiselectElement>;
             "is-readmore": LocalJSX.IsReadmore & JSXBase.HTMLAttributes<HTMLIsReadmoreElement>;
         }
