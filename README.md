@@ -77,7 +77,7 @@ Script tag
 - [x] [is-badge](src/components/badge/readme.md)
 - [x] [is-modal](src/components/modal/readme.md)
 - [x] [is-multiselect](src/components/multiselect/readme.md)
-- [ ] is-pagination
+- [x] [is-pagination](src/components/pagination/readme.md)
 - [x] [is-readmore](src/components/readmore/readme.md)
 - [ ] is-table
 - [ ] is-tabs
