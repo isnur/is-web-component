@@ -1,4 +1,4 @@
-import { r as registerInstance, h, c as createEvent, H as Host, d as getElement } from './core-6ec07ed7.js';
+import { r as registerInstance, h, c as createEvent, H as Host, d as getElement } from './core-b4d71f8d.js';
 
 const Alert = class {
     constructor(hostRef) {

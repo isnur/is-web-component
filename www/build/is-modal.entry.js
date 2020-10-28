@@ -1,4 +1,4 @@
-import { r as registerInstance, c as createEvent, h } from './core-6ec07ed7.js';
+import { r as registerInstance, c as createEvent, h } from './core-b4d71f8d.js';
 
 const Modal = class {
     constructor(hostRef) {
