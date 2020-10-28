@@ -16,7 +16,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  z-index: 3;
+  z-index: 1050;
 
   .modal {
     font-family: Helvetica, sans-serif;
@@ -26,7 +26,11 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    min-width: 500px;
+    width: 90%;
+
+    @media (min-width: 576px) {
+      max-width: 500px;
+    }
 
     border: 1px solid rgba(0, 0, 0, .2);
     border-radius: .3rem;

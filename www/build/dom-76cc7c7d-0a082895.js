@@ -1,6 +1,3 @@
-/*
- Stencil Client Patch v1.17.3 | MIT Licensed | https://stenciljs.com
- */
 (function(){
 var aa=new Set("annotation-xml color-profile font-face font-face-src font-face-uri font-face-format font-face-name missing-glyph".split(" "));function g(a){var b=aa.has(a);a=/^[a-z][.0-9_a-z]*-[\-.0-9_a-z]*$/.test(a);return !b&&a}function l(a){var b=a.isConnected;if(void 0!==b)return b;for(;a&&!(a.__CE_isImportDocument||a instanceof Document);)a=a.parentNode||(window.ShadowRoot&&a instanceof ShadowRoot?a.host:void 0);return !(!a||!(a.__CE_isImportDocument||a instanceof Document))}
   function n(a,b){for(;b&&b!==a&&!b.nextSibling;)b=b.parentNode;return b&&b!==a?b.nextSibling:null}
@@ -20,7 +17,7 @@ var aa=new Set("annotation-xml color-profile font-face font-face-src font-face-u
   "textContent"),N=window.Element.prototype.attachShadow,O=Object.getOwnPropertyDescriptor(window.Element.prototype,"innerHTML"),P=window.Element.prototype.getAttribute,Q=window.Element.prototype.setAttribute,R=window.Element.prototype.removeAttribute,S=window.Element.prototype.getAttributeNS,T=window.Element.prototype.setAttributeNS,U=window.Element.prototype.removeAttributeNS,ma=window.Element.prototype.insertAdjacentElement,na=window.Element.prototype.insertAdjacentHTML,oa=window.Element.prototype.prepend,
   pa=window.Element.prototype.append,V=window.Element.prototype.before,qa=window.Element.prototype.after,ra=window.Element.prototype.replaceWith,sa=window.Element.prototype.remove,ta=window.HTMLElement,W=Object.getOwnPropertyDescriptor(window.HTMLElement.prototype,"innerHTML"),ua=window.HTMLElement.prototype.insertAdjacentElement,va=window.HTMLElement.prototype.insertAdjacentHTML;var wa=new function(){};function xa(){var a=X;window.HTMLElement=function(){function b(){var b=this.constructor,c=a.g.get(b);if(!c)throw Error("The custom element being constructed was not registered with `customElements`.");var e=c.constructionStack;if(0===e.length)return e=F.call(document,c.localName),Object.setPrototypeOf(e,b.prototype),e.__CE_state=1,e.__CE_definition=c,w(a,e),e;c=e.length-1;var f=e[c];if(f===wa)throw Error("The HTMLElement constructor was either called reentrantly for this constructor or called multiple times.");
   e[c]=wa;Object.setPrototypeOf(f,b.prototype);w(a,f);return f}b.prototype=ta.prototype;Object.defineProperty(b.prototype,"constructor",{writable:!0,configurable:!0,enumerable:!1,value:b});return b}();}function Y(a,b,d){function c(b){return function(d){for(var e=[],c=0;c<arguments.length;++c)e[c]=arguments[c];c=[];for(var f=[],m=0;m<e.length;m++){var q=e[m];q instanceof Element&&l(q)&&f.push(q);if(q instanceof DocumentFragment)for(q=q.firstChild;q;q=q.nextSibling)c.push(q);else c.push(q);}b.apply(this,e);for(e=0;e<f.length;e++)z(a,f[e]);if(l(this))for(e=0;e<c.length;e++)f=c[e],f instanceof Element&&x(a,f);}}void 0!==d.h&&(b.prepend=c(d.h));void 0!==d.append&&(b.append=c(d.append));}function ya(){var a=X;r(Document.prototype,"createElement",function(b){if(this.__CE_hasRegistry){var d=a.a.get(b);if(d)return new d.constructorFunction}b=F.call(this,b);w(a,b);return b});r(Document.prototype,"importNode",function(b,d){b=ha.call(this,b,!!d);this.__CE_hasRegistry?A(a,b):v(a,b);return b});r(Document.prototype,"createElementNS",function(b,d){if(this.__CE_hasRegistry&&(null===b||"http://www.w3.org/1999/xhtml"===b)){var c=a.a.get(d);if(c)return new c.constructorFunction}b=G.call(this,b,
-  d);w(a,b);return b});Y(a,Document.prototype,{h:ia,append:ja});}function za(){function a(a,c){Object.defineProperty(a,"textContent",{enumerable:c.enumerable,configurable:!0,get:c.get,set:function(a){if(this.nodeType===Node.TEXT_NODE)c.set.call(this,a);else {var d=void 0;if(this.firstChild){var e=this.childNodes,k=e.length;if(0<k&&l(this)){d=Array(k);for(var h=0;h<k;h++)d[h]=e[h];}}c.set.call(this,a);if(d)for(a=0;a<d.length;a++)z(b,d[a]);}}});}var b=X;r(Node.prototype,"insertBefore",function(a,c){if(a instanceof DocumentFragment){var e=Array.prototype.slice.apply(a.childNodes);
+  d);w(a,b);return b});Y(a,Document.prototype,{h:ia,append:ja});}function za(){function a(a,c){Object.defineProperty(a,"textContent",{enumerable:c.enumerable,configurable:!0,get:c.get,set:function(a){if(this.nodeType===Node.TEXT_NODE)c.set.call(this,a);else{var d=void 0;if(this.firstChild){var e=this.childNodes,k=e.length;if(0<k&&l(this)){d=Array(k);for(var h=0;h<k;h++)d[h]=e[h];}}c.set.call(this,a);if(d)for(a=0;a<d.length;a++)z(b,d[a]);}}});}var b=X;r(Node.prototype,"insertBefore",function(a,c){if(a instanceof DocumentFragment){var e=Array.prototype.slice.apply(a.childNodes);
   a=J.call(this,a,c);if(l(this))for(c=0;c<e.length;c++)x(b,e[c]);return a}e=l(a);c=J.call(this,a,c);e&&z(b,a);l(this)&&x(b,a);return c});r(Node.prototype,"appendChild",function(a){if(a instanceof DocumentFragment){var c=Array.prototype.slice.apply(a.childNodes);a=I.call(this,a);if(l(this))for(var e=0;e<c.length;e++)x(b,c[e]);return a}c=l(a);e=I.call(this,a);c&&z(b,a);l(this)&&x(b,a);return e});r(Node.prototype,"cloneNode",function(a){a=H.call(this,!!a);this.ownerDocument.__CE_hasRegistry?A(b,a):v(b,
   a);return a});r(Node.prototype,"removeChild",function(a){var c=l(a),e=K.call(this,a);c&&z(b,a);return e});r(Node.prototype,"replaceChild",function(a,c){if(a instanceof DocumentFragment){var e=Array.prototype.slice.apply(a.childNodes);a=L.call(this,a,c);if(l(this))for(z(b,c),c=0;c<e.length;c++)x(b,e[c]);return a}e=l(a);var f=L.call(this,a,c),d=l(this);d&&z(b,c);e&&z(b,a);d&&x(b,a);return f});M&&M.get?a(Node.prototype,M):ca(b,function(b){a(b,{enumerable:!0,configurable:!0,get:function(){for(var a=[],
   b=0;b<this.childNodes.length;b++){var f=this.childNodes[b];f.nodeType!==Node.COMMENT_NODE&&a.push(f.textContent);}return a.join("")},set:function(a){for(;this.firstChild;)K.call(this,this.firstChild);null!=a&&""!==a&&I.call(this,document.createTextNode(a));}});});}function Aa(a){function b(b){return function(e){for(var c=[],d=0;d<arguments.length;++d)c[d]=arguments[d];d=[];for(var k=[],h=0;h<c.length;h++){var m=c[h];m instanceof Element&&l(m)&&k.push(m);if(m instanceof DocumentFragment)for(m=m.firstChild;m;m=m.nextSibling)d.push(m);else d.push(m);}b.apply(this,c);for(c=0;c<k.length;c++)z(a,k[c]);if(l(this))for(c=0;c<d.length;c++)k=d[c],k instanceof Element&&x(a,k);}}var d=Element.prototype;void 0!==V&&(d.before=b(V));void 0!==V&&(d.after=b(qa));void 0!==ra&&
@@ -32,13 +29,50 @@ var aa=new Set("annotation-xml color-profile font-face font-face-src font-face-u
   a,b);d!==e&&c.attributeChangedCallback(this,b,d,e,a);});ua?b(HTMLElement.prototype,ua):ma?b(Element.prototype,ma):console.warn("Custom Elements: `Element#insertAdjacentElement` was not patched.");va?d(HTMLElement.prototype,va):na?d(Element.prototype,na):console.warn("Custom Elements: `Element#insertAdjacentHTML` was not patched.");Y(c,Element.prototype,{h:oa,append:pa});Aa(c);}var Z=window.customElements;if(!Z||Z.forcePolyfill||"function"!=typeof Z.define||"function"!=typeof Z.get){var X=new u;xa();ya();Y(X,DocumentFragment.prototype,{h:ka,append:la});za();Ba();document.__CE_hasRegistry=!0;var customElements=new E(X);Object.defineProperty(window,"customElements",{configurable:!0,enumerable:!0,value:customElements});}}).call(self);
 
 // Polyfill document.baseURI
-"string"!==typeof document.baseURI&&Object.defineProperty(Document.prototype,"baseURI",{enumerable:!0,configurable:!0,get:function(){var a=document.querySelector("base");return a&&a.href?a.href:document.URL}});
+if (typeof document.baseURI !== 'string') {
+  Object.defineProperty(Document.prototype, 'baseURI', {
+    enumerable: true,
+    configurable: true,
+    get: function () {
+      var base = document.querySelector('base');
+      if (base && base.href) {
+        return base.href;
+      }
+      return document.URL;
+    }
+  });
+}
 
 // Polyfill CustomEvent
-"function"!==typeof window.CustomEvent&&(window.CustomEvent=function(c,a){a=a||{bubbles:!1,cancelable:!1,detail:void 0};var b=document.createEvent("CustomEvent");b.initCustomEvent(c,a.bubbles,a.cancelable,a.detail);return b},window.CustomEvent.prototype=window.Event.prototype);
+if (typeof window.CustomEvent !== 'function') {
+  window.CustomEvent = function CustomEvent(event, params) {
+    params = params || { bubbles: false, cancelable: false, detail: undefined };
+    var evt = document.createEvent( 'CustomEvent' );
+    evt.initCustomEvent( event, params.bubbles, params.cancelable, params.detail );
+    return evt;
+  };
+  window.CustomEvent.prototype = window.Event.prototype;
+}
 
 // Event.composedPath
-(function(b,c,d){b.composedPath||(b.composedPath=function(){if(this.path)return this.path;var a=this.target;for(this.path=[];null!==a.parentNode;)this.path.push(a),a=a.parentNode;this.path.push(c,d);return this.path});})(Event.prototype,document,window);
+(function(E, d, w) {
+  if(!E.composedPath) {
+    E.composedPath = function() {
+      if (this.path) {
+        return this.path;
+      }
+    var target = this.target;
+
+    this.path = [];
+    while (target.parentNode !== null) {
+      this.path.push(target);
+      target = target.parentNode;
+    }
+    this.path.push(d, w);
+    return this.path;
+    };
+  }
+})(Event.prototype, document, window);
 
 /*!
 Element.closest and Element.matches
@@ -55,7 +89,18 @@ Element.getRootNode()
 /*!
 Element.isConnected()
 */
-(function(a){"isConnected"in a||Object.defineProperty(a,"isConnected",{configurable:!0,enumerable:!0,get:function(){var a=this.getRootNode({composed:!0});return a&&9===a.nodeType}});})(Element.prototype);
+(function(prototype) {
+  if (!("isConnected" in prototype)) {
+    Object.defineProperty(prototype, 'isConnected', {
+      configurable: true,
+      enumerable: true,
+      get: function() {
+        var root = this.getRootNode({composed: true});
+        return root && root.nodeType === 9;
+      }
+    });
+  }
+})(Element.prototype);
 
 /*!
 Element.remove()
@@ -70,4 +115,23 @@ Element.classList
 /*!
 DOMTokenList
 */
-(function(b){try{document.body.classList.add();}catch(e){var c=b.add,d=b.remove;b.add=function(){for(var a=0;a<arguments.length;a++)c.call(this,arguments[a]);};b.remove=function(){for(var a=0;a<arguments.length;a++)d.call(this,arguments[a]);};}})(DOMTokenList.prototype);
+(function(prototype){
+  try {
+    document.body.classList.add();
+  } catch (e) {
+    var originalAdd = prototype.add;
+    var originalRemove = prototype.remove;
+
+    prototype.add = function() {
+      for (var i = 0; i < arguments.length; i++) {
+        originalAdd.call(this, arguments[i]);
+      }
+    };
+
+    prototype.remove = function() {
+      for (var i = 0; i < arguments.length; i++) {
+        originalRemove.call(this, arguments[i]);
+      }
+    };
+  }
+}(DOMTokenList.prototype));
