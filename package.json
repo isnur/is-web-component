@@ -1,6 +1,6 @@
 {
   "name": "is-web-component",
-  "version": "1.4.0",
+  "version": "1.5.0",
   "description": "Is Web Component build with stenciljs",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
