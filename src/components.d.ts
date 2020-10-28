@@ -76,6 +76,10 @@ export namespace Components {
   }
   interface IsMultiselect {
     /**
+    * Enable/disable closing after selecting an option
+    */
+    'closeOnSelect': boolean;
+    /**
     * If `true`, the user cannot interact with the select.
     */
     'disabled': boolean;
@@ -239,6 +243,10 @@ declare namespace LocalJSX {
     'visible'?: boolean;
   }
   interface IsMultiselect {
+    /**
+    * Enable/disable closing after selecting an option
+    */
+    'closeOnSelect'?: boolean;
     /**
     * If `true`, the user cannot interact with the select.
     */

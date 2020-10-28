@@ -162,6 +162,15 @@
         font-weight: normal;
       }
     }
+    &--single:hover {
+      background: $success-bg;
+      color: $success-color;
+      outline: none;
+      &::after {
+        content: attr(label-to-select);
+        font-size: 12px;
+      }
+    }
   }
   &--remove {
     background: $error-bg;
