@@ -1,0 +1,17 @@
+import  { Component, Prop, State, h } from  '@stencil/core';
+
+@Component({
+   tag: 'my-rating',
+   styleUrl: 'my-rating-component.css',
+   shadow: true
+})
+export  class  MyRatingComponent  {
+  @Prop() maxValue: number = 5;
+  @Prop() value: number = 0;
+
+  @State() starList: Array<object> = [];
+
+  setValue(newValue) {
+    this.value = newValue;
+    this.createStarList(this.value);
+  }
