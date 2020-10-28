@@ -36,7 +36,7 @@ const Alert = class {
         };
         this.closed = createEvent(this, "closed", 7);
     }
-    componentDidLoad() {
+    componentWillLoad() {
         if (this.el.attributes['auto-close']) {
             this.countDownTimerId = window.setTimeout(() => {
                 this.close();

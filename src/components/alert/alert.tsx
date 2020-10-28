@@ -57,7 +57,7 @@ export class Alert {
     return null;
   };
 
-  componentDidLoad() {
+  componentWillLoad() {
     if (this.el.attributes['auto-close']) {
       this.countDownTimerId = window.setTimeout(() => {
         this.close()
