@@ -1,4 +1,4 @@
-<!doctype html><html dir="ltr" lang="en"><head> <meta charset="utf-8"> <meta name="viewport" content="width=device-width, initial-scale=1"> <title>Is Web Component Starter</title> <script type="module" src="/build/is-web-component.esm.js" data-stencil></script> <script nomodule="" src="/build/is-web-component.js" data-stencil></script> <style>is-badge {
+<!doctype html><html dir="ltr" lang="en"><head> <meta charset="utf-8"> <meta name="viewport" content="width=device-width, initial-scale=1"> <title>Is Web Component Starter</title> <script type="module" src="/build/is-web-component.esm.js"></script> <script nomodule="" src="/build/is-web-component.js"></script> <style>is-badge {
       cursor: pointer;
     }
 
@@ -135,8 +135,8 @@
   });</script> <script>if ('serviceWorker' in navigator && location.protocol !== 'file:') {
   // auto-unregister service worker during dev mode
   navigator.serviceWorker.getRegistration().then(function(registration) {
-  if (registration) {
-    registration.unregister().then(function() { location.reload(true) });
-  }
+    if (registration) {
+      registration.unregister().then(function() { location.reload(true) });
+    }
   });
 }</script></body></html>
