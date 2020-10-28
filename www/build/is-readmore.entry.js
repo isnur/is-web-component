@@ -1,4 +1,4 @@
-import { r as registerInstance, h, H as Host } from './core-6ec07ed7.js';
+import { r as registerInstance, h, H as Host } from './core-b4d71f8d.js';
 
 const Readmore = class {
     constructor(hostRef) {
@@ -27,7 +27,7 @@ const Readmore = class {
             return 'align-left';
         }
     }
-    componentDidLoad() {
+    componentWillLoad() {
         this.contentExpanded = false;
     }
     render() {

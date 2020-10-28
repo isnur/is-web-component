@@ -124,6 +124,24 @@ export namespace Components {
     */
     'showSelectedBadge': boolean;
   }
+  interface IsPagination {
+    /**
+    * The color options are: `"primary"`, `"secondary"`, `"success"`, `"warning"`, `"error"`, `"light"`, `"info"`, `"white"`, `"black"`, and `"dark"`.
+    */
+    'color'?: string;
+    /**
+    * Current page number, starting from 1
+    */
+    'currentPage': number | string;
+    /**
+    * Number of rows per page
+    */
+    'perPage': number | string;
+    /**
+    * Total number of rows in the dataset
+    */
+    'totalRows': number | string;
+  }
   interface IsReadmore {
     /**
     * The options to config toggle text.
@@ -159,6 +177,12 @@ declare global {
     new (): HTMLIsMultiselectElement;
   };
 
+  interface HTMLIsPaginationElement extends Components.IsPagination, HTMLStencilElement {}
+  var HTMLIsPaginationElement: {
+    prototype: HTMLIsPaginationElement;
+    new (): HTMLIsPaginationElement;
+  };
+
   interface HTMLIsReadmoreElement extends Components.IsReadmore, HTMLStencilElement {}
   var HTMLIsReadmoreElement: {
     prototype: HTMLIsReadmoreElement;
@@ -169,6 +193,7 @@ declare global {
     'is-badge': HTMLIsBadgeElement;
     'is-modal': HTMLIsModalElement;
     'is-multiselect': HTMLIsMultiselectElement;
+    'is-pagination': HTMLIsPaginationElement;
     'is-readmore': HTMLIsReadmoreElement;
   }
 }
@@ -292,6 +317,28 @@ declare namespace LocalJSX {
     */
     'showSelectedBadge'?: boolean;
   }
+  interface IsPagination {
+    /**
+    * The color options are: `"primary"`, `"secondary"`, `"success"`, `"warning"`, `"error"`, `"light"`, `"info"`, `"white"`, `"black"`, and `"dark"`.
+    */
+    'color'?: string;
+    /**
+    * Current page number, starting from 1
+    */
+    'currentPage'?: number | string;
+    /**
+    * Emitted when the page is changed.
+    */
+    'onChangePage'?: (event: CustomEvent<any>) => void;
+    /**
+    * Number of rows per page
+    */
+    'perPage'?: number | string;
+    /**
+    * Total number of rows in the dataset
+    */
+    'totalRows'?: number | string;
+  }
   interface IsReadmore {
     /**
     * The options to config toggle text.
@@ -304,6 +351,7 @@ declare namespace LocalJSX {
     'is-badge': IsBadge;
     'is-modal': IsModal;
     'is-multiselect': IsMultiselect;
+    'is-pagination': IsPagination;
     'is-readmore': IsReadmore;
   }
 }
@@ -318,6 +366,7 @@ declare module "@stencil/core" {
       'is-badge': LocalJSX.IsBadge & JSXBase.HTMLAttributes<HTMLIsBadgeElement>;
       'is-modal': LocalJSX.IsModal & JSXBase.HTMLAttributes<HTMLIsModalElement>;
       'is-multiselect': LocalJSX.IsMultiselect & JSXBase.HTMLAttributes<HTMLIsMultiselectElement>;
+      'is-pagination': LocalJSX.IsPagination & JSXBase.HTMLAttributes<HTMLIsPaginationElement>;
       'is-readmore': LocalJSX.IsReadmore & JSXBase.HTMLAttributes<HTMLIsReadmoreElement>;
     }
   }

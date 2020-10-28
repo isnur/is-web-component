@@ -13,8 +13,8 @@
       cursor: pointer;
     }
 
-    is-alert {
-      margin-bottom: 10px;
+    is-alert, is-pagination {
+      margin: 10px 0;
     }
   </style>
 </head>
@@ -39,7 +39,7 @@
   <hr>
   <p class="mb-0">Whenever you need to, be sure to use margin utilities to keep things nice and tidy.</p>
 </is-alert>
-<br>
+<br />
 <is-multiselect id="select1" show-selected-badge="true" limit="2" placeholder="Pilih katalog"></is-multiselect>
 <pre id="result1">
   </pre>
@@ -72,12 +72,19 @@
   </p>
 </is-readmore>
 
-
 <button onclick="openModal()">Open is-modal</button>
 
 <is-modal id="ismodal" modal-title="Important!" modal-header>
   <p>This is just an example of content</p>
 </is-modal>
+
+<is-pagination id="pagination" per-page="15" total-rows="60" current-page="1"></is-pagination>
+<is-multiselect id="select3" label-selected="selected" close-on-select max="1" placeholder="Per Page"></is-multiselect>
+<pre id="result-page">
+  Active Page: 1
+  Total data: 60
+  Per page: 15
+</pre>
 
 <script>
   let disableState = {
@@ -131,6 +138,24 @@
     name: 'Data 6'
   }];
   setOptions('2', data2);
+
+  const data3= [{
+    id: 1,
+    name: '15'
+  }, {
+    id: 2,
+    name: '20'
+  }, {
+    id: 3,
+    name: '30'
+  }];
+  setOptions('3', data3);
+
+  const selected3 = [{
+    id: 1,
+    name: '15'
+  }];
+  setSelected('3', selected3);
 
   function setSelected(id, data) {
     const element = document.getElementById('select' + id);
@@ -196,6 +221,22 @@
   modal.addEventListener("cancel", function () {
     console.log("cancel");
   });
+
+  let pagination = document.getElementById("pagination");
+  pagination.addEventListener("changePage", function (val) {
+    console.log('changePage: ' + val.detail);
+
+    const result = document.getElementById('result-page');
+    result.innerHTML = 'Active Page: ' + val.detail + '\n' +
+      'Total data: ' + pagination.totalRows + '\n' +
+      'Per page: ' + pagination.perPage
+  });
+
+  const elm3 = document.getElementById('select3');
+  elm3.addEventListener('selectedChanged', event => {
+    pagination.perPage = event.detail[0].name;
+  })
+
 </script>
 </body>
 
