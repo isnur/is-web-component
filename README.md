@@ -31,7 +31,7 @@ https://unpkg.com/is-web-component
 
 ## Usage
 
-Script tag
+Use Script tag
 
 - Put a script tag similar to this
 
