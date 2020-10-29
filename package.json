@@ -30,7 +30,7 @@
   },
   "devDependencies": {
     "@compodoc/compodoc": "1.1.11",
-    "@stencil/core": "1.17.3",
+    "@stencil/core": "1.17.4",
     "@stencil/sass": "1.1.1",
     "@types/jest": "24.9.1",
     "@types/puppeteer": "2.0.0",
