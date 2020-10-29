@@ -1,9 +1,9 @@
-<!doctype html><html dir="ltr" lang="en"><head> <meta charset="utf-8"> <meta name="viewport" content="width=device-width, initial-scale=1"> <title>Is Web Component Starter</title> <script type="module" src="/build/is-web-component.esm.js" data-stencil></script> <script nomodule="" src="/build/is-web-component.js" data-stencil></script> <style>is-badge {
+<!doctype html><html dir="ltr" lang="en"><head> <meta charset="utf-8"> <meta name="viewport" content="width=device-width, initial-scale=1"> <title>Is Web Component Starter</title> <script type="module" src="/build/is-web-component.esm.js"></script> <script nomodule="" src="/build/is-web-component.js"></script> <style>is-badge {
       cursor: pointer;
     }
 
-    is-alert {
-      margin-bottom: 10px;
+    is-alert, is-pagination {
+      margin: 10px 0;
     }</style> </head> <body> <is-alert color="light" rounded=""> <strong>Holy guacamole 1!</strong> You should check in on some of those fields below. </is-alert> <is-alert color="light" auto-close="" rounded=""> <strong>Auto close in 3 seconds!</strong> You should check in on some of those fields below. </is-alert> <is-alert color="light" auto-close="" close-secs="10" rounded=""> <strong>Auto close in 10 seconds!</strong> You should check in on some of those fields below. </is-alert> <is-alert color="light" rounded=""> <strong>Holy guacamole 3!</strong> You should check in on some of those fields below. </is-alert> <is-alert color="success" rounded="" closeable="false"> <h4 class="alert-heading">Well done!</h4> <p>Aww yeah, you successfully read this important alert message. This example text is going to run a bit longer so
     that you can see how spacing within an alert works with this kind of content.</p> <hr> <p class="mb-0">Whenever you need to, be sure to use margin utilities to keep things nice and tidy.</p> </is-alert> <br> <is-multiselect id="select1" show-selected-badge="true" limit="2" placeholder="Pilih katalog"></is-multiselect> <pre id="result1"></pre> <is-multiselect id="select2" label-selected="selected" max="3"></is-multiselect> <pre id="result2"></pre> <is-badge color="success" rounded="" text="Get Items" onclick="setResult()"></is-badge> <is-badge id="disable1" color="dark" rounded="" text="Disable Select 1" onclick="setDisabled('1')"></is-badge> <is-badge id="disable2" color="dark" rounded="" text="Disable Select 2" onclick="setDisabled('2')"></is-badge> <is-readmore id="readmore" style="max-width: 980px;"> <h1>Readmore Demo</h1> <p style="text-align: justify;"> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
     aliqua. Tellus elementum sagittis vitae et leo duis. Magna etiam tempor orci eu lobortis elementum nibh tellus.
@@ -17,7 +17,10 @@
     magnis dis parturient. Velit aliquet sagittis id consectetur purus ut faucibus pulvinar elementum. Dignissim sodales
     ut eu sem integer. Blandit massa enim nec dui. Egestas integer eget aliquet nibh praesent tristique. Tellus at urna
     condimentum mattis pellentesque id. Dui ut ornare lectus sit amet est placerat. Turpis egestas integer eget aliquet
-    nibh praesent tristique magna sit. Risus commodo viverra maecenas accumsan lacus vel. </p> </is-readmore> <button onclick="openModal()">Open is-modal</button> <is-modal id="ismodal" modal-title="Important!" modal-header=""> <p>This is just an example of content</p> </is-modal> <script>let disableState = {
+    nibh praesent tristique magna sit. Risus commodo viverra maecenas accumsan lacus vel. </p> </is-readmore> <button onclick="openModal()">Open is-modal</button> <is-modal id="ismodal" modal-title="Important!" modal-header=""> <p>This is just an example of content</p> </is-modal> <is-pagination id="pagination" per-page="15" total-rows="60" current-page="1"></is-pagination> <is-multiselect id="select3" label-selected="selected" close-on-select="" max="1" placeholder="Per Page"></is-multiselect> <pre id="result-page">  Active Page: 1
+  Total data: 60
+  Per page: 15
+</pre> <script>let disableState = {
     disable1: false,
     disable2: false
   };
@@ -68,6 +71,24 @@
     name: 'Data 6'
   }];
   setOptions('2', data2);
+
+  const data3= [{
+    id: 1,
+    name: '15'
+  }, {
+    id: 2,
+    name: '20'
+  }, {
+    id: 3,
+    name: '30'
+  }];
+  setOptions('3', data3);
+
+  const selected3 = [{
+    id: 1,
+    name: '15'
+  }];
+  setSelected('3', selected3);
 
   function setSelected(id, data) {
     const element = document.getElementById('select' + id);
@@ -132,11 +153,26 @@
   });
   modal.addEventListener("cancel", function () {
     console.log("cancel");
-  });</script> <script>if ('serviceWorker' in navigator && location.protocol !== 'file:') {
+  });
+
+  let pagination = document.getElementById("pagination");
+  pagination.addEventListener("changePage", function (val) {
+    console.log('changePage: ' + val.detail);
+
+    const result = document.getElementById('result-page');
+    result.innerHTML = 'Active Page: ' + val.detail + '\n' +
+      'Total data: ' + pagination.totalRows + '\n' +
+      'Per page: ' + pagination.perPage
+  });
+
+  const elm3 = document.getElementById('select3');
+  elm3.addEventListener('selectedChanged', event => {
+    pagination.perPage = event.detail[0].name;
+  })</script> <script>if ('serviceWorker' in navigator && location.protocol !== 'file:') {
   // auto-unregister service worker during dev mode
   navigator.serviceWorker.getRegistration().then(function(registration) {
-  if (registration) {
-    registration.unregister().then(function() { location.reload(true) });
-  }
+    if (registration) {
+      registration.unregister().then(function() { location.reload(true) });
+    }
   });
 }</script></body></html>

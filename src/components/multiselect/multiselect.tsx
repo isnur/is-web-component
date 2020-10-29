@@ -72,6 +72,11 @@ export class Multiselect implements ComponentInterface {
    */
   @Prop() max: number;
 
+  /**
+   * Enable/disable closing after selecting an option
+   */
+  @Prop() closeOnSelect: boolean = false;
+
   @State() isExpanded: boolean = false;
   @State() keyword: string = '';
   @State() textSelected: string = this.placeholder;
@@ -155,7 +160,11 @@ export class Multiselect implements ComponentInterface {
   private updatePlaceholder() {
     this.textSelected = this.placeholder;
     if (this.selected && this.selected.length > 0 && !this.isExpanded) {
-      this.textSelected = this.selected.length + ' options selected';
+      if (this.max === 1) {
+        this.textSelected = this.selected[0].name;
+      } else {
+        this.textSelected = this.selected.length + ' options selected';
+      }
     }
     if (this.showSelectedBadge) {
       this.tags = this.renderSelectedItems();
@@ -173,20 +182,27 @@ export class Multiselect implements ComponentInterface {
   };
 
   private updateItems = (item: ISelectItem) => {
-    if (this.isSelected(item)) {
-      this.selected = this.selected.filter(obj => {
-        return obj.id !== item.id;
-      });
+    if (this.max === 1) {
+      this.selected = [item];
     } else {
-      if (this.selected.length !== this.max) {
-        if (this.selected && this.selected.length > 0) {
-          this.selected = [...this.selected, item];
-        } else {
-          this.selected = [item];
+      if (this.isSelected(item)) {
+        this.selected = this.selected.filter(obj => {
+          return obj.id !== item.id;
+        });
+      } else {
+        if (this.selected.length !== this.max) {
+          if (this.selected && this.selected.length > 0) {
+            this.selected = [...this.selected, item];
+          } else {
+            this.selected = [item];
+          }
         }
       }
     }
     this.selectedChanged.emit(this.selected);
+    if (this.closeOnSelect) {
+      this.toggle(false);
+    }
   };
 
   private onFilteredItems = () => {
@@ -204,7 +220,11 @@ export class Multiselect implements ComponentInterface {
   componentWillLoad() {
     this.textSelected = this.placeholder;
     if (this.selected.length > 0 && !this.isExpanded) {
-      this.textSelected = this.selected.length + ' options selected';
+      if (this.max === 1) {
+        this.textSelected = this.selected[0].name;
+      } else {
+        this.textSelected = this.selected.length + ' options selected';
+      }
     }
     if (this.showSelectedBadge) {
       this.tags = this.renderSelectedItems();
@@ -252,11 +272,12 @@ export class Multiselect implements ComponentInterface {
                     return (
                       <li class={{
                         'multiselect__content--item': true,
-                        'multiselect__content--selected': this.isSelected(item)
+                        'multiselect__content--selected': this.isSelected(item),
+                        'multiselect__content--selected--single': this.isSelected(item) && this.max === 1
                       }} key={i}
                           onClick={() => this.updateItems(item)}
                           label-selected={this.isSelected(item) ? this.labelSelected : null}
-                          label-to-remove={this.isSelected(item) ? this.labelTo.remove : null}
+                          label-to-remove={this.isSelected(item) && this.max !== 1 ? this.labelTo.remove : null}
                           label-to-select={!this.isSelected(item) ? this.labelTo.select : null}
                       >{item.name}</li>
                     )

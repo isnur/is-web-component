@@ -1,0 +1,86 @@
+:host {
+  /**
+     * @prop --background-color: Active page background color
+     */
+  display: block;
+  cursor: default;
+
+  .pagination {
+    display: inline-block;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .pagination li {
+    color: black;
+    float: left;
+    padding: 8px 16px;
+    border: 1px solid #ddd;
+  }
+
+  .pagination li.active {
+    &.primary {
+      color: $primary-color;
+      background-color: $primary-bg;
+      border: 1px solid $primary-bg;
+    }
+    &.secondary {
+      color: $secondary-color;
+      background-color: $secondary-bg;
+      border: 1px solid $secondary-bg;
+    }
+    &.success {
+      color: $success-color;
+      background-color: $success-bg;
+      border: 1px solid $success-bg;
+    }
+    &.warning {
+      color: $warning-color;
+      background-color: $warning-bg;
+      border: 1px solid $warning-bg;
+    }
+    &.error {
+      color: $error-color;
+      background-color: $error-bg;
+      border: 1px solid $error-bg;
+    }
+    &.light {
+      color: $light-color;
+      background-color: $light-bg;
+      border: 1px solid $light-bg;
+    }
+    &.info {
+      color: $info-color;
+      background-color: $info-bg;
+      border: 1px solid $info-bg;
+    }
+    &.dark {
+      color: $dark-color;
+      background-color: $dark-bg;
+      border: 1px solid $dark-bg;
+    }
+    &.white {
+      color: $white-color;
+      background-color: $white-bg;
+      border: 1px solid $white-bg;
+    }
+    &.black {
+      color: $black-color;
+      background-color: $black-bg;
+      border: 1px solid $black-bg;
+    }
+  }
+
+  .pagination li:hover:not(.active) {background-color: #ddd;}
+
+  .pagination li:first-child {
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+  }
+
+  .pagination li:last-child {
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+  }
+}

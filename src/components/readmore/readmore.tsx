@@ -31,7 +31,7 @@ export class Readmore {
     }
   }
 
-  componentDidLoad() {
+  componentWillLoad() {
     this.contentExpanded = false;
   }
 
