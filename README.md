@@ -7,7 +7,7 @@
 
 Open source web components for building web applications. Build on top [StencilJS](https://stenciljs.com).
 
-## Demo
+## Demonstration
 
 [https://is-web-component.isnur.com/](https://is-web-component.isnur.com/)
 
@@ -40,7 +40,7 @@ Script tag
     <script nomodule="" src="https://unpkg.com/is-web-component@latest/dist/is-web-component/is-web-component.js"></script>
   ```
   
-  in the head of your index.html
+  in the head of your index.html file
 - Then you can use the element anywhere in your template, JSX, html etc.
 
   ```html
