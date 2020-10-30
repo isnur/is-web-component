@@ -69,7 +69,7 @@ Use Script tag
 ## Contributing
 
 * Read the project [Code of Conduct](CODE_OF_CONDUCT.md) and remember to be nice to one another.
-* See [CONTRIBUTING.md](CONTRIBUTING.md) for info about how to contribute to this project.
+* See [CONTRIBUTING.md](CONTRIBUTING.md) for information about how to contribute to this project.
 
 ## Components
 
