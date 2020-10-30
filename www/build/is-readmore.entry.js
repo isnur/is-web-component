@@ -1,4 +1,6 @@
-import { r as registerInstance, h, H as Host } from './core-b4d71f8d.js';
+import { r as registerInstance, h, f as Host } from './index-9699d743.js';
+
+const readmoreCss = "is-readmore{display:block}is-readmore .content{position:relative;width:100%;height:var(--height, 260px);overflow:hidden;transition:all 0.3s ease-in-out}is-readmore .content.active{height:auto;overflow:unset;position:unset;transition:all 0.3s ease-in-out}is-readmore .content.active:before{display:none}is-readmore .content:before{background:-moz-linear-gradient(top, rgba(255, 255, 255, 0) 0, rgba(255, 255, 255, 0.8) 40%, #ffffff 100%);background:-o-linear-gradient(top, rgba(255, 255, 255, 0) 0, rgba(255, 255, 255, 0.8) 40%, #ffffff 100%);background:linear-gradient(to bottom, rgba(255, 255, 255, 0) 0, rgba(255, 255, 255, 0.8) 40%, #ffffff 100%);background:-webkit-linear-gradient(top, rgba(255, 255, 255, 0) 0, rgba(255, 255, 255, 0.8) 40%, #ffffff 100%);height:45px;bottom:0;position:absolute;z-index:2;right:0;left:0;content:\"\"}is-readmore .content-toggle{display:flex;width:100%;cursor:pointer}is-readmore .align-right{justify-content:flex-end}is-readmore .align-center{justify-content:center}is-readmore .align-left{justify-content:flex-start}";
 
 const Readmore = class {
     constructor(hostRef) {
@@ -36,7 +38,7 @@ const Readmore = class {
                 'active': this.contentExpanded
             } }, h("slot", null)), h("div", { class: 'content-toggle ' + (this.setPosition()) + ' ' + this.toggleOptions.textClass, onClick: () => this.toggle() }, this.contentExpanded ? this.toggleOptions.textClose : this.toggleOptions.textOpen)));
     }
-    static get style() { return "is-readmore {\n  display: block;\n}\nis-readmore .content {\n  position: relative;\n  width: 100%;\n  height: var(--height, 260px);\n  overflow: hidden;\n  -webkit-transition: all 0.3s ease-in-out;\n  transition: all 0.3s ease-in-out;\n}\nis-readmore .content.active {\n  height: auto;\n  overflow: unset;\n  position: unset;\n  -webkit-transition: all 0.3s ease-in-out;\n  transition: all 0.3s ease-in-out;\n}\nis-readmore .content.active:before {\n  display: none;\n}\nis-readmore .content:before {\n  background: -moz-linear-gradient(top, rgba(255, 255, 255, 0) 0, rgba(255, 255, 255, 0.8) 40%, #ffffff 100%);\n  background: -o-linear-gradient(top, rgba(255, 255, 255, 0) 0, rgba(255, 255, 255, 0.8) 40%, #ffffff 100%);\n  background: -webkit-gradient(linear, left top, left bottom, color-stop(0, rgba(255, 255, 255, 0)), color-stop(40%, rgba(255, 255, 255, 0.8)), to(#ffffff));\n  background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0, rgba(255, 255, 255, 0.8) 40%, #ffffff 100%);\n  background: -webkit-linear-gradient(top, rgba(255, 255, 255, 0) 0, rgba(255, 255, 255, 0.8) 40%, #ffffff 100%);\n  height: 45px;\n  bottom: 0;\n  position: absolute;\n  z-index: 2;\n  right: 0;\n  left: 0;\n  content: \"\";\n}\nis-readmore .content-toggle {\n  display: -ms-flexbox;\n  display: flex;\n  width: 100%;\n  cursor: pointer;\n}\nis-readmore .align-right {\n  -ms-flex-pack: end;\n  justify-content: flex-end;\n}\nis-readmore .align-center {\n  -ms-flex-pack: center;\n  justify-content: center;\n}\nis-readmore .align-left {\n  -ms-flex-pack: start;\n  justify-content: flex-start;\n}"; }
 };
+Readmore.style = readmoreCss;
 
 export { Readmore as is_readmore };
