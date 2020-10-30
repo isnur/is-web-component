@@ -1,4 +1,4 @@
-import { r as registerInstance, h, c as createEvent, H as Host } from './core-b4d71f8d.js';
+import { r as registerInstance, e as createEvent, h, f as Host } from './index-9699d743.js';
 
 function format(first, middle, last) {
     return ((first || '') +
@@ -10,9 +10,12 @@ const toInteger = (value, defaultValue = NaN) => {
     return isNaN(integer) ? defaultValue : integer;
 };
 
+const paginationCss = ":host{display:block;cursor:default}:host .pagination{display:inline-block;list-style-type:none;margin:0;padding:0}:host .pagination li{color:black;float:left;padding:8px 16px;border:1px solid #ddd}:host .pagination li.active.primary{color:white;background-color:#327bb7;border:1px solid #327bb7}:host .pagination li.active.secondary{color:white;background-color:#ff7d09;border:1px solid #ff7d09}:host .pagination li.active.success{color:white;background-color:#00c092;border:1px solid #00c092}:host .pagination li.active.warning{color:white;background-color:#e8d700;border:1px solid #e8d700}:host .pagination li.active.error{color:white;background-color:#d0021b;border:1px solid #d0021b}:host .pagination li.active.light{color:black;background-color:#e5e5e5;border:1px solid #e5e5e5}:host .pagination li.active.info{color:black;background-color:#b9b9b9;border:1px solid #b9b9b9}:host .pagination li.active.dark{color:white;background-color:#5d5d5d;border:1px solid #5d5d5d}:host .pagination li.active.white{color:black;background-color:white;border:1px solid white}:host .pagination li.active.black{color:white;background-color:black;border:1px solid black}:host .pagination li:hover:not(.active){background-color:#ddd}:host .pagination li:first-child{border-top-left-radius:5px;border-bottom-left-radius:5px}:host .pagination li:last-child{border-top-right-radius:5px;border-bottom-right-radius:5px}";
+
 const Pagination = class {
     constructor(hostRef) {
         registerInstance(this, hostRef);
+        this.changePage = createEvent(this, "changePage", 7);
         this.DEFAULT_PER_PAGE = 10;
         this.DEFAULT_TOTAL_ROWS = 0;
         this.localNumberOfPages = 1;
@@ -72,7 +75,6 @@ const Pagination = class {
             }
             this.list = list;
         };
-        this.changePage = createEvent(this, "changePage", 7);
     }
     numberOfPages() {
         const result = Math.ceil(this.sanitizeTotalRows(this.totalRows) / this.sanitizePerPage(this.perPage));
@@ -114,7 +116,7 @@ const Pagination = class {
         "totalRows": ["numberOfPages"],
         "perPage": ["numberOfPages"]
     }; }
-    static get style() { return ":host {\n  /**\n     * \@prop --background-color: Active page background color\n     */\n  display: block;\n  cursor: default;\n}\n:host .pagination {\n  display: inline-block;\n  list-style-type: none;\n  margin: 0;\n  padding: 0;\n}\n:host .pagination li {\n  color: black;\n  float: left;\n  padding: 8px 16px;\n  border: 1px solid #ddd;\n}\n:host .pagination li.active.primary {\n  color: white;\n  background-color: #327bb7;\n  border: 1px solid #327bb7;\n}\n:host .pagination li.active.secondary {\n  color: white;\n  background-color: #ff7d09;\n  border: 1px solid #ff7d09;\n}\n:host .pagination li.active.success {\n  color: white;\n  background-color: #00c092;\n  border: 1px solid #00c092;\n}\n:host .pagination li.active.warning {\n  color: white;\n  background-color: #e8d700;\n  border: 1px solid #e8d700;\n}\n:host .pagination li.active.error {\n  color: white;\n  background-color: #d0021b;\n  border: 1px solid #d0021b;\n}\n:host .pagination li.active.light {\n  color: black;\n  background-color: #e5e5e5;\n  border: 1px solid #e5e5e5;\n}\n:host .pagination li.active.info {\n  color: black;\n  background-color: #b9b9b9;\n  border: 1px solid #b9b9b9;\n}\n:host .pagination li.active.dark {\n  color: white;\n  background-color: #5d5d5d;\n  border: 1px solid #5d5d5d;\n}\n:host .pagination li.active.white {\n  color: black;\n  background-color: white;\n  border: 1px solid white;\n}\n:host .pagination li.active.black {\n  color: white;\n  background-color: black;\n  border: 1px solid black;\n}\n:host .pagination li:hover:not(.active) {\n  background-color: #ddd;\n}\n:host .pagination li:first-child {\n  border-top-left-radius: 5px;\n  border-bottom-left-radius: 5px;\n}\n:host .pagination li:last-child {\n  border-top-right-radius: 5px;\n  border-bottom-right-radius: 5px;\n}"; }
 };
+Pagination.style = paginationCss;
 
 export { Pagination as is_pagination };

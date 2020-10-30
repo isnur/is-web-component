@@ -1,4 +1,4 @@
-<!doctype html><html dir="ltr" lang="en"><head> <meta charset="utf-8"> <meta name="viewport" content="width=device-width, initial-scale=1"> <title>Is Web Component Starter</title> <script type="module" src="/build/is-web-component.esm.js"></script> <script nomodule="" src="/build/is-web-component.js"></script> <style>is-badge {
+<!doctype html><html dir="ltr" lang="en"><head> <meta charset="utf-8"> <meta name="viewport" content="width=device-width, initial-scale=1"> <title>Is Web Component Starter</title> <script type="module" src="/build/is-web-component.esm.js" data-stencil></script> <script nomodule="" src="/build/is-web-component.js" data-stencil></script> <style>is-badge {
       cursor: pointer;
     }
 
@@ -20,7 +20,7 @@
     nibh praesent tristique magna sit. Risus commodo viverra maecenas accumsan lacus vel. </p> </is-readmore> <button onclick="openModal()">Open is-modal</button> <is-modal id="ismodal" modal-title="Important!" modal-header=""> <p>This is just an example of content</p> </is-modal> <is-pagination id="pagination" per-page="15" total-rows="60" current-page="1"></is-pagination> <is-multiselect id="select3" label-selected="selected" close-on-select="" max="1" placeholder="Per Page"></is-multiselect> <pre id="result-page">  Active Page: 1
   Total data: 60
   Per page: 15
-</pre> <script>let disableState = {
+</pre> <is-tabs> <is-tab label="Active" isactive="true"></is-tab> <is-tab label="Link" isactive="false"></is-tab> </is-tabs> <script>let disableState = {
     disable1: false,
     disable2: false
   };
@@ -171,8 +171,8 @@
   })</script> <script>if ('serviceWorker' in navigator && location.protocol !== 'file:') {
   // auto-unregister service worker during dev mode
   navigator.serviceWorker.getRegistration().then(function(registration) {
-    if (registration) {
-      registration.unregister().then(function() { location.reload(true) });
-    }
+  if (registration) {
+    registration.unregister().then(function() { location.reload(true) });
+  }
   });
 }</script></body></html>
