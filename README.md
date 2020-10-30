@@ -33,7 +33,7 @@ https://unpkg.com/is-web-component
 
 Use Script tag
 
-- Put a script tag similar to this
+- Put a script tag similar to this one
 
   ```html
     <script type="module" src="https://unpkg.com/is-web-component@latest/dist/is-web-component/is-web-component.esm.js"></script>
