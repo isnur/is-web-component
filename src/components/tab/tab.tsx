@@ -1,8 +1,9 @@
-import { Component, Host, h, Prop, Event } from '@stencil/core';
+import { Component, Host, h, Prop, Watch } from '@stencil/core';
 
 @Component({
   tag: 'is-tab',
   styleUrl: 'tab.scss',
+  scoped: true
 })
 export class Tab {
 
@@ -11,15 +12,40 @@ export class Tab {
    */
   @Prop() label: string;
 
-  @Prop() isActive: boolean;
+  /**
+   * Indicates if tab is active
+   */
+  @Prop() isactive: boolean;
 
-  @Event() tabClick; // TODO - descover the correct type
+  /**
+   * Indicates if tab is blocked
+   */
+  @Prop() disable: boolean;
+
+  @Watch('disable')
+  watchIsDisable() {
+    this.disable = !this.disable ? false : true;
+  }
+
+  // @Watch('isactive')
+  // watchIsActive() {
+  //   this.isactive = !this.isactive ? false : true;
+  // }
+
+  private handleOnClick = () => {
+
+    this.isactive = !this.isactive;
+  }
 
   render() {
+
     return (
       <Host>
         <li class='tab'>
-          <a class='tab-link' onClick={this.tabClick}>
+          <a class={!this.disable ? (this.isactive ? 'tab-link-active' : 'tab-link')
+            : 'tab-link-disable'}
+            onClick={this.handleOnClick}
+          >
             {this.label}
           </a>
         </li>
@@ -27,5 +53,3 @@ export class Tab {
     );
   }
 }
-
-// {!!this.isActive ? 'tab-link' : 'tab'}

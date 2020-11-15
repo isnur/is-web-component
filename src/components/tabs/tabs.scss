@@ -1,1 +1,13 @@
-:host {}
+:host {
+
+  .tabs {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    border-bottom: 1.5px solid #dee2e6; // #dee2e6;
+  }
+
+  &-content {
+    margin: 30px auto;
+    width: 100%;
+  }
+}

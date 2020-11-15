@@ -1,12 +1,51 @@
 :host {
 
   .tab {
-
-    font-size: 40px; // For test
+    display: inline-block;
+    cursor: pointer;
   }
 
   .tab-link {
+    color: #495057;
+    padding: 15px;
+    margin: 0 -2px;
+    border-width: .2rem;
 
-    color: blue; // For test
+    border-top: 1.5px solid transparent;
+    border-left: 1.5px solid transparent;
+    border-right: 1.5px solid transparent;
+    // border-bottom: 1.5px solid transparent;
+    border-radius: 5px 5px 0 0;
+    text-decoration: none !important;
+
+    &-active {
+      color: #6c757d;
+      padding: 15px;
+      margin: 0 -2px;
+      border-width: .2rem;
+      border-radius: 5px 5px 0 0;
+
+      border-top: 1.5px solid #dee2e6;
+      border-left: 1.5px solid #dee2e6;
+      border-right: 1.5px solid #dee2e6;
+      border-bottom: 1.5px solid #fff;
+    }
+
+    &-disable {
+      color: #49506c;
+      padding: 15px;
+      margin: 0 -2px;
+      border: none;
+      cursor: auto;
+    }
+
+    &:hover {
+      color: #007bff;
+
+      border-top: 1.5px solid #dddddd;
+      border-left: 1.5px solid #dddddd;
+      border-right: 1.5px solid #dddddd;
+    }
+
   }
 }

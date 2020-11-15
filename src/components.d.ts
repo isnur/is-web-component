@@ -144,7 +144,14 @@ export namespace Components {
         "toggleOptions": IToggleOptions;
     }
     interface IsTab {
-        "isActive": boolean;
+        /**
+          * Indicates if tab is blocked
+         */
+        "disable": boolean;
+        /**
+          * Indicates if tab is active
+         */
+        "isactive": boolean;
         /**
           * Customized name tab
          */
@@ -361,12 +368,18 @@ declare namespace LocalJSX {
         "toggleOptions"?: IToggleOptions;
     }
     interface IsTab {
-        "isActive"?: boolean;
+        /**
+          * Indicates if tab is blocked
+         */
+        "disable"?: boolean;
+        /**
+          * Indicates if tab is active
+         */
+        "isactive"?: boolean;
         /**
           * Customized name tab
          */
         "label"?: string;
-        "onTabClick"?: (event: CustomEvent<any>) => void;
     }
     interface IsTabs {
     }
