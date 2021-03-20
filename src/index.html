@@ -17,6 +17,19 @@
       margin: 10px 0;
     }
   </style>
+
+
+  <!-- example purpose -->
+  <!-- ======================== -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/default.min.css">
+
+  <style>
+    /* this styling purpose only for separate section of component (example) */
+    .section {
+      padding: 3rem 1.5rem;
+    }
+  </style>
+  <!-- ======================== -->
 </head>
 
 <body>
@@ -85,6 +98,29 @@
   Total data: 60
   Per page: 15
 </pre>
+
+<!-- Divider -->
+<div class="section">
+  <div>
+    <h3>Dividers</h3>
+    <is-divider></is-divider>
+    <is-divider text="you are awesome" align-text="left" color="primary"></is-divider>
+    <is-divider text="really?" align-text="center" color="success"/></is-divider>
+    <is-divider text="always has been ;)" align-text="right" color="error"/></is-divider>
+    
+    <div>
+      <pre>
+        <code class="html">
+          &lt;is-divider&gt;&lt;/is-divider&gt;
+          &lt;is-divider text="you are awesome" align-text="left" color="primary"&gt;&lt;/is-divider&gt;
+          &lt;is-divider text="really?" align-text="center" color="success"/&gt;&lt;/is-divider&gt;
+          &lt;is-divider text="always has been ;)" align-text="right" color="error"/&gt;&lt;/is-divider&gt;    
+        </code>
+      </pre>
+    </div>
+  </div>
+</div>
+<!-- / Divider -->
 
 <script>
   let disableState = {
@@ -238,6 +274,16 @@
   })
 
 </script>
-</body>
 
+
+<!-- Example Purpose -->
+<!-- ======================== -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+
+<script>
+ hljs.initHighlightingOnLoad();
+</script>
+<!-- ======================== -->
+
+</body>
 </html>
