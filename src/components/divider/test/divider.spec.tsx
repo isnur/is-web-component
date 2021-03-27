@@ -1,7 +1,7 @@
 import { newSpecPage } from '@stencil/core/testing';
-import { IsDivider } from '../is-divider';
+import { IsDivider } from '../divider';
 
-describe('is-divider', () => {
+describe('divider', () => {
   let page;
 
   beforeEach(async () => {
@@ -15,7 +15,7 @@ describe('is-divider', () => {
     expect(page.root).toEqualHtml(`
       <is-divider>
         <mock:shadow-root>
-          <div class="is-divider is-center is-default">
+          <div class="is-default is-divider is-no-text"></div>
         </mock:shadow-root>
       </is-divider>
     `);
