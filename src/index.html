@@ -132,12 +132,15 @@
     <div>
       <div style="margin-bottom: 10px;">
         <is-button type="button">Button</is-button>
-        <is-button href="https://www.google.com/" color="secondary" target="_blank">Link</is-button>
-        <is-button type="button" disabled>Disabled</is-button>
+        <is-button type="button" color="primary" disabled>Disabled</is-button>
+        <is-button type="button" onClick="openModal()" color="primary">Open Modal</is-button>
+        <is-button href="https://www.google.com" color="secondary" target="_blank">Link</is-button>
+        <is-button href="https://www.google.com" color="secondary" target="_blank" disabled>Link Disabled</is-button>
       </div>
 
       <div>
         <form action="/#button-title" method="post">
+          <h5 style="margin-bottom: 0;">Form Example</h5>
           <input type="text">
           <is-button type="reset">Reset</is-button>
           <is-button color="primary" type="submit">Submit</is-button>
@@ -148,9 +151,11 @@
       <div>
         <pre>
           <code class="html">
-            &lt;is-button type="button">Button&lt;/is-button&gt;
-            &lt;is-button href="https://www.google.com/" color="secondary" target="_blank"&gt;Link&lt;/is-button&gt;
-            &lt;is-button type="button" disabled&gt;Disabled&lt;/is-button&gt;
+            &lt;is-button type="button"&gt;Button&lt;/is-button&gt;
+            &lt;is-button type="button" color="primary" disabled&gt;Disabled&lt;/is-button&gt;
+            &lt;is-button type="button" onClick="openModal()" color="primary"&gt;Open Modal&lt;/is-button&gt;
+            &lt;is-button href="https://www.google.com" color="secondary" target="_blank"&gt;Link&lt;/is-button&gt;
+            &lt;is-button href="https://www.google.com" color="secondary" target="_blank" disabled&gt;Link Disabled&lt;/is-button&gt;
 
             &lt;is-button type="reset"&gt;Reset&lt;/is-button&gt;
             &lt;is-button color="success" type="submit"&gt;Submit&lt;/is-button&gt;

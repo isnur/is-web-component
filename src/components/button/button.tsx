@@ -56,6 +56,12 @@ export class IsButton implements ComponentInterface {
 
 
   onClick = (event: Event): void => {
+    // we dont need anymore event anymore when disabled is active
+    if (this.disabled) {
+      event.preventDefault();
+      return;
+    }
+
     if (this.type !== 'button') {
       const form = this.el.closest('form');
       if (form) {
@@ -74,7 +80,7 @@ export class IsButton implements ComponentInterface {
     const { color, disabled, size, display, shape, href, type, target } = this;
     const TagChose = href === undefined ? 'button' : 'a' as any;
 
-    const attributes = (TagChose === 'button') ? { type } : {
+    const attributes = (TagChose === 'button') ? { type, disabled } : {
       href, target
     }
 
@@ -90,8 +96,8 @@ export class IsButton implements ComponentInterface {
             [`is-${size}`]: size !== undefined,
             [`is-${display}`]: display !== undefined,
             [`is-${shape}`]: shape !== undefined,
+            'is-disabled': disabled,
           }}
-          disabled={disabled}
         >
           <slot></slot>
         </TagChose>
