@@ -26,7 +26,7 @@
   <style>
     /* this styling purpose only for separate section of component (example) */
     .section {
-      padding: 3rem 1.5rem;
+      padding: 2rem 1.5rem;
     }
   </style>
   <!-- ======================== -->
@@ -107,20 +107,146 @@
     <is-divider text="you are awesome" align-text="left" color="primary"></is-divider>
     <is-divider text="really?" align-text="center" color="success"/></is-divider>
     <is-divider text="always has been ;)" align-text="right" color="error"/></is-divider>
-    
+
     <div>
       <pre>
         <code class="html">
           &lt;is-divider&gt;&lt;/is-divider&gt;
           &lt;is-divider text="you are awesome" align-text="left" color="primary"&gt;&lt;/is-divider&gt;
           &lt;is-divider text="really?" align-text="center" color="success"/&gt;&lt;/is-divider&gt;
-          &lt;is-divider text="always has been ;)" align-text="right" color="error"/&gt;&lt;/is-divider&gt;    
+          &lt;is-divider text="always has been ;)" align-text="right" color="error"/&gt;&lt;/is-divider&gt;
         </code>
       </pre>
     </div>
   </div>
 </div>
 <!-- / Divider -->
+
+
+<!-- Button -->
+<div class="section">
+  <div>
+    <h3 id="button-title">Button</h3>
+
+    <!-- Button: type `tag` supported -->
+    <div>
+      <div style="margin-bottom: 10px;">
+        <is-button type="button">Button</is-button>
+        <is-button href="https://www.google.com/" color="secondary" target="_blank">Link</is-button>
+        <is-button type="button" disabled>Disabled</is-button>
+      </div>
+
+      <div>
+        <form action="/#button-title" method="post">
+          <input type="text">
+          <is-button type="reset">Reset</is-button>
+          <is-button color="primary" type="submit">Submit</is-button>
+        </form>
+      </div>
+
+
+      <div>
+        <pre>
+          <code class="html">
+            &lt;is-button type="button">Button&lt;/is-button&gt;
+            &lt;is-button href="https://www.google.com/" color="secondary" target="_blank"&gt;Link&lt;/is-button&gt;
+            &lt;is-button type="button" disabled&gt;Disabled&lt;/is-button&gt;
+
+            &lt;is-button type="reset"&gt;Reset&lt;/is-button&gt;
+            &lt;is-button color="success" type="submit"&gt;Submit&lt;/is-button&gt;
+          </code>
+        </pre>
+      </div>
+    </div>
+
+    <!-- Button: Colors -->
+    <div>
+      <div>
+        <is-button>Default</is-button>
+        <is-button color="primary">Primary</is-button>
+        <is-button color="success">Success</is-button>
+        <is-button color="warning">Warning</is-button>
+        <is-button color="error">Error</is-button>
+      </div>
+
+
+      <div>
+        <pre>
+          <code class="html">
+            &lt;is-button&gt;Default&lt;/is-button&gt;
+            &lt;is-button color="primary"&gt;Primary&lt;/is-button&gt;
+            &lt;is-button color="success"&gt;Success&lt;/is-button&gt;
+            &lt;is-button color="warning"&gt;Warning&lt;/is-button&gt;
+            &lt;is-button color="error"&gt;Error&lt;/is-button&gt;
+          </code>
+        </pre>
+      </div>
+    </div>
+
+    <!-- Button: Sizes -->
+    <div>
+      <div>
+        <is-button size="small">Small</is-button>
+        <is-button>Default</is-button>
+        <is-button size="medium">Medium</is-button>
+        <is-button size="large">Large</is-button>
+      </div>
+
+
+      <div>
+        <pre>
+          <code class="html">
+            &lt;is-button size="small"&gt;Small&lt;/is-button&gt;
+            &lt;is-button&gt;Default&lt;/is-button&gt;
+            &lt;is-button size="medium"&gt;Medium&lt;/is-button&gt;
+            &lt;is-button size="large"&gt;Large&lt;/is-button&gt;
+          </code>
+        </pre>
+      </div>
+    </div>
+
+    <!-- Button: Display -->
+    <div>
+      <div>
+        <is-button color="primary">Default</is-button>
+        <hr style="border: none; font-size: 3px;"/>
+        <is-button color="secondary" display="fullwidth">Medium</is-button>
+      </div>
+
+
+      <div>
+        <pre>
+          <code class="html">
+            &lt;is-button color="primary"&gt;Default&lt;/is-button&gt;
+            &lt;is-button color="secondary" display="fullwidth"&gt;Medium&lt;/is-button&gt;
+          </code>
+        </pre>
+      </div>
+    </div>
+
+
+    <!-- Button: Shape -->
+    <div>
+      <div>
+        <is-button color="success">Round</is-button>
+        <is-button color="error" shape="round" size="small">Small Round</is-button>
+        <is-button color="primary" shape="round" size="large">Large Round</is-button>
+      </div>
+
+
+      <div>
+        <pre>
+          <code class="html">
+            &lt;is-button color="success"&gt;Round&lt;/is-button&gt;
+            &lt;is-button color="warning" shape="round"&gt;Small Round&lt;/is-button&gt;
+            &lt;is-button color="primary" shape="round" size="large"&gt;Large Round&lt;/is-button&gt;
+          </code>
+        </pre>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- / Button -->
 
 <script>
   let disableState = {
@@ -283,6 +409,28 @@
 <script>
  hljs.initHighlightingOnLoad();
 </script>
+
+  <script>
+    [].forEach.call(document.querySelectorAll('code'), function($code) {
+      var lines = $code.textContent.split('\n');
+
+      if (lines[0] === '')
+      {
+          lines.shift()
+      }
+
+      var matches;
+      var indentation = (matches = /^[\s\t]+/.exec(lines[0])) !== null ? matches[0] : null;
+      if (!!indentation) {
+          lines = lines.map(function(line) {
+              line = line.replace(indentation, '')
+              return line.replace(/\t/g, '    ')
+          });
+
+          $code.textContent = lines.join('\n').trim();
+      }
+    });
+  </script>
 <!-- ======================== -->
 
 </body>
