@@ -49,7 +49,7 @@ $button-size-default: $size-6 !default;
     }
   }
 
-  &[disabled] {
+  &.is-disabled {
     background-color: $button-disabled-bg;
     color: $button-disabled-color;
     cursor: not-allowed;
