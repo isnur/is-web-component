@@ -1,0 +1,36 @@
+@import "../../global/variables.scss";
+
+// main
+:host(.is-breadcrumb) {
+  display: flex;
+  font-size: 1rem;
+  padding: 0;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+
+// ***  Item   ***
+
+// Item: Align
+@each $name, $value in ('center': 'center', 'right': 'flex-end') {
+  :host(.is-#{$name}) {
+    justify-content: #{$value};
+  }
+}
+
+
+// Item: Separators
+::slotted(is-breadcrumb-item:nth-child(n+2))::before {
+  color: $dark-bg;
+  content: "\0002f";
+  margin: 0 1rem;
+}
+
+
+// Item: Sizes
+@each $name, $value in ('small': $size-7, 'medium': $size-6, 'large': $size-5) {
+  :host(.is-#{$name}) {
+    font-size: #{$value};
+  }
+}

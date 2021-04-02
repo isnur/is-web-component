@@ -1,0 +1,25 @@
+@import "../../global/variables.scss";
+
+:host(.item) {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  padding: 0;
+}
+
+
+:host(.item) > a {
+  text-decoration: none;
+  color: $dark-bg;
+  cursor: pointer;
+
+  &:hover,
+  &.is-active {
+    color: darken($dark-bg, 23%);
+  }
+
+  &.is-active {
+    cursor: default;
+    pointer-events: none;
+  }
+}
