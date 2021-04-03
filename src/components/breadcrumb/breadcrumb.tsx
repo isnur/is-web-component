@@ -14,12 +14,19 @@ export class Breadcrumb {
    */
   @Prop({ reflect: true }) size?: 'small' | 'medium' | 'large';
 
+  /**
+   * Use different separator for each item
+   * default is '/'
+   */
+  @Prop() separator?: 'dot' | 'arrow' | 'slash';
+
   render() {
-    const { align, size } = this
+    const { align, size, separator } = this
 
     return (
       <Host class={{
         [`is-breadcrumb`]: true,
+        [`has-separator-${separator}`]: separator !== undefined,
         [`is-${align}`]: align !== undefined,
         [`is-${size}`]: size !== undefined,
       }}>

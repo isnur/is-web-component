@@ -1,5 +1,11 @@
 @import "../../global/variables.scss";
 
+$separator-item-color: $dark-bg !default;
+$separator-item-active-color: darken($separator-item-color, 23%) !default;
+
+
+// ***  Main  ***
+
 :host(.item) {
   align-items: center;
   display: flex;
@@ -7,15 +13,15 @@
   padding: 0;
 }
 
-
+// Main: anchor
 :host(.item) > a {
   text-decoration: none;
-  color: $dark-bg;
+  color: $separator-item-color;
   cursor: pointer;
 
   &:hover,
   &.is-active {
-    color: darken($dark-bg, 23%);
+    color: $separator-item-active-color;
   }
 
   &.is-active {

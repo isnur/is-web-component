@@ -28,6 +28,17 @@
     .section {
       padding: 2rem 1.5rem;
     }
+    .mb-1 {
+      margin-bottom: 0.85rem;
+    }
+    .mx-0 {
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+    .px-0 {
+      padding-top: 0;
+      padding-bottom: 0;
+    }
   </style>
   <!-- ======================== -->
 </head>
@@ -257,23 +268,187 @@
 <!-- Breadcrumb -->
 <div class="section">
   <div>
-    <h3>Breadcrumb</h3>
-    <is-breadcrumb>
-      <is-breadcrumb-item href="https://www.asiansigmatechnology.com/" target="_blank">Home</is-breadcrumb-item>
-      <is-breadcrumb-item>Hot News</is-breadcrumb-item>
-      <is-breadcrumb-item active="true">Anti-Asian Violence And Discrimination</is-breadcrumb-item>
-    </is-breadcrumb>
+    <h3 class="mb-1">Breadcrumb</h3>
 
+    <!-- Intro -->
     <div>
-      <pre>
+      <h4 class="px-0">Introduction</h4>
+      <is-breadcrumb>
+        <is-breadcrumb-item href="https://is-web-component.isnur.com/" target="_blank">Home</is-breadcrumb-item>
+        <is-breadcrumb-item href="/hot-news">Hot News</is-breadcrumb-item>
+        <is-breadcrumb-item active="true">Anti-Asian Violence And Discrimination</is-breadcrumb-item>
+      </is-breadcrumb>
+
+      <div>
+        <pre>
         <code class="html">
           &lt;is-breadcrumb&gt;
-            &lt;is-breadcrumb-item href="https://www.asiansigmatechnology.com/" target="_blank"&gt;Home&lt;/is-breadcrumb-item&gt;
-            &lt;is-breadcrumb-item&gt;Hot News&lt;/is-breadcrumb-item&gt;
-            &lt;is-breadcrumb-item is-active="true"&gt;Anti-Asian Violence And Discrimination&lt;/is-breadcrumb-item&gt;
+            &lt;is-breadcrumb-item href="https://is-web-component.isnur.com/" target="_blank"&gt;Home&lt;/is-breadcrumb-item&gt;
+            &lt;is-breadcrumb-item href="/hot-news"&gt;Hot News&lt;/is-breadcrumb-item&gt;
+            &lt;is-breadcrumb-item active="true"&gt;Anti-Asian Violence And Discrimination&lt;/is-breadcrumb-item&gt;
           &lt;/is-breadcrumb&gt;
         </code>
       </pre>
+      </div>
+    </div>
+
+    <!-- Align -->
+    <div>
+      <h4 class="px-0">Align</h4>
+
+      <div class="mb-1">
+        <is-breadcrumb>
+          <is-breadcrumb-item href="https://is-web-component.isnur.com/" target="_blank">Home</is-breadcrumb-item>
+          <is-breadcrumb-item href="/hot-news">Hot News</is-breadcrumb-item>
+          <is-breadcrumb-item active="true">Anti-Asian Violence And Discrimination</is-breadcrumb-item>
+        </is-breadcrumb>
+      </div>
+
+      <div class="mb-1">
+        <is-breadcrumb align="center">
+          <is-breadcrumb-item href="https://is-web-component.isnur.com/" target="_blank">Home</is-breadcrumb-item>
+          <is-breadcrumb-item href="/hot-news">Hot News</is-breadcrumb-item>
+          <is-breadcrumb-item active="true">Anti-Asian Violence And Discrimination</is-breadcrumb-item>
+        </is-breadcrumb>
+      </div>
+
+      <div class="mb-1">
+        <is-breadcrumb align="right">
+          <is-breadcrumb-item href="https://is-web-component.isnur.com/" target="_blank">Home</is-breadcrumb-item>
+          <is-breadcrumb-item href="/hot-news">Hot News</is-breadcrumb-item>
+          <is-breadcrumb-item active="true">Anti-Asian Violence And Discrimination</is-breadcrumb-item>
+        </is-breadcrumb>
+      </div>
+
+      <div>
+        <pre>
+        <code class="html">
+          &lt;is-breadcrumb&gt;
+            &lt;is-breadcrumb-item href="https://is-web-component.isnur.com/" target="_blank"&gt;Home&lt;/is-breadcrumb-item&gt;
+            &lt;is-breadcrumb-item href="/hot-news"&gt;Hot News&lt;/is-breadcrumb-item&gt;
+            &lt;is-breadcrumb-item active="true"&gt;Anti-Asian Violence And Discrimination&lt;/is-breadcrumb-item&gt;
+          &lt;/is-breadcrumb&gt;
+
+          &lt;is-breadcrumb align="center"&gt;
+            &lt;is-breadcrumb-item href="https://is-web-component.isnur.com/" target="_blank"&gt;Home&lt;/is-breadcrumb-item&gt;
+            &lt;is-breadcrumb-item href="/hot-news"&gt;Hot News&lt;/is-breadcrumb-item&gt;
+            &lt;is-breadcrumb-item active="true"&gt;Anti-Asian Violence And Discrimination&lt;/is-breadcrumb-item&gt;
+          &lt;/is-breadcrumb&gt;
+
+          &lt;is-breadcrumb align="right"&gt;
+            &lt;is-breadcrumb-item href="https://is-web-component.isnur.com/" target="_blank"&gt;Home&lt;/is-breadcrumb-item&gt;
+            &lt;is-breadcrumb-item href="/hot-news"&gt;Hot News&lt;/is-breadcrumb-item&gt;
+            &lt;is-breadcrumb-item active="true"&gt;Anti-Asian Violence And Discrimination&lt;/is-breadcrumb-item&gt;
+          &lt;/is-breadcrumb&gt;
+        </code>
+      </pre>
+      </div>
+    </div>
+
+    <!-- Sizes -->
+    <div>
+      <h4 class="px-0">Sizes</h4>
+
+      <div class="mb-1">
+        <is-breadcrumb size="small">
+          <is-breadcrumb-item href="https://is-web-component.isnur.com/" target="_blank">Home</is-breadcrumb-item>
+          <is-breadcrumb-item href="/hot-news">Hot News</is-breadcrumb-item>
+          <is-breadcrumb-item active="true">Anti-Asian Violence And Discrimination</is-breadcrumb-item>
+        </is-breadcrumb>
+      </div>
+
+      <div class="mb-1">
+        <is-breadcrumb size="medium">
+          <is-breadcrumb-item href="https://is-web-component.isnur.com/" target="_blank">Home</is-breadcrumb-item>
+          <is-breadcrumb-item href="/hot-news">Hot News</is-breadcrumb-item>
+          <is-breadcrumb-item active="true">Anti-Asian Violence And Discrimination</is-breadcrumb-item>
+        </is-breadcrumb>
+      </div>
+
+      <div class="mb-1">
+        <is-breadcrumb size="large">
+          <is-breadcrumb-item href="https://is-web-component.isnur.com/" target="_blank">Home</is-breadcrumb-item>
+          <is-breadcrumb-item href="/hot-news">Hot News</is-breadcrumb-item>
+          <is-breadcrumb-item active="true">Anti-Asian Violence And Discrimination</is-breadcrumb-item>
+        </is-breadcrumb>
+      </div>
+
+      <div>
+        <pre>
+        <code class="html">
+          &lt;is-breadcrumb size="small"&gt;
+            &lt;is-breadcrumb-item href="https://is-web-component.isnur.com/" target="_blank"&gt;Home&lt;/is-breadcrumb-item&gt;
+            &lt;is-breadcrumb-item href="/hot-news"&gt;Hot News&lt;/is-breadcrumb-item&gt;
+            &lt;is-breadcrumb-item active="true"&gt;Anti-Asian Violence And Discrimination&lt;/is-breadcrumb-item&gt;
+          &lt;/is-breadcrumb&gt;
+
+          &lt;is-breadcrumb size="medium"&gt;
+            &lt;is-breadcrumb-item href="https://is-web-component.isnur.com/" target="_blank"&gt;Home&lt;/is-breadcrumb-item&gt;
+            &lt;is-breadcrumb-item href="/hot-news"&gt;Hot News&lt;/is-breadcrumb-item&gt;
+            &lt;is-breadcrumb-item active="true"&gt;Anti-Asian Violence And Discrimination&lt;/is-breadcrumb-item&gt;
+          &lt;/is-breadcrumb&gt;
+
+          &lt;is-breadcrumb size="large"&gt;
+            &lt;is-breadcrumb-item href="https://is-web-component.isnur.com/" target="_blank"&gt;Home&lt;/is-breadcrumb-item&gt;
+            &lt;is-breadcrumb-item href="/hot-news"&gt;Hot News&lt;/is-breadcrumb-item&gt;
+            &lt;is-breadcrumb-item active="true"&gt;Anti-Asian Violence And Discrimination&lt;/is-breadcrumb-item&gt;
+          &lt;/is-breadcrumb&gt;
+        </code>
+      </pre>
+      </div>
+    </div>
+
+    <!-- Separators -->
+    <div>
+      <h4 class="px-0">Separators</h4>
+
+      <div class="mb-1">
+        <is-breadcrumb separator="slash">
+          <is-breadcrumb-item href="https://is-web-component.isnur.com/" target="_blank">Home</is-breadcrumb-item>
+          <is-breadcrumb-item href="/hot-news">Hot News</is-breadcrumb-item>
+          <is-breadcrumb-item active="true">Anti-Asian Violence And Discrimination</is-breadcrumb-item>
+        </is-breadcrumb>
+      </div>
+
+      <div class="mb-1">
+        <is-breadcrumb separator="dot" align="center">
+          <is-breadcrumb-item href="https://is-web-component.isnur.com/" target="_blank">Home</is-breadcrumb-item>
+          <is-breadcrumb-item href="/hot-news">Hot News</is-breadcrumb-item>
+          <is-breadcrumb-item active="true">Anti-Asian Violence And Discrimination</is-breadcrumb-item>
+        </is-breadcrumb>
+      </div>
+
+      <div class="mb-1">
+        <is-breadcrumb separator="arrow" align="right">
+          <is-breadcrumb-item href="https://is-web-component.isnur.com/" target="_blank">Home</is-breadcrumb-item>
+          <is-breadcrumb-item href="/hot-news">Hot News</is-breadcrumb-item>
+          <is-breadcrumb-item active="true">Anti-Asian Violence And Discrimination</is-breadcrumb-item>
+        </is-breadcrumb>
+      </div>
+
+      <div>
+        <pre>
+        <code class="html">
+          &lt;is-breadcrumb separator="slash"&gt;
+            &lt;is-breadcrumb-item href="https://is-web-component.isnur.com/" target="_blank"&gt;Home&lt;/is-breadcrumb-item&gt;
+            &lt;is-breadcrumb-item href="/hot-news"&gt;Hot News&lt;/is-breadcrumb-item&gt;
+            &lt;is-breadcrumb-item active="true"&gt;Anti-Asian Violence And Discrimination&lt;/is-breadcrumb-item&gt;
+          &lt;/is-breadcrumb&gt;
+
+          &lt;is-breadcrumb separator="dot" align="medium"&gt;
+            &lt;is-breadcrumb-item href="https://is-web-component.isnur.com/" target="_blank"&gt;Home&lt;/is-breadcrumb-item&gt;
+            &lt;is-breadcrumb-item href="/hot-news"&gt;Hot News&lt;/is-breadcrumb-item&gt;
+            &lt;is-breadcrumb-item active="true"&gt;Anti-Asian Violence And Discrimination&lt;/is-breadcrumb-item&gt;
+          &lt;/is-breadcrumb&gt;
+
+          &lt;is-breadcrumb separator="arrow" align="large"&gt;
+            &lt;is-breadcrumb-item href="https://is-web-component.isnur.com/" target="_blank"&gt;Home&lt;/is-breadcrumb-item&gt;
+            &lt;is-breadcrumb-item href="/hot-news"&gt;Hot News&lt;/is-breadcrumb-item&gt;
+            &lt;is-breadcrumb-item active="true"&gt;Anti-Asian Violence And Discrimination&lt;/is-breadcrumb-item&gt;
+          &lt;/is-breadcrumb&gt;
+        </code>
+      </pre>
+      </div>
     </div>
   </div>
 </div>

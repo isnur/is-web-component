@@ -8,7 +8,7 @@ describe('is-breadcrumb', () => {
       html: `<is-breadcrumb></is-breadcrumb>`,
     });
     expect(page.root).toEqualHtml(`
-      <is-breadcrumb>
+      <is-breadcrumb class="is-breadcrumb">
         <mock:shadow-root>
           <slot></slot>
         </mock:shadow-root>
