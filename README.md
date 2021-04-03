@@ -79,5 +79,9 @@ Use Script tag
 - [x] [is-multiselect](src/components/multiselect/readme.md)
 - [x] [is-pagination](src/components/pagination/readme.md)
 - [x] [is-readmore](src/components/readmore/readme.md)
+- [x] [is-button](src/components/button/readme.md)
+- [x] [is-divider](src/components/divider/readme.md)
+- [x] [is-breadcrumb](src/components/breadcrumb/readme.md)
+  - [x] [is-breadcrumb-item](src/components/breadcrumb-item/readme.md)
 - [ ] is-table
 - [ ] is-tabs
