@@ -1,0 +1,31 @@
+@import "../../global/variables.scss";
+
+$separator-item-color: $dark-bg !default;
+$separator-item-active-color: darken($separator-item-color, 23%) !default;
+
+
+// ***  Main  ***
+
+:host(.item) {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  padding: 0;
+}
+
+// Main: anchor
+:host(.item) > a {
+  text-decoration: none;
+  color: $separator-item-color;
+  cursor: pointer;
+
+  &:hover,
+  &.is-active {
+    color: $separator-item-active-color;
+  }
+
+  &.is-active {
+    cursor: default;
+    pointer-events: none;
+  }
+}
