@@ -12,14 +12,21 @@ export class CardImage {
 
   @Prop() ratio?: Ratio;
 
+  /**
+   * object-fit
+   */
+  @Prop() object?: 'cover' | 'fill' | 'contain' | 'scale-down' | 'none';
+
   render() {
-    const { src, alt, ratio } = this;
+    const { src, alt, ratio, object } = this;
 
     return (
       <Host class={{
         [`is-${ratio}`]: ratio !== undefined,
       }}>
-        <img src={src} alt={alt}/>
+        <img class={{
+          [`is-object-${object}`]: object !== undefined,
+        }} src={src} alt={alt}/>
       </Host>
     );
   }
