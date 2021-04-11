@@ -39,6 +39,13 @@
       padding-top: 0;
       padding-bottom: 0;
     }
+
+    /* Headers */
+    .h2 {
+      font-size: 1.25rem;
+      font-weight: bold;
+      margin-bottom: 0.875rem;
+    }
   </style>
   <!-- ======================== -->
 </head>
@@ -454,6 +461,325 @@
 </div>
 <!-- / Breadcrumb -->
 
+
+<!-- Card -->
+<div class="section">
+  <h3 class="mb-1">Card</h3>
+
+  <!-- Intro -->
+  <div>
+    <h4 class="px-0">Introduction</h4>
+
+    <div style="display: flex;">
+      <div style="width: 33%; padding: 0 10px;">
+        <is-card>
+          <is-card-body>
+            <div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium animi aut, beatae dolorum fuga ipsum iusto nemo, nostrum placeat quo reiciendis reprehenderit sed similique soluta tenetur ut veniam veritatis, vitae?</div>
+          </is-card-body>
+        </is-card>
+      </div>
+
+      <div style="width: 33%; padding: 0 10px;">
+        <is-card>
+          <is-card-header>
+            <is-card-title>Lorem Lorem</is-card-title>
+          </is-card-header>
+
+          <is-card-body>
+            <div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium animi aut, beatae dolorum fuga ipsum iusto nemo, nostrum placeat quo reiciendis reprehenderit sed similique soluta tenetur ut veniam veritatis, vitae?</div>
+          </is-card-body>
+        </is-card>
+      </div>
+
+      <div style="width: 33%; padding: 0 10px;">
+        <is-card>
+          <is-card-image src="https://i.pinimg.com/originals/bd/5a/7a/bd5a7af0f81b086477d25fb1be6a76f8.jpg">
+          </is-card-image>
+
+          <is-card-body>
+            <div class="h2">Street Fighter</div>
+            <div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium animi aut, beatae dolorum fuga ipsum iusto nemo, nostrum placeat quo reiciendis reprehenderit sed similique soluta tenetur ut veniam veritatis, vitae?</div>
+          </is-card-body>
+        </is-card>
+      </div>
+    </div>
+
+    <div>
+        <pre>
+        <code class="html">
+          &lt;is-card&gt;
+            &lt;is-card-body&gt;
+              &lt;div&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium animi ...&lt;/div&gt;
+            &lt;/is-card-body&gt;
+          &lt;/is-card&gt;
+
+          &lt;is-card&gt;
+            &lt;is-card-header&gt;
+              &lt;is-card-title&gt;Lorem Lorem&lt;/is-card-title&gt;
+            &lt;/is-card-header&gt;
+
+            &lt;is-card-body&gt;
+              &lt;div&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium animi ...&lt;/div&gt;
+            &lt;/is-card-body&gt;
+          &lt;/is-card&gt;
+
+          &lt;is-card&gt;
+            &lt;is-card-image src="https://i.pinimg.com/originals/bd/5a/7a/bd5a7af0f81b086477d25fb1be6a76f8.jpg"&gt;
+            &lt;/is-card-image&gt;
+
+            &lt;is-card-body&gt;
+              &lt;div class="h2"&gt;Street Fighter&lt;/div&gt;
+              &lt;div&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusant ...?&lt;/div&gt;
+            &lt;/is-card-body&gt;
+          &lt;/is-card&gt;
+        </code>
+      </pre>
+    </div>
+  </div>
+
+  <!-- Color -->
+  <div>
+    <h4 class="px-0">Colors</h4>
+    <p class="px-0">
+      You can use a color attribute to change current card background color,
+      exists colors are: `primary`, `secondary`, `success`, `error`, `dark`, `white`, and `default`
+    </p>
+
+    <div style="display: flex;">
+      <div style="width: 33%; padding: 0 10px;">
+        <is-card color="primary">
+          <is-card-body>
+            <div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium animi aut, beatae dolorum fuga ipsum iusto nemo, nostrum placeat quo reiciendis reprehenderit sed similique soluta tenetur ut veniam veritatis, vitae?</div>
+          </is-card-body>
+        </is-card>
+      </div>
+
+      <div style="width: 33%; padding: 0 10px;">
+        <is-card color="secondary">
+          <is-card-header>
+            <is-card-title>Lorem Lorem</is-card-title>
+          </is-card-header>
+
+          <is-card-body>
+            <div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium animi aut, beatae dolorum fuga ipsum iusto nemo, nostrum placeat quo reiciendis reprehenderit sed similique soluta tenetur ut veniam veritatis, vitae?</div>
+          </is-card-body>
+        </is-card>
+      </div>
+
+      <div style="width: 33%; padding: 0 10px;">
+        <is-card color="success">
+          <is-card-image src="https://i.pinimg.com/originals/bd/5a/7a/bd5a7af0f81b086477d25fb1be6a76f8.jpg">
+          </is-card-image>
+
+          <is-card-body>
+            <div class="h2">Street Fighter</div>
+            <div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium animi aut, beatae dolorum fuga ipsum iusto nemo, nostrum placeat quo reiciendis reprehenderit sed similique soluta tenetur ut veniam veritatis, vitae?</div>
+          </is-card-body>
+        </is-card>
+      </div>
+    </div>
+
+    <div>
+        <pre>
+        <code class="html">
+          &lt;is-card color="primary"&gt;
+            &lt;is-card-body&gt;
+              &lt;div&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium animi ...&lt;/div&gt;
+            &lt;/is-card-body&gt;
+          &lt;/is-card&gt;
+
+          &lt;is-card color="secondary"&gt;
+            &lt;is-card-header&gt;
+              &lt;is-card-title&gt;Lorem Lorem&lt;/is-card-title&gt;
+            &lt;/is-card-header&gt;
+
+            &lt;is-card-body&gt;
+              &lt;div&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium animi ...&lt;/div&gt;
+            &lt;/is-card-body&gt;
+          &lt;/is-card&gt;
+
+          &lt;is-card color="success"&gt;
+            &lt;is-card-image src="https://i.pinimg.com/originals/bd/5a/7a/bd5a7af0f81b086477d25fb1be6a76f8.jpg"&gt;
+            &lt;/is-card-image&gt;
+
+            &lt;is-card-body&gt;
+              &lt;div class="h2"&gt;Street Fighter&lt;/div&gt;
+              &lt;div&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusant ...?&lt;/div&gt;
+            &lt;/is-card-body&gt;
+          &lt;/is-card&gt;
+        </code>
+      </pre>
+    </div>
+  </div>
+
+
+  <!-- Image -->
+  <div>
+    <h4 class="px-0">Images</h4>
+    <p class="px-0">
+      You can use a ratio attribute to change size of image,
+      ratios are supported: `1x1`, `5x4`, `5x3`, `3x2`, `16x9`, `2x1`, `3x1`
+    </p>
+
+    <div style="display: flex;">
+      <div style="width: 33%; padding: 0 10px;">
+        <is-card>
+          <is-card-image src="https://i.pinimg.com/originals/bd/5a/7a/bd5a7af0f81b086477d25fb1be6a76f8.jpg">
+          </is-card-image>
+
+          <is-card-body>
+            <div class="h2">Street Fighter</div>
+            <div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium animi aut, beatae dolorum fuga ipsum iusto nemo, nostrum placeat quo reiciendis reprehenderit sed similique soluta tenetur ut veniam veritatis, vitae?</div>
+          </is-card-body>
+        </is-card>
+      </div>
+
+      <div style="width: 33%; padding: 0 10px;">
+        <is-card>
+          <is-card-image ratio="3x2" src="https://i.pinimg.com/originals/bd/5a/7a/bd5a7af0f81b086477d25fb1be6a76f8.jpg">
+          </is-card-image>
+
+          <is-card-body>
+            <div class="h2">Street Fighter</div>
+            <div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium animi aut, beatae dolorum fuga ipsum iusto nemo, nostrum placeat quo reiciendis reprehenderit sed similique soluta tenetur ut veniam veritatis, vitae?</div>
+          </is-card-body>
+        </is-card>
+      </div>
+
+      <div style="width: 33%; padding: 0 10px;">
+        <is-card>
+          <is-card-image ratio="2x1" src="https://i.pinimg.com/originals/bd/5a/7a/bd5a7af0f81b086477d25fb1be6a76f8.jpg">
+          </is-card-image>
+
+          <is-card-body>
+            <div class="h2">Street Fighter</div>
+            <div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium animi aut, beatae dolorum fuga ipsum iusto nemo, nostrum placeat quo reiciendis reprehenderit sed similique soluta tenetur ut veniam veritatis, vitae?</div>
+          </is-card-body>
+        </is-card>
+      </div>
+    </div>
+
+    <div>
+        <pre>
+        <code class="html">
+          &lt;is-card&gt;
+            &lt;is-card-image src="https://i.pinimg.com/originals/bd/5a/7a/bd5a7af0f81b086477d25fb1be6a76f8.jpg"&gt;
+            &lt;/is-card-image&gt;
+
+            &lt;is-card-body&gt;
+              &lt;div class="h2"&gt;Street Fighter&lt;/div&gt;
+              &lt;div&gt;Lorem ipsum dolor sit amet, consectetur ..., vitae?&lt;/div&gt;
+            &lt;/is-card-body&gt;
+          &lt;/is-card&gt;
+
+          &lt;is-card&gt;
+            &lt;is-card-image ratio="3x2" src="https://i.pinimg.com/originals/bd/5a/7a/bd5a7af0f81b086477d25fb1be6a76f8.jpg"&gt;
+            &lt;/is-card-image&gt;
+
+            &lt;is-card-body&gt;
+              &lt;div class="h2"&gt;Street Fighter&lt;/div&gt;
+              &lt;div&gt;Lorem ipsum dolor sit amet, consectetur ..., vitae?&lt;/div&gt;
+            &lt;/is-card-body&gt;
+          &lt;/is-card&gt;
+
+          &lt;is-card&gt;
+            &lt;is-card-image ratio="2x1" src="https://i.pinimg.com/originals/bd/5a/7a/bd5a7af0f81b086477d25fb1be6a76f8.jpg"&gt;
+            &lt;/is-card-image&gt;
+
+            &lt;is-card-body&gt;
+              &lt;div class="h2"&gt;Street Fighter&lt;/div&gt;
+              &lt;div&gt;Lorem ipsum dolor sit amet, consectetur ..., vitae?&lt;/div&gt;
+            &lt;/is-card-body&gt;
+          &lt;/is-card&gt;
+        </code>
+      </pre>
+    </div>
+  </div>
+
+  <!-- Link -->
+  <div>
+    <h4 class="px-0">Link</h4>
+
+    <p class="px-0">
+      add href attribute to make card support click and open / redirect to new location.
+    </p>
+
+    <div style="display: flex;">
+      <div style="width: 33%; padding: 0 10px;">
+        <is-card href="/home">
+          <is-card-image src="https://i.pinimg.com/originals/bd/5a/7a/bd5a7af0f81b086477d25fb1be6a76f8.jpg">
+          </is-card-image>
+
+          <is-card-body>
+            <div class="h2">Street Fighter</div>
+            <div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium animi aut, beatae dolorum fuga ipsum iusto nemo, nostrum placeat quo reiciendis reprehenderit sed similique soluta tenetur ut veniam veritatis, vitae?</div>
+          </is-card-body>
+        </is-card>
+      </div>
+
+      <div style="width: 33%; padding: 0 10px;">
+        <is-card href="https://is-web-component.isnur.com/">
+          <is-card-image src="https://i.pinimg.com/originals/bd/5a/7a/bd5a7af0f81b086477d25fb1be6a76f8.jpg">
+          </is-card-image>
+
+          <is-card-body>
+            <div class="h2">Street Fighter</div>
+            <div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium animi aut, beatae dolorum fuga ipsum iusto nemo, nostrum placeat quo reiciendis reprehenderit sed similique soluta tenetur ut veniam veritatis, vitae?</div>
+          </is-card-body>
+        </is-card>
+      </div>
+
+      <div style="width: 33%; padding: 0 10px;">
+        <is-card href="https://is-web-component.isnur.com/" target="_blank">
+          <is-card-image src="https://i.pinimg.com/originals/bd/5a/7a/bd5a7af0f81b086477d25fb1be6a76f8.jpg">
+          </is-card-image>
+
+          <is-card-body>
+            <div class="h2">Street Fighter</div>
+            <div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium animi aut, beatae dolorum fuga ipsum iusto nemo, nostrum placeat quo reiciendis reprehenderit sed similique soluta tenetur ut veniam veritatis, vitae?</div>
+          </is-card-body>
+        </is-card>
+      </div>
+    </div>
+
+    <div>
+        <pre>
+        <code class="html">
+          &lt;is-card href="/home"&gt;
+            &lt;is-card-image src="https://i.pinimg.com/originals/bd/5a/7a/bd5a7af0f81b086477d25fb1be6a76f8.jpg"&gt;
+            &lt;/is-card-image&gt;
+
+            &lt;is-card-body&gt;
+              &lt;div class="h2"&gt;Street Fighter&lt;/div&gt;
+              &lt;div&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusant ...?&lt;/div&gt;
+            &lt;/is-card-body&gt;
+          &lt;/is-card&gt;
+
+          &lt;is-card href="https://is-web-component.isnur.com/"&gt;
+            &lt;is-card-image src="https://i.pinimg.com/originals/bd/5a/7a/bd5a7af0f81b086477d25fb1be6a76f8.jpg"&gt;
+            &lt;/is-card-image&gt;
+
+            &lt;is-card-body&gt;
+              &lt;div class="h2"&gt;Street Fighter&lt;/div&gt;
+              &lt;div&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusant ...?&lt;/div&gt;
+            &lt;/is-card-body&gt;
+          &lt;/is-card&gt;
+
+          &lt;is-card href="https://is-web-component.isnur.com/" target="_blank"&gt;
+            &lt;is-card-image src="https://i.pinimg.com/originals/bd/5a/7a/bd5a7af0f81b086477d25fb1be6a76f8.jpg"&gt;
+            &lt;/is-card-image&gt;
+
+            &lt;is-card-body&gt;
+              &lt;div class="h2"&gt;Street Fighter&lt;/div&gt;
+              &lt;div&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusant ...?&lt;/div&gt;
+            &lt;/is-card-body&gt;
+          &lt;/is-card&gt;
+        </code>
+      </pre>
+    </div>
+  </div>
+</div>
+<!-- / Card -->
 
 <script>
   let disableState = {
