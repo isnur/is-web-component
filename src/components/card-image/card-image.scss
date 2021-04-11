@@ -2,7 +2,8 @@
 
 $card-image-radius-top: 0.25rem !default;
 $card-image-radius-bottom: 0 !default;
-$shadow: 0 0.125em 0.25em rgba($black-bg, 0.1) !default;
+
+$card-image-object-fits: cover, fill, contain, scale-down, none !default;
 
 $ratios: (
   '1x1': 100%,
@@ -44,3 +45,12 @@ $ratios: (
     }
   }
 }
+
+// object-fit
+@each $object in $card-image-object-fits {
+  .is-object-#{$object} {
+    object-fit: $object;
+    @debug $object;
+  }
+}
+

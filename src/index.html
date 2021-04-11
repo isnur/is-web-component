@@ -39,6 +39,9 @@
       padding-top: 0;
       padding-bottom: 0;
     }
+    .pb-0 {
+      padding-bottom: 0;
+    }
 
     /* Headers */
     .h2 {
@@ -633,7 +636,6 @@
           </is-card-body>
         </is-card>
       </div>
-
       <div style="width: 33%; padding: 0 10px;">
         <is-card>
           <is-card-image ratio="3x2" src="https://i.pinimg.com/originals/bd/5a/7a/bd5a7af0f81b086477d25fb1be6a76f8.jpg">
@@ -645,14 +647,13 @@
           </is-card-body>
         </is-card>
       </div>
-
       <div style="width: 33%; padding: 0 10px;">
         <is-card>
           <is-card-image ratio="2x1" src="https://i.pinimg.com/originals/bd/5a/7a/bd5a7af0f81b086477d25fb1be6a76f8.jpg">
           </is-card-image>
 
           <is-card-body>
-            <div class="h2">Street Fighter</div>
+            <div class="h2">Street Fighter wow</div>
             <div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium animi aut, beatae dolorum fuga ipsum iusto nemo, nostrum placeat quo reiciendis reprehenderit sed similique soluta tenetur ut veniam veritatis, vitae?</div>
           </is-card-body>
         </is-card>
@@ -688,6 +689,86 @@
 
             &lt;is-card-body&gt;
               &lt;div class="h2"&gt;Street Fighter&lt;/div&gt;
+              &lt;div&gt;Lorem ipsum dolor sit amet, consectetur ..., vitae?&lt;/div&gt;
+            &lt;/is-card-body&gt;
+          &lt;/is-card&gt;
+        </code>
+      </pre>
+    </div>
+
+
+    <!-- Image: Object Fit -->
+    <h4 class="pb-0">Images: Object Fit</h4>
+    <p class="px-0">
+      You can use a `object` attribute to specify how image should be resized.
+      objects are supported: `fill`, `cover`, `contain`, `scale-down`, `none`
+    </p>
+
+    <div style="display: flex;">
+      <div style="width: 33%; padding: 0 10px;">
+        <is-card>
+          <is-card-image object="fill" ratio="2x1" src="https://i.pinimg.com/originals/bd/5a/7a/bd5a7af0f81b086477d25fb1be6a76f8.jpg">
+          </is-card-image>
+
+          <is-card-body>
+            <div class="h2">Street Fighter wow</div>
+            <div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium animi aut, beatae dolorum fuga ipsum iusto nemo, nostrum placeat quo reiciendis reprehenderit sed similique soluta tenetur ut veniam veritatis, vitae?</div>
+          </is-card-body>
+        </is-card>
+      </div>
+      <div style="width: 33%; padding: 0 10px;">
+        <is-card>
+          <is-card-image object="cover" ratio="2x1" src="https://i.pinimg.com/originals/bd/5a/7a/bd5a7af0f81b086477d25fb1be6a76f8.jpg">
+          </is-card-image>
+
+          <is-card-body>
+            <div class="h2">Street Fighter wow</div>
+            <div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium animi aut, beatae dolorum fuga ipsum iusto nemo, nostrum placeat quo reiciendis reprehenderit sed similique soluta tenetur ut veniam veritatis, vitae?</div>
+          </is-card-body>
+        </is-card>
+      </div>
+      <div style="width: 33%; padding: 0 10px;">
+        <is-card>
+          <is-card-image object="contain" ratio="2x1" src="https://i.pinimg.com/originals/bd/5a/7a/bd5a7af0f81b086477d25fb1be6a76f8.jpg">
+          </is-card-image>
+
+          <is-card-body>
+            <div class="h2">Street Fighter wow</div>
+            <div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium animi aut, beatae dolorum fuga ipsum iusto nemo, nostrum placeat quo reiciendis reprehenderit sed similique soluta tenetur ut veniam veritatis, vitae?</div>
+          </is-card-body>
+        </is-card>
+      </div>
+    </div>
+
+    <div>
+        <pre>
+        <code class="html">
+          &lt;is-card&gt;
+            &lt;is-card-image object="fill" ratio="2x1" src="https://i.pinimg.com/originals/bd/5a/7a/bd5a7af0f81b086477d25fb1be6a76f8.jpg"&gt;
+            &lt;/is-card-image&gt;
+
+            &lt;is-card-body&gt;
+              &lt;div class="h2"&gt;Street Fighter wow&lt;/div&gt;
+              &lt;div&gt;Lorem ipsum dolor sit amet, consectetur ..., vitae?&lt;/div&gt;
+            &lt;/is-card-body&gt;
+          &lt;/is-card&gt;
+
+          &lt;is-card&gt;
+            &lt;is-card-image object="cover" ratio="2x1" src="https://i.pinimg.com/originals/bd/5a/7a/bd5a7af0f81b086477d25fb1be6a76f8.jpg"&gt;
+            &lt;/is-card-image&gt;
+
+            &lt;is-card-body&gt;
+              &lt;div class="h2"&gt;Street Fighter wow&lt;/div&gt;
+              &lt;div&gt;Lorem ipsum dolor sit amet, consectetur ..., vitae?&lt;/div&gt;
+            &lt;/is-card-body&gt;
+          &lt;/is-card&gt;
+
+          &lt;is-card&gt;
+            &lt;is-card-image object="contain" ratio="2x1" src="https://i.pinimg.com/originals/bd/5a/7a/bd5a7af0f81b086477d25fb1be6a76f8.jpg"&gt;
+            &lt;/is-card-image&gt;
+
+            &lt;is-card-body&gt;
+              &lt;div class="h2"&gt;Street Fighter wow&lt;/div&gt;
               &lt;div&gt;Lorem ipsum dolor sit amet, consectetur ..., vitae?&lt;/div&gt;
             &lt;/is-card-body&gt;
           &lt;/is-card&gt;
