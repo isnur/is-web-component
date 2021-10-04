@@ -29,7 +29,7 @@ You can install using unpkg cdn:
 https://unpkg.com/is-web-component
 ```
 
-## Usage
+## Usages
 
 Use Script tag
 
