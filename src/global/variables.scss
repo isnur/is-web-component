@@ -1,6 +1,31 @@
-$dark: black;
-$light: white;
+/**
+ * Initial Variables
+ */
 
+// colors
+$blue: #327bb7 !default;
+$orange: #ff7d09 !default;
+$green: #00c092 !default;
+$yellow: #e8d700 !default; 
+$red: #d0021b !default;
+
+$dark: black !default;
+$light: white !default;
+
+
+// sizes
+$size-1: 3rem !default;
+$size-2: 2.5rem !default;
+$size-3: 2rem !default;
+$size-4: 1.5rem !default;
+$size-5: 1.25rem !default;
+$size-6: 1rem !default;
+$size-7: 0.75rem !default;
+
+
+/**
+ * Functions
+ */
 @function set-text-color($color) {
   @if (lightness($color) > 60) {
     @return $dark; // Lighter background, return dark color
@@ -9,25 +34,29 @@ $light: white;
   }
 }
 
-$primary-bg: #327bb7;
+
+/**
+ * Delivered variables
+ */
+$primary-bg: $blue !default;
 $primary-color: set-text-color($primary-bg);
 
-$secondary-bg: #ff7d09;
+$secondary-bg: $orange !default;
 $secondary-color: set-text-color($secondary-bg);
 
-$success-bg: #00c092;
+$success-bg: $green !default;
 $success-color: set-text-color($success-bg);
 
-$warning-bg: #e8d700;
+$warning-bg: $yellow !default;
 $warning-color: set-text-color($warning-bg);
 
-$error-bg: #d0021b;
+$error-bg: $red !default;
 $error-color: set-text-color($error-bg);
 
 $light-bg: #e5e5e5;
 $light-color: set-text-color($light-bg);
 
-$info-bg: #b9b9b9;
+$info-bg: #53ff5c;
 $info-color: set-text-color($info-bg);
 
 $dark-bg: #5d5d5d;
@@ -39,3 +68,11 @@ $black-color: set-text-color($black-bg);
 $white-bg: white;
 $white-color: set-text-color($white-bg);
 
+
+$colors: (
+  'primary': $primary-bg, 'secondary': $secondary-bg,
+  'success': $success-bg, 'warning': $warning-bg,
+  'error': $error-bg, 'info': $info-bg,
+  'dark': $dark-bg, 'black': $black-bg,
+  'white': $white-bg, 'default': $light-bg,
+);

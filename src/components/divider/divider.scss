@@ -1,0 +1,75 @@
+@import "../../global/variables.scss";
+
+
+$divider-weight: 300 !default;
+$divider-margin-inner: 10px !default;
+$divider-margin-y: 25px 0 !default;
+
+
+.is-divider {
+    position: relative;
+    display: flex;
+    align-items: center;
+    text-transform: uppercase;
+    color: $black-bg;
+    font-size: $size-7;
+    font-weight: $divider-weight;
+    letter-spacing: 1px;
+    margin: $divider-margin-y;
+
+    &::after,
+    &::before {
+        content: '';
+        flex: 1;
+        height: 1px;
+        background-color: $dark;
+    }
+
+    &:not(.is-left) {
+        &:not(.is-no-text) {
+            &::after {
+                margin-left: $divider-margin-inner;
+            }
+        }
+    }
+    &:not(.is-right) {
+        &:not(.is-no-text) {
+            &::before {
+                margin-right: $divider-margin-inner;
+            }
+        }
+    }
+
+    &.is-left {
+        &::before {
+            display: none;
+        }
+        &::after {
+            margin-left: $divider-margin-inner;
+        }
+        &.is-no-text {
+            margin-left: auto;
+        }
+    }
+
+    &.is-right {
+        &::after {
+            display: none;
+        }
+        &::before {
+            margin-right: $divider-margin-inner;
+        }
+        &.is-not-text {
+            margin-right: auto;
+        }
+    }
+
+    @each $name, $color in $colors {
+        &.is-#{$name} {
+            &::after,
+            &::before {
+                background-color: $color;
+            }
+        }
+    }
+}

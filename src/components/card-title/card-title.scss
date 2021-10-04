@@ -1,0 +1,9 @@
+@import "../../global/variables.scss";
+
+:host {
+  align-items: center;
+  color: inherit;
+  display: flex;
+  flex-grow: 1;
+  font-weight: 700;
+}

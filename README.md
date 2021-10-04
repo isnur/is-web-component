@@ -33,7 +33,7 @@ https://unpkg.com/is-web-component
 
 Use Script tag
 
-- Put a script tag similar to this
+- Put a script tag similar to this one
 
   ```html
     <script type="module" src="https://unpkg.com/is-web-component@latest/dist/is-web-component/is-web-component.esm.js"></script>
@@ -79,5 +79,14 @@ Use Script tag
 - [x] [is-multiselect](src/components/multiselect/readme.md)
 - [x] [is-pagination](src/components/pagination/readme.md)
 - [x] [is-readmore](src/components/readmore/readme.md)
+- [x] [is-button](src/components/button/readme.md)
+- [x] [is-divider](src/components/divider/readme.md)
+- [x] [is-breadcrumb](src/components/breadcrumb/readme.md)
+  - [x] [is-breadcrumb-item](src/components/breadcrumb-item/readme.md)
+- [x] [is-card](src/components/card/readme.md)
+  - [x] [is-card-header](src/components/card-header/readme.md)
+  - [x] [is-card-title](src/components/card-title/readme.md)
+  - [x] [is-card-image](src/components/card-image/readme.md)
+  - [x] [is-card-body](src/components/card-body/readme.md)
 - [ ] is-table
 - [ ] is-tabs

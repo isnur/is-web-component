@@ -1,0 +1,84 @@
+@import "../../global/variables.scss";
+
+
+$button-disabled-bg: $light-bg !default;
+$button-disabled-color: #6b6a6a !default;
+
+
+$button-size-small: $size-7 !default;
+$button-size-small-padding: 0 15px !default;
+$button-size-small-line-height: 30px;
+
+$button-size-medium: $size-6 !default;
+$button-size-medium-padding: 0 30px !default;
+$button-size-medium-line-height: 40px;
+
+$button-size-large: $size-4 !default;
+$button-size-large-padding: 0 40px !default;
+$button-size-large-line-height: 55px;
+
+$button-size-default: $size-6 !default;
+
+
+
+.is-button {
+  margin: 0;
+  border: none;
+  overflow: visible;
+  font: inherit;
+  color: inherit;
+  text-transform: none;
+
+  -webkit-appearance: none;
+  border-radius: 0;
+  display: inline-block;
+  box-sizing: border-box;
+  padding: 0 25px;
+  vertical-align: middle;
+  font-size: $button-size-default;
+  line-height: 35px;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+
+  // colors
+  @each $name, $color in $colors {
+    &.is-#{$name} {
+      color: set-text-color($color);
+      background-color: $color;
+    }
+  }
+
+  &.is-disabled {
+    background-color: $button-disabled-bg;
+    color: $button-disabled-color;
+    cursor: not-allowed;
+  }
+
+  // sizes
+  &.is-small {
+    font-size: $button-size-small;
+    line-height: $button-size-small-line-height;
+    padding: $button-size-small-padding;
+  }
+  &.is-medium {
+    font-size: $button-size-medium;
+    line-height: $button-size-medium-line-height;
+    padding: $button-size-medium-padding;
+  }
+  &.is-large {
+    font-size: $button-size-large;
+    line-height: $button-size-large-line-height;
+    padding: $button-size-large-padding;
+  }
+
+  // display
+  &.is-fullwidth {
+    width: 100%;
+  }
+
+  // shape
+  &.is-round {
+    border-radius: 9999px;
+  }
+}

@@ -1,0 +1,56 @@
+@import "../../global/variables.scss";
+
+$card-image-radius-top: 0.25rem !default;
+$card-image-radius-bottom: 0 !default;
+
+$card-image-object-fits: cover, fill, contain, scale-down, none !default;
+
+$ratios: (
+  '1x1': 100%,
+  '5x4': 80%,
+  '4x3': 75%,
+  '3x2': 66.6666%,
+  '16x9': 56.25%,
+  '2x1': 50%,
+  '3x1': 33.3333%,
+) !default;
+
+
+:host {
+  display: block;
+  position: relative;
+
+  img {
+    display: block;
+    height: auto;
+    width: 100%;
+    border-radius: $card-image-radius-top $card-image-radius-top $card-image-radius-bottom $card-image-radius-bottom;
+  }
+}
+
+
+// sizes
+@each $key, $value in $ratios {
+  :host(.is-#{$key}) {
+    padding-top: $value;
+
+    img {
+      height: 100%;
+      width: 100%;
+      bottom: 0;
+      left: 0;
+      position: absolute;
+      right: 0;
+      top: 0;
+    }
+  }
+}
+
+// object-fit
+@each $object in $card-image-object-fits {
+  .is-object-#{$object} {
+    object-fit: $object;
+    @debug $object;
+  }
+}
+
