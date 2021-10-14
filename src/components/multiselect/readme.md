@@ -9,6 +9,7 @@
 
 | Property            | Attribute             | Description                                                                                 | Type            | Default                                                              |
 | ------------------- | --------------------- | ------------------------------------------------------------------------------------------- | --------------- | -------------------------------------------------------------------- |
+| `closeOnSelect`     | `close-on-select`     | Enable/disable closing after selecting an option                                            | `boolean`       | `false`                                                              |
 | `disabled`          | `disabled`            | If `true`, the user cannot interact with the select.                                        | `boolean`       | `false`                                                              |
 | `items`             | --                    | The options list items.                                                                     | `ISelectItem[]` | `[]`                                                                 |
 | `labelSelected`     | `label-selected`      | The label when option is selected.                                                          | `string`        | `'\u2713'`                                                           |
@@ -30,7 +31,7 @@
 
 ## Methods
 
-### `getSelected() => Promise<ISelectItem[] | undefined>`
+### `getSelected() => Promise<ISelectItem[]>`
 
 Get the selected items.
 
