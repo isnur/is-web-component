@@ -81,11 +81,9 @@
     </is-alert>
     <br />
     <is-multiselect id="select1" show-selected-badge="true" limit="2" placeholder="Pilih katalog"></is-multiselect>
-    <pre id="result1">
-  </pre>
+    <pre id="result1"></pre>
     <is-multiselect id="select2" label-selected="selected" max="3"></is-multiselect>
-    <pre id="result2">
-  </pre>
+    <pre id="result2"></pre>
     <is-badge color="success" rounded text="Get Items" onclick="setResult()"></is-badge>
     <is-badge id="disable1" color="dark" rounded text="Disable Select 1" onclick="setDisabled('1')"></is-badge>
     <is-badge id="disable2" color="dark" rounded text="Disable Select 2" onclick="setDisabled('2')"></is-badge>
@@ -129,10 +127,50 @@
     <is-multiselect id="select3" label-selected="selected" close-on-select max="1" placeholder="Per Page">
     </is-multiselect>
     <pre id="result-page">
-  Active Page: 1
-  Total data: 60
-  Per page: 15
-</pre>
+      Active Page: 1
+      Total data: 60
+      Per page: 15
+    </pre>
+    <is-container>
+      <h3>Row</h3>
+      <is-row>
+        <is-badge color="success" rounded text="Item 1"></is-badge>
+        <is-badge color="dark" rounded text="Item 2"></is-badge>
+        <is-badge rounded text="Item 3"></is-badge>
+      </is-row>
+    </is-container>
+    <is-container>
+      <h3>Row No Gutters</h3>
+      <is-row no-gutters>
+        <is-badge color="success" rounded text="Item 1"></is-badge>
+        <is-badge color="dark" rounded text="Item 2"></is-badge>
+        <is-badge rounded text="Item 3"></is-badge>
+      </is-row>
+    </is-container>
+    <is-container>
+      <h3>Row Align Items End</h3>
+      <is-row no-gutters align-v="end" style="border: 1px solid black; height: 100px;">
+        <is-badge color="success" rounded text="Item 1"></is-badge>
+        <is-badge color="dark" rounded text="Item 2"></is-badge>
+        <is-badge rounded text="Item 3"></is-badge>
+      </is-row>
+    </is-container>
+    <is-container>
+      <h3>Row Justify Content Center</h3>
+      <is-row align-h="center" style="border: 1px solid black; height: 100px;">
+        <is-badge color="success" rounded text="Item 1"></is-badge>
+        <is-badge color="dark" rounded text="Item 2"></is-badge>
+        <is-badge rounded text="Item 3"></is-badge>
+      </is-row>
+    </is-container>
+    <is-container>
+      <h3>Row Align Content Center</h3>
+      <is-row no-gutters align-content="center" style="width: 52px; border: 1px solid black; height: 100px;">
+        <is-badge color="success" rounded text="Item 1"></is-badge>
+        <is-badge color="dark" rounded text="Item 2"></is-badge>
+        <is-badge rounded text="Item 3"></is-badge>
+      </is-row>
+    </is-container>
 
     <!-- Divider -->
     <div class="section">
@@ -147,13 +185,13 @@
 
         <div>
           <pre>
-        <code class="html">
-          &lt;is-divider&gt;&lt;/is-divider&gt;
-          &lt;is-divider text="you are awesome" align-text="left" color="primary"&gt;&lt;/is-divider&gt;
-          &lt;is-divider text="really?" align-text="center" color="success"/&gt;&lt;/is-divider&gt;
-          &lt;is-divider text="always has been ;)" align-text="right" color="error"/&gt;&lt;/is-divider&gt;
-        </code>
-      </pre>
+            <code class="html">
+              &lt;is-divider&gt;&lt;/is-divider&gt;
+              &lt;is-divider text="you are awesome" align-text="left" color="primary"&gt;&lt;/is-divider&gt;
+              &lt;is-divider text="really?" align-text="center" color="success"/&gt;&lt;/is-divider&gt;
+              &lt;is-divider text="always has been ;)" align-text="right" color="error"/&gt;&lt;/is-divider&gt;
+            </code>
+          </pre>
         </div>
       </div>
     </div>
@@ -188,17 +226,17 @@
 
           <div>
             <pre>
-          <code class="html">
-            &lt;is-button type="button"&gt;Button&lt;/is-button&gt;
-            &lt;is-button type="button" color="primary" disabled&gt;Disabled&lt;/is-button&gt;
-            &lt;is-button type="button" onClick="openModal()" color="primary"&gt;Open Modal&lt;/is-button&gt;
-            &lt;is-button href="https://www.google.com" color="secondary" target="_blank"&gt;Link&lt;/is-button&gt;
-            &lt;is-button href="https://www.google.com" color="secondary" target="_blank" disabled&gt;Link Disabled&lt;/is-button&gt;
+              <code class="html">
+                &lt;is-button type="button"&gt;Button&lt;/is-button&gt;
+                &lt;is-button type="button" color="primary" disabled&gt;Disabled&lt;/is-button&gt;
+                &lt;is-button type="button" onClick="openModal()" color="primary"&gt;Open Modal&lt;/is-button&gt;
+                &lt;is-button href="https://www.google.com" color="secondary" target="_blank"&gt;Link&lt;/is-button&gt;
+                &lt;is-button href="https://www.google.com" color="secondary" target="_blank" disabled&gt;Link Disabled&lt;/is-button&gt;
 
-            &lt;is-button type="reset"&gt;Reset&lt;/is-button&gt;
-            &lt;is-button color="success" type="submit"&gt;Submit&lt;/is-button&gt;
-          </code>
-        </pre>
+                &lt;is-button type="reset"&gt;Reset&lt;/is-button&gt;
+                &lt;is-button color="success" type="submit"&gt;Submit&lt;/is-button&gt;
+              </code>
+            </pre>
           </div>
         </div>
 
@@ -215,14 +253,14 @@
 
           <div>
             <pre>
-          <code class="html">
-            &lt;is-button&gt;Default&lt;/is-button&gt;
-            &lt;is-button color="primary"&gt;Primary&lt;/is-button&gt;
-            &lt;is-button color="success"&gt;Success&lt;/is-button&gt;
-            &lt;is-button color="warning"&gt;Warning&lt;/is-button&gt;
-            &lt;is-button color="error"&gt;Error&lt;/is-button&gt;
-          </code>
-        </pre>
+              <code class="html">
+                &lt;is-button&gt;Default&lt;/is-button&gt;
+                &lt;is-button color="primary"&gt;Primary&lt;/is-button&gt;
+                &lt;is-button color="success"&gt;Success&lt;/is-button&gt;
+                &lt;is-button color="warning"&gt;Warning&lt;/is-button&gt;
+                &lt;is-button color="error"&gt;Error&lt;/is-button&gt;
+              </code>
+            </pre>
           </div>
         </div>
 
@@ -238,13 +276,13 @@
 
           <div>
             <pre>
-          <code class="html">
-            &lt;is-button size="small"&gt;Small&lt;/is-button&gt;
-            &lt;is-button&gt;Default&lt;/is-button&gt;
-            &lt;is-button size="medium"&gt;Medium&lt;/is-button&gt;
-            &lt;is-button size="large"&gt;Large&lt;/is-button&gt;
-          </code>
-        </pre>
+              <code class="html">
+                &lt;is-button size="small"&gt;Small&lt;/is-button&gt;
+                &lt;is-button&gt;Default&lt;/is-button&gt;
+                &lt;is-button size="medium"&gt;Medium&lt;/is-button&gt;
+                &lt;is-button size="large"&gt;Large&lt;/is-button&gt;
+              </code>
+            </pre>
           </div>
         </div>
 
@@ -259,11 +297,11 @@
 
           <div>
             <pre>
-          <code class="html">
-            &lt;is-button color="primary"&gt;Default&lt;/is-button&gt;
-            &lt;is-button color="secondary" display="fullwidth"&gt;Medium&lt;/is-button&gt;
-          </code>
-        </pre>
+              <code class="html">
+                &lt;is-button color="primary"&gt;Default&lt;/is-button&gt;
+                &lt;is-button color="secondary" display="fullwidth"&gt;Medium&lt;/is-button&gt;
+              </code>
+            </pre>
           </div>
         </div>
 
@@ -279,12 +317,12 @@
 
           <div>
             <pre>
-          <code class="html">
-            &lt;is-button color="success"&gt;Round&lt;/is-button&gt;
-            &lt;is-button color="warning" shape="round"&gt;Small Round&lt;/is-button&gt;
-            &lt;is-button color="primary" shape="round" size="large"&gt;Large Round&lt;/is-button&gt;
-          </code>
-        </pre>
+              <code class="html">
+                &lt;is-button color="success"&gt;Round&lt;/is-button&gt;
+                &lt;is-button color="warning" shape="round"&gt;Small Round&lt;/is-button&gt;
+                &lt;is-button color="primary" shape="round" size="large"&gt;Large Round&lt;/is-button&gt;
+              </code>
+            </pre>
           </div>
         </div>
       </div>
@@ -308,14 +346,14 @@
 
           <div>
             <pre>
-        <code class="html">
-          &lt;is-breadcrumb&gt;
-            &lt;is-breadcrumb-item href="https://is-web-component.isnur.com/" target="_blank"&gt;Home&lt;/is-breadcrumb-item&gt;
-            &lt;is-breadcrumb-item href="/hot-news"&gt;Hot News&lt;/is-breadcrumb-item&gt;
-            &lt;is-breadcrumb-item active="true"&gt;Anti-Asian Violence And Discrimination&lt;/is-breadcrumb-item&gt;
-          &lt;/is-breadcrumb&gt;
-        </code>
-      </pre>
+              <code class="html">
+                &lt;is-breadcrumb&gt;
+                  &lt;is-breadcrumb-item href="https://is-web-component.isnur.com/" target="_blank"&gt;Home&lt;/is-breadcrumb-item&gt;
+                  &lt;is-breadcrumb-item href="/hot-news"&gt;Hot News&lt;/is-breadcrumb-item&gt;
+                  &lt;is-breadcrumb-item active="true"&gt;Anti-Asian Violence And Discrimination&lt;/is-breadcrumb-item&gt;
+                &lt;/is-breadcrumb&gt;
+              </code>
+            </pre>
           </div>
         </div>
 
@@ -349,26 +387,26 @@
 
           <div>
             <pre>
-        <code class="html">
-          &lt;is-breadcrumb&gt;
-            &lt;is-breadcrumb-item href="https://is-web-component.isnur.com/" target="_blank"&gt;Home&lt;/is-breadcrumb-item&gt;
-            &lt;is-breadcrumb-item href="/hot-news"&gt;Hot News&lt;/is-breadcrumb-item&gt;
-            &lt;is-breadcrumb-item active="true"&gt;Anti-Asian Violence And Discrimination&lt;/is-breadcrumb-item&gt;
-          &lt;/is-breadcrumb&gt;
+              <code class="html">
+                &lt;is-breadcrumb&gt;
+                  &lt;is-breadcrumb-item href="https://is-web-component.isnur.com/" target="_blank"&gt;Home&lt;/is-breadcrumb-item&gt;
+                  &lt;is-breadcrumb-item href="/hot-news"&gt;Hot News&lt;/is-breadcrumb-item&gt;
+                  &lt;is-breadcrumb-item active="true"&gt;Anti-Asian Violence And Discrimination&lt;/is-breadcrumb-item&gt;
+                &lt;/is-breadcrumb&gt;
 
-          &lt;is-breadcrumb align="center"&gt;
-            &lt;is-breadcrumb-item href="https://is-web-component.isnur.com/" target="_blank"&gt;Home&lt;/is-breadcrumb-item&gt;
-            &lt;is-breadcrumb-item href="/hot-news"&gt;Hot News&lt;/is-breadcrumb-item&gt;
-            &lt;is-breadcrumb-item active="true"&gt;Anti-Asian Violence And Discrimination&lt;/is-breadcrumb-item&gt;
-          &lt;/is-breadcrumb&gt;
+                &lt;is-breadcrumb align="center"&gt;
+                  &lt;is-breadcrumb-item href="https://is-web-component.isnur.com/" target="_blank"&gt;Home&lt;/is-breadcrumb-item&gt;
+                  &lt;is-breadcrumb-item href="/hot-news"&gt;Hot News&lt;/is-breadcrumb-item&gt;
+                  &lt;is-breadcrumb-item active="true"&gt;Anti-Asian Violence And Discrimination&lt;/is-breadcrumb-item&gt;
+                &lt;/is-breadcrumb&gt;
 
-          &lt;is-breadcrumb align="right"&gt;
-            &lt;is-breadcrumb-item href="https://is-web-component.isnur.com/" target="_blank"&gt;Home&lt;/is-breadcrumb-item&gt;
-            &lt;is-breadcrumb-item href="/hot-news"&gt;Hot News&lt;/is-breadcrumb-item&gt;
-            &lt;is-breadcrumb-item active="true"&gt;Anti-Asian Violence And Discrimination&lt;/is-breadcrumb-item&gt;
-          &lt;/is-breadcrumb&gt;
-        </code>
-      </pre>
+                &lt;is-breadcrumb align="right"&gt;
+                  &lt;is-breadcrumb-item href="https://is-web-component.isnur.com/" target="_blank"&gt;Home&lt;/is-breadcrumb-item&gt;
+                  &lt;is-breadcrumb-item href="/hot-news"&gt;Hot News&lt;/is-breadcrumb-item&gt;
+                  &lt;is-breadcrumb-item active="true"&gt;Anti-Asian Violence And Discrimination&lt;/is-breadcrumb-item&gt;
+                &lt;/is-breadcrumb&gt;
+              </code>
+            </pre>
           </div>
         </div>
 
@@ -402,26 +440,26 @@
 
           <div>
             <pre>
-        <code class="html">
-          &lt;is-breadcrumb size="small"&gt;
-            &lt;is-breadcrumb-item href="https://is-web-component.isnur.com/" target="_blank"&gt;Home&lt;/is-breadcrumb-item&gt;
-            &lt;is-breadcrumb-item href="/hot-news"&gt;Hot News&lt;/is-breadcrumb-item&gt;
-            &lt;is-breadcrumb-item active="true"&gt;Anti-Asian Violence And Discrimination&lt;/is-breadcrumb-item&gt;
-          &lt;/is-breadcrumb&gt;
+              <code class="html">
+                &lt;is-breadcrumb size="small"&gt;
+                  &lt;is-breadcrumb-item href="https://is-web-component.isnur.com/" target="_blank"&gt;Home&lt;/is-breadcrumb-item&gt;
+                  &lt;is-breadcrumb-item href="/hot-news"&gt;Hot News&lt;/is-breadcrumb-item&gt;
+                  &lt;is-breadcrumb-item active="true"&gt;Anti-Asian Violence And Discrimination&lt;/is-breadcrumb-item&gt;
+                &lt;/is-breadcrumb&gt;
 
-          &lt;is-breadcrumb size="medium"&gt;
-            &lt;is-breadcrumb-item href="https://is-web-component.isnur.com/" target="_blank"&gt;Home&lt;/is-breadcrumb-item&gt;
-            &lt;is-breadcrumb-item href="/hot-news"&gt;Hot News&lt;/is-breadcrumb-item&gt;
-            &lt;is-breadcrumb-item active="true"&gt;Anti-Asian Violence And Discrimination&lt;/is-breadcrumb-item&gt;
-          &lt;/is-breadcrumb&gt;
+                &lt;is-breadcrumb size="medium"&gt;
+                  &lt;is-breadcrumb-item href="https://is-web-component.isnur.com/" target="_blank"&gt;Home&lt;/is-breadcrumb-item&gt;
+                  &lt;is-breadcrumb-item href="/hot-news"&gt;Hot News&lt;/is-breadcrumb-item&gt;
+                  &lt;is-breadcrumb-item active="true"&gt;Anti-Asian Violence And Discrimination&lt;/is-breadcrumb-item&gt;
+                &lt;/is-breadcrumb&gt;
 
-          &lt;is-breadcrumb size="large"&gt;
-            &lt;is-breadcrumb-item href="https://is-web-component.isnur.com/" target="_blank"&gt;Home&lt;/is-breadcrumb-item&gt;
-            &lt;is-breadcrumb-item href="/hot-news"&gt;Hot News&lt;/is-breadcrumb-item&gt;
-            &lt;is-breadcrumb-item active="true"&gt;Anti-Asian Violence And Discrimination&lt;/is-breadcrumb-item&gt;
-          &lt;/is-breadcrumb&gt;
-        </code>
-      </pre>
+                &lt;is-breadcrumb size="large"&gt;
+                  &lt;is-breadcrumb-item href="https://is-web-component.isnur.com/" target="_blank"&gt;Home&lt;/is-breadcrumb-item&gt;
+                  &lt;is-breadcrumb-item href="/hot-news"&gt;Hot News&lt;/is-breadcrumb-item&gt;
+                  &lt;is-breadcrumb-item active="true"&gt;Anti-Asian Violence And Discrimination&lt;/is-breadcrumb-item&gt;
+                &lt;/is-breadcrumb&gt;
+              </code>
+            </pre>
           </div>
         </div>
 
@@ -455,26 +493,26 @@
 
           <div>
             <pre>
-        <code class="html">
-          &lt;is-breadcrumb separator="slash"&gt;
-            &lt;is-breadcrumb-item href="https://is-web-component.isnur.com/" target="_blank"&gt;Home&lt;/is-breadcrumb-item&gt;
-            &lt;is-breadcrumb-item href="/hot-news"&gt;Hot News&lt;/is-breadcrumb-item&gt;
-            &lt;is-breadcrumb-item active="true"&gt;Anti-Asian Violence And Discrimination&lt;/is-breadcrumb-item&gt;
-          &lt;/is-breadcrumb&gt;
+              <code class="html">
+                &lt;is-breadcrumb separator="slash"&gt;
+                  &lt;is-breadcrumb-item href="https://is-web-component.isnur.com/" target="_blank"&gt;Home&lt;/is-breadcrumb-item&gt;
+                  &lt;is-breadcrumb-item href="/hot-news"&gt;Hot News&lt;/is-breadcrumb-item&gt;
+                  &lt;is-breadcrumb-item active="true"&gt;Anti-Asian Violence And Discrimination&lt;/is-breadcrumb-item&gt;
+                &lt;/is-breadcrumb&gt;
 
-          &lt;is-breadcrumb separator="dot" align="medium"&gt;
-            &lt;is-breadcrumb-item href="https://is-web-component.isnur.com/" target="_blank"&gt;Home&lt;/is-breadcrumb-item&gt;
-            &lt;is-breadcrumb-item href="/hot-news"&gt;Hot News&lt;/is-breadcrumb-item&gt;
-            &lt;is-breadcrumb-item active="true"&gt;Anti-Asian Violence And Discrimination&lt;/is-breadcrumb-item&gt;
-          &lt;/is-breadcrumb&gt;
+                &lt;is-breadcrumb separator="dot" align="medium"&gt;
+                  &lt;is-breadcrumb-item href="https://is-web-component.isnur.com/" target="_blank"&gt;Home&lt;/is-breadcrumb-item&gt;
+                  &lt;is-breadcrumb-item href="/hot-news"&gt;Hot News&lt;/is-breadcrumb-item&gt;
+                  &lt;is-breadcrumb-item active="true"&gt;Anti-Asian Violence And Discrimination&lt;/is-breadcrumb-item&gt;
+                &lt;/is-breadcrumb&gt;
 
-          &lt;is-breadcrumb separator="arrow" align="large"&gt;
-            &lt;is-breadcrumb-item href="https://is-web-component.isnur.com/" target="_blank"&gt;Home&lt;/is-breadcrumb-item&gt;
-            &lt;is-breadcrumb-item href="/hot-news"&gt;Hot News&lt;/is-breadcrumb-item&gt;
-            &lt;is-breadcrumb-item active="true"&gt;Anti-Asian Violence And Discrimination&lt;/is-breadcrumb-item&gt;
-          &lt;/is-breadcrumb&gt;
-        </code>
-      </pre>
+                &lt;is-breadcrumb separator="arrow" align="large"&gt;
+                  &lt;is-breadcrumb-item href="https://is-web-component.isnur.com/" target="_blank"&gt;Home&lt;/is-breadcrumb-item&gt;
+                  &lt;is-breadcrumb-item href="/hot-news"&gt;Hot News&lt;/is-breadcrumb-item&gt;
+                  &lt;is-breadcrumb-item active="true"&gt;Anti-Asian Violence And Discrimination&lt;/is-breadcrumb-item&gt;
+                &lt;/is-breadcrumb&gt;
+              </code>
+            </pre>
           </div>
         </div>
       </div>
@@ -535,34 +573,34 @@
 
         <div>
           <pre>
-        <code class="html">
-          &lt;is-card&gt;
-            &lt;is-card-body&gt;
-              &lt;div&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium animi ...&lt;/div&gt;
-            &lt;/is-card-body&gt;
-          &lt;/is-card&gt;
+            <code class="html">
+              &lt;is-card&gt;
+                &lt;is-card-body&gt;
+                  &lt;div&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium animi ...&lt;/div&gt;
+                &lt;/is-card-body&gt;
+              &lt;/is-card&gt;
 
-          &lt;is-card&gt;
-            &lt;is-card-header&gt;
-              &lt;is-card-title&gt;Lorem Lorem&lt;/is-card-title&gt;
-            &lt;/is-card-header&gt;
+              &lt;is-card&gt;
+                &lt;is-card-header&gt;
+                  &lt;is-card-title&gt;Lorem Lorem&lt;/is-card-title&gt;
+                &lt;/is-card-header&gt;
 
-            &lt;is-card-body&gt;
-              &lt;div&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium animi ...&lt;/div&gt;
-            &lt;/is-card-body&gt;
-          &lt;/is-card&gt;
+                &lt;is-card-body&gt;
+                  &lt;div&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium animi ...&lt;/div&gt;
+                &lt;/is-card-body&gt;
+              &lt;/is-card&gt;
 
-          &lt;is-card&gt;
-            &lt;is-card-image src="https://i.pinimg.com/originals/bd/5a/7a/bd5a7af0f81b086477d25fb1be6a76f8.jpg"&gt;
-            &lt;/is-card-image&gt;
+              &lt;is-card&gt;
+                &lt;is-card-image src="https://i.pinimg.com/originals/bd/5a/7a/bd5a7af0f81b086477d25fb1be6a76f8.jpg"&gt;
+                &lt;/is-card-image&gt;
 
-            &lt;is-card-body&gt;
-              &lt;div class="h2"&gt;Street Fighter&lt;/div&gt;
-              &lt;div&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusant ...?&lt;/div&gt;
-            &lt;/is-card-body&gt;
-          &lt;/is-card&gt;
-        </code>
-      </pre>
+                &lt;is-card-body&gt;
+                  &lt;div class="h2"&gt;Street Fighter&lt;/div&gt;
+                  &lt;div&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusant ...?&lt;/div&gt;
+                &lt;/is-card-body&gt;
+              &lt;/is-card&gt;
+            </code>
+          </pre>
         </div>
       </div>
 
@@ -619,34 +657,34 @@
 
         <div>
           <pre>
-        <code class="html">
-          &lt;is-card color="primary"&gt;
-            &lt;is-card-body&gt;
-              &lt;div&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium animi ...&lt;/div&gt;
-            &lt;/is-card-body&gt;
-          &lt;/is-card&gt;
+            <code class="html">
+              &lt;is-card color="primary"&gt;
+                &lt;is-card-body&gt;
+                  &lt;div&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium animi ...&lt;/div&gt;
+                &lt;/is-card-body&gt;
+              &lt;/is-card&gt;
 
-          &lt;is-card color="secondary"&gt;
-            &lt;is-card-header&gt;
-              &lt;is-card-title&gt;Lorem Lorem&lt;/is-card-title&gt;
-            &lt;/is-card-header&gt;
+              &lt;is-card color="secondary"&gt;
+                &lt;is-card-header&gt;
+                  &lt;is-card-title&gt;Lorem Lorem&lt;/is-card-title&gt;
+                &lt;/is-card-header&gt;
 
-            &lt;is-card-body&gt;
-              &lt;div&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium animi ...&lt;/div&gt;
-            &lt;/is-card-body&gt;
-          &lt;/is-card&gt;
+                &lt;is-card-body&gt;
+                  &lt;div&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium animi ...&lt;/div&gt;
+                &lt;/is-card-body&gt;
+              &lt;/is-card&gt;
 
-          &lt;is-card color="success"&gt;
-            &lt;is-card-image src="https://i.pinimg.com/originals/bd/5a/7a/bd5a7af0f81b086477d25fb1be6a76f8.jpg"&gt;
-            &lt;/is-card-image&gt;
+              &lt;is-card color="success"&gt;
+                &lt;is-card-image src="https://i.pinimg.com/originals/bd/5a/7a/bd5a7af0f81b086477d25fb1be6a76f8.jpg"&gt;
+                &lt;/is-card-image&gt;
 
-            &lt;is-card-body&gt;
-              &lt;div class="h2"&gt;Street Fighter&lt;/div&gt;
-              &lt;div&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusant ...?&lt;/div&gt;
-            &lt;/is-card-body&gt;
-          &lt;/is-card&gt;
-        </code>
-      </pre>
+                &lt;is-card-body&gt;
+                  &lt;div class="h2"&gt;Street Fighter&lt;/div&gt;
+                  &lt;div&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusant ...?&lt;/div&gt;
+                &lt;/is-card-body&gt;
+              &lt;/is-card&gt;
+            </code>
+          </pre>
         </div>
       </div>
 
@@ -708,38 +746,38 @@
 
         <div>
           <pre>
-        <code class="html">
-          &lt;is-card&gt;
-            &lt;is-card-image src="https://i.pinimg.com/originals/bd/5a/7a/bd5a7af0f81b086477d25fb1be6a76f8.jpg"&gt;
-            &lt;/is-card-image&gt;
+            <code class="html">
+              &lt;is-card&gt;
+                &lt;is-card-image src="https://i.pinimg.com/originals/bd/5a/7a/bd5a7af0f81b086477d25fb1be6a76f8.jpg"&gt;
+                &lt;/is-card-image&gt;
 
-            &lt;is-card-body&gt;
-              &lt;div class="h2"&gt;Street Fighter&lt;/div&gt;
-              &lt;div&gt;Lorem ipsum dolor sit amet, consectetur ..., vitae?&lt;/div&gt;
-            &lt;/is-card-body&gt;
-          &lt;/is-card&gt;
+                &lt;is-card-body&gt;
+                  &lt;div class="h2"&gt;Street Fighter&lt;/div&gt;
+                  &lt;div&gt;Lorem ipsum dolor sit amet, consectetur ..., vitae?&lt;/div&gt;
+                &lt;/is-card-body&gt;
+              &lt;/is-card&gt;
 
-          &lt;is-card&gt;
-            &lt;is-card-image ratio="3x2" src="https://i.pinimg.com/originals/bd/5a/7a/bd5a7af0f81b086477d25fb1be6a76f8.jpg"&gt;
-            &lt;/is-card-image&gt;
+              &lt;is-card&gt;
+                &lt;is-card-image ratio="3x2" src="https://i.pinimg.com/originals/bd/5a/7a/bd5a7af0f81b086477d25fb1be6a76f8.jpg"&gt;
+                &lt;/is-card-image&gt;
 
-            &lt;is-card-body&gt;
-              &lt;div class="h2"&gt;Street Fighter&lt;/div&gt;
-              &lt;div&gt;Lorem ipsum dolor sit amet, consectetur ..., vitae?&lt;/div&gt;
-            &lt;/is-card-body&gt;
-          &lt;/is-card&gt;
+                &lt;is-card-body&gt;
+                  &lt;div class="h2"&gt;Street Fighter&lt;/div&gt;
+                  &lt;div&gt;Lorem ipsum dolor sit amet, consectetur ..., vitae?&lt;/div&gt;
+                &lt;/is-card-body&gt;
+              &lt;/is-card&gt;
 
-          &lt;is-card&gt;
-            &lt;is-card-image ratio="2x1" src="https://i.pinimg.com/originals/bd/5a/7a/bd5a7af0f81b086477d25fb1be6a76f8.jpg"&gt;
-            &lt;/is-card-image&gt;
+              &lt;is-card&gt;
+                &lt;is-card-image ratio="2x1" src="https://i.pinimg.com/originals/bd/5a/7a/bd5a7af0f81b086477d25fb1be6a76f8.jpg"&gt;
+                &lt;/is-card-image&gt;
 
-            &lt;is-card-body&gt;
-              &lt;div class="h2"&gt;Street Fighter&lt;/div&gt;
-              &lt;div&gt;Lorem ipsum dolor sit amet, consectetur ..., vitae?&lt;/div&gt;
-            &lt;/is-card-body&gt;
-          &lt;/is-card&gt;
-        </code>
-      </pre>
+                &lt;is-card-body&gt;
+                  &lt;div class="h2"&gt;Street Fighter&lt;/div&gt;
+                  &lt;div&gt;Lorem ipsum dolor sit amet, consectetur ..., vitae?&lt;/div&gt;
+                &lt;/is-card-body&gt;
+              &lt;/is-card&gt;
+            </code>
+          </pre>
         </div>
 
 
@@ -800,38 +838,38 @@
 
         <div>
           <pre>
-        <code class="html">
-          &lt;is-card&gt;
-            &lt;is-card-image object="fill" ratio="2x1" src="https://i.pinimg.com/originals/bd/5a/7a/bd5a7af0f81b086477d25fb1be6a76f8.jpg"&gt;
-            &lt;/is-card-image&gt;
+            <code class="html">
+              &lt;is-card&gt;
+                &lt;is-card-image object="fill" ratio="2x1" src="https://i.pinimg.com/originals/bd/5a/7a/bd5a7af0f81b086477d25fb1be6a76f8.jpg"&gt;
+                &lt;/is-card-image&gt;
 
-            &lt;is-card-body&gt;
-              &lt;div class="h2"&gt;Street Fighter wow&lt;/div&gt;
-              &lt;div&gt;Lorem ipsum dolor sit amet, consectetur ..., vitae?&lt;/div&gt;
-            &lt;/is-card-body&gt;
-          &lt;/is-card&gt;
+                &lt;is-card-body&gt;
+                  &lt;div class="h2"&gt;Street Fighter wow&lt;/div&gt;
+                  &lt;div&gt;Lorem ipsum dolor sit amet, consectetur ..., vitae?&lt;/div&gt;
+                &lt;/is-card-body&gt;
+              &lt;/is-card&gt;
 
-          &lt;is-card&gt;
-            &lt;is-card-image object="cover" ratio="2x1" src="https://i.pinimg.com/originals/bd/5a/7a/bd5a7af0f81b086477d25fb1be6a76f8.jpg"&gt;
-            &lt;/is-card-image&gt;
+              &lt;is-card&gt;
+                &lt;is-card-image object="cover" ratio="2x1" src="https://i.pinimg.com/originals/bd/5a/7a/bd5a7af0f81b086477d25fb1be6a76f8.jpg"&gt;
+                &lt;/is-card-image&gt;
 
-            &lt;is-card-body&gt;
-              &lt;div class="h2"&gt;Street Fighter wow&lt;/div&gt;
-              &lt;div&gt;Lorem ipsum dolor sit amet, consectetur ..., vitae?&lt;/div&gt;
-            &lt;/is-card-body&gt;
-          &lt;/is-card&gt;
+                &lt;is-card-body&gt;
+                  &lt;div class="h2"&gt;Street Fighter wow&lt;/div&gt;
+                  &lt;div&gt;Lorem ipsum dolor sit amet, consectetur ..., vitae?&lt;/div&gt;
+                &lt;/is-card-body&gt;
+              &lt;/is-card&gt;
 
-          &lt;is-card&gt;
-            &lt;is-card-image object="contain" ratio="2x1" src="https://i.pinimg.com/originals/bd/5a/7a/bd5a7af0f81b086477d25fb1be6a76f8.jpg"&gt;
-            &lt;/is-card-image&gt;
+              &lt;is-card&gt;
+                &lt;is-card-image object="contain" ratio="2x1" src="https://i.pinimg.com/originals/bd/5a/7a/bd5a7af0f81b086477d25fb1be6a76f8.jpg"&gt;
+                &lt;/is-card-image&gt;
 
-            &lt;is-card-body&gt;
-              &lt;div class="h2"&gt;Street Fighter wow&lt;/div&gt;
-              &lt;div&gt;Lorem ipsum dolor sit amet, consectetur ..., vitae?&lt;/div&gt;
-            &lt;/is-card-body&gt;
-          &lt;/is-card&gt;
-        </code>
-      </pre>
+                &lt;is-card-body&gt;
+                  &lt;div class="h2"&gt;Street Fighter wow&lt;/div&gt;
+                  &lt;div&gt;Lorem ipsum dolor sit amet, consectetur ..., vitae?&lt;/div&gt;
+                &lt;/is-card-body&gt;
+              &lt;/is-card&gt;
+            </code>
+          </pre>
         </div>
       </div>
 
@@ -892,38 +930,38 @@
 
         <div>
           <pre>
-        <code class="html">
-          &lt;is-card href="/home"&gt;
-            &lt;is-card-image src="https://i.pinimg.com/originals/bd/5a/7a/bd5a7af0f81b086477d25fb1be6a76f8.jpg"&gt;
-            &lt;/is-card-image&gt;
+            <code class="html">
+              &lt;is-card href="/home"&gt;
+                &lt;is-card-image src="https://i.pinimg.com/originals/bd/5a/7a/bd5a7af0f81b086477d25fb1be6a76f8.jpg"&gt;
+                &lt;/is-card-image&gt;
 
-            &lt;is-card-body&gt;
-              &lt;div class="h2"&gt;Street Fighter&lt;/div&gt;
-              &lt;div&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusant ...?&lt;/div&gt;
-            &lt;/is-card-body&gt;
-          &lt;/is-card&gt;
+                &lt;is-card-body&gt;
+                  &lt;div class="h2"&gt;Street Fighter&lt;/div&gt;
+                  &lt;div&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusant ...?&lt;/div&gt;
+                &lt;/is-card-body&gt;
+              &lt;/is-card&gt;
 
-          &lt;is-card href="https://is-web-component.isnur.com/"&gt;
-            &lt;is-card-image src="https://i.pinimg.com/originals/bd/5a/7a/bd5a7af0f81b086477d25fb1be6a76f8.jpg"&gt;
-            &lt;/is-card-image&gt;
+              &lt;is-card href="https://is-web-component.isnur.com/"&gt;
+                &lt;is-card-image src="https://i.pinimg.com/originals/bd/5a/7a/bd5a7af0f81b086477d25fb1be6a76f8.jpg"&gt;
+                &lt;/is-card-image&gt;
 
-            &lt;is-card-body&gt;
-              &lt;div class="h2"&gt;Street Fighter&lt;/div&gt;
-              &lt;div&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusant ...?&lt;/div&gt;
-            &lt;/is-card-body&gt;
-          &lt;/is-card&gt;
+                &lt;is-card-body&gt;
+                  &lt;div class="h2"&gt;Street Fighter&lt;/div&gt;
+                  &lt;div&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusant ...?&lt;/div&gt;
+                &lt;/is-card-body&gt;
+              &lt;/is-card&gt;
 
-          &lt;is-card href="https://is-web-component.isnur.com/" target="_blank"&gt;
-            &lt;is-card-image src="https://i.pinimg.com/originals/bd/5a/7a/bd5a7af0f81b086477d25fb1be6a76f8.jpg"&gt;
-            &lt;/is-card-image&gt;
+              &lt;is-card href="https://is-web-component.isnur.com/" target="_blank"&gt;
+                &lt;is-card-image src="https://i.pinimg.com/originals/bd/5a/7a/bd5a7af0f81b086477d25fb1be6a76f8.jpg"&gt;
+                &lt;/is-card-image&gt;
 
-            &lt;is-card-body&gt;
-              &lt;div class="h2"&gt;Street Fighter&lt;/div&gt;
-              &lt;div&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusant ...?&lt;/div&gt;
-            &lt;/is-card-body&gt;
-          &lt;/is-card&gt;
-        </code>
-      </pre>
+                &lt;is-card-body&gt;
+                  &lt;div class="h2"&gt;Street Fighter&lt;/div&gt;
+                  &lt;div&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusant ...?&lt;/div&gt;
+                &lt;/is-card-body&gt;
+              &lt;/is-card&gt;
+            </code>
+          </pre>
         </div>
       </div>
     </div>

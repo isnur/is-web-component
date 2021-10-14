@@ -260,6 +260,28 @@ export namespace Components {
          */
         "toggleOptions": IToggleOptions;
     }
+    interface IsRow {
+        /**
+          * Align columns items together on the cross axis: 'start', 'center', 'end', 'around', 'between' or 'stretch'. Has no effect on single rows of items
+         */
+        "alignContent"?: string | null;
+        /**
+          * Horizontal alignment/spacing of all columns: 'start', 'center', 'end', 'around', or 'between'
+         */
+        "alignH"?: string | null;
+        /**
+          * Vertical alignment of all columns in a row: 'start', 'center', 'end', 'baseline', or 'stretch'
+         */
+        "alignV"?: string | null;
+        /**
+          * When set, removes the margin from the row and removes the padding from the child columns
+         */
+        "noGutters"?: boolean;
+        /**
+          * Specify the HTML tag to render instead of the default tag
+         */
+        "tag"?: string;
+    }
 }
 declare global {
     interface HTMLIsAlertElement extends Components.IsAlert, HTMLStencilElement {
@@ -358,6 +380,12 @@ declare global {
         prototype: HTMLIsReadmoreElement;
         new (): HTMLIsReadmoreElement;
     };
+    interface HTMLIsRowElement extends Components.IsRow, HTMLStencilElement {
+    }
+    var HTMLIsRowElement: {
+        prototype: HTMLIsRowElement;
+        new (): HTMLIsRowElement;
+    };
     interface HTMLElementTagNameMap {
         "is-alert": HTMLIsAlertElement;
         "is-badge": HTMLIsBadgeElement;
@@ -375,6 +403,7 @@ declare global {
         "is-multiselect": HTMLIsMultiselectElement;
         "is-pagination": HTMLIsPaginationElement;
         "is-readmore": HTMLIsReadmoreElement;
+        "is-row": HTMLIsRowElement;
     }
 }
 declare namespace LocalJSX {
@@ -640,6 +669,28 @@ declare namespace LocalJSX {
          */
         "toggleOptions"?: IToggleOptions;
     }
+    interface IsRow {
+        /**
+          * Align columns items together on the cross axis: 'start', 'center', 'end', 'around', 'between' or 'stretch'. Has no effect on single rows of items
+         */
+        "alignContent"?: string | null;
+        /**
+          * Horizontal alignment/spacing of all columns: 'start', 'center', 'end', 'around', or 'between'
+         */
+        "alignH"?: string | null;
+        /**
+          * Vertical alignment of all columns in a row: 'start', 'center', 'end', 'baseline', or 'stretch'
+         */
+        "alignV"?: string | null;
+        /**
+          * When set, removes the margin from the row and removes the padding from the child columns
+         */
+        "noGutters"?: boolean;
+        /**
+          * Specify the HTML tag to render instead of the default tag
+         */
+        "tag"?: string;
+    }
     interface IntrinsicElements {
         "is-alert": IsAlert;
         "is-badge": IsBadge;
@@ -657,6 +708,7 @@ declare namespace LocalJSX {
         "is-multiselect": IsMultiselect;
         "is-pagination": IsPagination;
         "is-readmore": IsReadmore;
+        "is-row": IsRow;
     }
 }
 export { LocalJSX as JSX };
@@ -679,6 +731,7 @@ declare module "@stencil/core" {
             "is-multiselect": LocalJSX.IsMultiselect & JSXBase.HTMLAttributes<HTMLIsMultiselectElement>;
             "is-pagination": LocalJSX.IsPagination & JSXBase.HTMLAttributes<HTMLIsPaginationElement>;
             "is-readmore": LocalJSX.IsReadmore & JSXBase.HTMLAttributes<HTMLIsReadmoreElement>;
+            "is-row": LocalJSX.IsRow & JSXBase.HTMLAttributes<HTMLIsRowElement>;
         }
     }
 }
