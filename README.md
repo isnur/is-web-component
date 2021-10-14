@@ -88,5 +88,6 @@ Use Script tag
   - [x] [is-card-title](src/components/card-title/readme.md)
   - [x] [is-card-image](src/components/card-image/readme.md)
   - [x] [is-card-body](src/components/card-body/readme.md)
+- [x] [is-container](src/components/container/readme.md)
 - [ ] is-table
 - [ ] is-tabs
