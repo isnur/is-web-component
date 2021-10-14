@@ -11,7 +11,7 @@
 | ----------- | ------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | --------- | ----------- |
 | `autoClose` | `auto-close` | If `true` alert will close automatically.                                                                                                        | `boolean` | `true`      |
 | `closeSecs` | `close-secs` | Number of seconds to close alert automatically if autoClose `true`.                                                                              | `number`  | `3`         |
-| `closeText` | `close-text` | Customized close button text.                                                                                                                    | `string`  | `'\u2573'`  |
+| `closeText` | `close-text` | Customized close button text.                                                                                                                    | `string`  | `'×'`       |
 | `closeable` | `closeable`  | If closable or not.                                                                                                                              | `boolean` | `true`      |
 | `color`     | `color`      | The color options are: `"primary"`, `"secondary"`, `"success"`, `"warning"`, `"error"`, `"light"`, `"info"`, `"white"`, `"black"`, and `"dark"`. | `string`  | `undefined` |
 | `rounded`   | `rounded`    | If `true`, make the alert rounded.                                                                                                               | `boolean` | `false`     |
