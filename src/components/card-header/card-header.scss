@@ -1,0 +1,18 @@
+@import "../../global/variables.scss";
+
+$card-header-padding-vertical: 20px !default;
+$card-header-padding-horizontal: 20px !default;
+$card-header-shadow: 0 0.125em 0.25em rgba($black-bg, 0.1) !default;
+
+$card-header-radius-top: 0.5rem !default;
+$card-header-radius-bottom: 0 !default;
+
+
+:host {
+  border-radius: $card-header-radius-top $card-header-radius-top $card-header-radius-bottom $card-header-radius-bottom;
+  display: flex;
+  align-items: stretch;
+  box-shadow: $card-header-shadow;
+  background-color: transparent;
+  padding: $card-header-padding-vertical $card-header-padding-horizontal;
+}

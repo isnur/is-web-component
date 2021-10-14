@@ -1,0 +1,53 @@
+@import "../../global/variables.scss";
+
+$breadcrumb-size: 1rem !default;
+$breadcrumb-separator-default: '\0002f' !default;
+
+$breadcrumb-sizes: (
+  'small': $size-7, 'medium': $size-6, 'large': $size-5
+) !default;
+$breadcrumb-separators: (
+  'slash': '\0002f', 'dot': '\2022', 'arrow': '\2192'
+) !default;
+
+
+
+// ***  Main  ***
+
+:host(.is-breadcrumb) {
+  display: flex;
+  font-size: $breadcrumb-size;
+  padding: 0;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+
+// ***  Item  ***
+
+// Item: Align
+@each $name, $value in ('center': 'center', 'right': 'flex-end') {
+  :host(.is-#{$name}) {
+    justify-content: #{$value};
+  }
+}
+
+// Item: Separators
+::slotted(is-breadcrumb-item:nth-child(n+2))::before {
+  color: $dark-bg;
+  content: $breadcrumb-separator-default;
+  margin: 0 1rem;
+}
+
+@each $name, $value in $breadcrumb-separators {
+  :host(.has-separator-#{$name}) > ::slotted(is-breadcrumb-item:nth-child(n+2))::before {
+    content: '#{$value}';
+  }
+}
+
+// Item: Sizes
+@each $name, $value in $breadcrumb-sizes {
+  :host(.is-#{$name}) {
+    font-size: #{$value};
+  }
+}

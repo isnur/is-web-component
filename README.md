@@ -7,7 +7,7 @@
 
 Open source web components for building web applications. Build on top [StencilJS](https://stenciljs.com).
 
-## Demo
+## Demonstration
 
 [https://is-web-component.isnur.com/](https://is-web-component.isnur.com/)
 
@@ -31,16 +31,16 @@ https://unpkg.com/is-web-component
 
 ## Usage
 
-Script tag
+Use Script tag
 
-- Put a script tag similar to this
+- Put a script tag similar to this one
 
   ```html
     <script type="module" src="https://unpkg.com/is-web-component@latest/dist/is-web-component/is-web-component.esm.js"></script>
     <script nomodule="" src="https://unpkg.com/is-web-component@latest/dist/is-web-component/is-web-component.js"></script>
   ```
   
-  in the head of your index.html
+  in the head of your index.html file
 - Then you can use the element anywhere in your template, JSX, html etc.
 
   ```html
@@ -69,7 +69,7 @@ Script tag
 ## Contributing
 
 * Read the project [Code of Conduct](CODE_OF_CONDUCT.md) and remember to be nice to one another.
-* See [CONTRIBUTING.md](CONTRIBUTING.md) for info about how to contribute to this project.
+* See [CONTRIBUTING.md](CONTRIBUTING.md) for information about how to contribute to this project.
 
 ## Components
 
@@ -77,7 +77,16 @@ Script tag
 - [x] [is-badge](src/components/badge/readme.md)
 - [x] [is-modal](src/components/modal/readme.md)
 - [x] [is-multiselect](src/components/multiselect/readme.md)
-- [ ] is-pagination
+- [x] [is-pagination](src/components/pagination/readme.md)
 - [x] [is-readmore](src/components/readmore/readme.md)
+- [x] [is-button](src/components/button/readme.md)
+- [x] [is-divider](src/components/divider/readme.md)
+- [x] [is-breadcrumb](src/components/breadcrumb/readme.md)
+  - [x] [is-breadcrumb-item](src/components/breadcrumb-item/readme.md)
+- [x] [is-card](src/components/card/readme.md)
+  - [x] [is-card-header](src/components/card-header/readme.md)
+  - [x] [is-card-title](src/components/card-title/readme.md)
+  - [x] [is-card-image](src/components/card-image/readme.md)
+  - [x] [is-card-body](src/components/card-body/readme.md)
 - [ ] is-table
 - [ ] is-tabs
