@@ -29,7 +29,7 @@ export class Alert {
   /**
    * Customized close button text.
    */
-  @Prop() closeText?: string = '\u2573';
+  @Prop() closeText?: string = '×';
 
   /**
    * If `true`, make the alert rounded.
@@ -79,7 +79,10 @@ export class Alert {
           'rounded': this.rounded
         }}
       >
-        <div class="alert__content">
+        <div class={{
+          'alert__content': true,
+          'alert__dismissible': this.closeable
+        }}>
           <slot></slot>
         </div>
         {this.renderCloseText()}

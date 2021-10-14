@@ -9,7 +9,7 @@
        * @prop --padding-left: Padding left of the alert
        *
        * @prop --font-family: Font family of the alert text
-       * @prop --font-size: Font size of the alert text 
+       * @prop --font-size: Font size of the alert text
        * @prop --font-weight: Font weight of the alert text
        */
     -webkit-font-smoothing: antialiased;
@@ -32,21 +32,27 @@
         display: block;
         height: 100%;
         width: 100%;
+        box-sizing: border-box;
       }
       &__close-text {
         cursor: pointer;
-        opacity: .70;
+        opacity: .5;
         position: absolute;
-        top: 14px;
-        right: 16px;
-        font-size: 0.8em;
+        top: 0;
+        right: 0;
+        font-size: 1.25rem;
+        padding: .55rem 1rem;
+        text-shadow: 0 1px 0 #fff;
         &:hover {
           opacity: .85;
         }
       }
+      &__dismissible {
+        padding-right: 1.25rem;
+      }
     }
   }
-  
+
   :host(.primary) {
     color: $primary-color;
     background-color: $primary-bg;
@@ -93,4 +99,3 @@
        */
     border-radius: var(--border-radius, 4px);
   }
-  
