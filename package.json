@@ -37,7 +37,7 @@
     "doc:wow": "stencil build --docs-readme"
   },
   "devDependencies": {
-    "@compodoc/compodoc": "1.1.11",
+    "@compodoc/compodoc": "1.1.19",
     "@stencil/core": "1.17.4",
     "@stencil/sass": "1.3.2",
     "@types/jest": "26.0.15",
